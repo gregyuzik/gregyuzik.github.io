@@ -160,7 +160,7 @@ body {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     transition: color var(--transition-fast);
 }
 
@@ -753,7 +753,7 @@ main {
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: 1rem;
         padding: 6px 12px;
     }
 
@@ -825,7 +825,7 @@ main {
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         padding: 4px 8px;
         white-space: nowrap;
     }
