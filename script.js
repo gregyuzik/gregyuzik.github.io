@@ -36,8 +36,15 @@ function setWallpaper(asset) {
         }, 400);
     };
     img.src = `assets/${asset}`;
+    // Persist wallpaper asset name
     localStorage.setItem('klosyt_wallpaper', asset);
     sessionStorage.setItem('klosyt_wallpaper', asset);
+    // Sync the inline-script theme key (short name, e.g. 'blue' from 'wallpaper_blue.jpg')
+    const shortName = asset.replace('wallpaper_', '').replace('.jpg', '');
+    localStorage.setItem('klosyt_theme', shortName);
+    sessionStorage.setItem('klosyt_theme', shortName);
+    // Update CSS variable so it stays in sync
+    document.documentElement.style.setProperty('--current-wallpaper', `url('assets/${asset}')`);
     // Update theme pill text
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(asset);
@@ -59,13 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.hero-background').style.backgroundImage = `url('assets/${wp}')`;
     sessionStorage.setItem('klosyt_wallpaper', wp);
     localStorage.setItem('klosyt_wallpaper', wp);
+    // Keep klosyt_theme in sync with wallpaper asset
+    const shortName = wp.replace('wallpaper_', '').replace('.jpg', '');
+    localStorage.setItem('klosyt_theme', shortName);
+    sessionStorage.setItem('klosyt_theme', shortName);
     // Set initial theme pill text
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(wp);
 
-
     // Dynamic App Icon update
-    const currentTheme = sessionStorage.getItem('klosyt_theme') || 'alligator'; // Fallback
+    const currentTheme = localStorage.getItem('klosyt_theme') || 'blue';
     const appIcons = document.querySelectorAll('.dynamic-app-icon');
     appIcons.forEach(icon => {
         icon.src = `assets/AppIcon_${currentTheme}.png`;

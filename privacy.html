@@ -27,21 +27,17 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Random Theme Generator -->
+    <!-- Theme Loader — Blue Velvet default, persists user choice via localStorage -->
     <script>
         (function () {
-            const themes = ['alligator', 'blue', 'gray', 'green', 'mink', 'orange', 'pink', 'purple', 'red', 'redvelvet', 'snakeskin', 'white', 'yellow'];
-            let currentTheme = sessionStorage.getItem('klosyt_theme');
-            let themeTimestamp = sessionStorage.getItem('klosyt_theme_ts');
-            let now = new Date().getTime();
-
-            // Refresh theme if not set, or if it's been more than 1 hour (3600000 ms)
-            if (!currentTheme || !themeTimestamp || now - themeTimestamp > 3600000) {
-                currentTheme = themes[Math.floor(Math.random() * themes.length)];
-                sessionStorage.setItem('klosyt_theme', currentTheme);
-                sessionStorage.setItem('klosyt_theme_ts', now);
-            }
-
+            // Restore user's saved theme from localStorage (persists across visits),
+            // fall back to sessionStorage, then default to Blue Velvet
+            let currentTheme = localStorage.getItem('klosyt_theme')
+                || sessionStorage.getItem('klosyt_theme')
+                || 'blue';
+            // Persist to both storage layers
+            localStorage.setItem('klosyt_theme', currentTheme);
+            sessionStorage.setItem('klosyt_theme', currentTheme);
             document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
             // Darken lighter themes slightly more for text contrast
             if (['white', 'yellow', 'pink'].includes(currentTheme)) {
