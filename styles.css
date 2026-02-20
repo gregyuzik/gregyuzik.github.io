@@ -194,7 +194,7 @@ body {
 }
 
 .hero-hanger-icon {
-    height: clamp(100px, 15vw, 180px);
+    height: clamp(150px, 22.5vw, 270px);
     width: auto;
     filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
 }
@@ -770,7 +770,7 @@ main {
     }
 
     .hero-hanger-icon {
-        height: 90px;
+        height: 135px;
     }
 
     .glass-panel {
@@ -867,7 +867,7 @@ main {
     }
 
     .hero-hanger-icon {
-        height: 100px;
+        height: 150px;
     }
 
     .glass-panel {
