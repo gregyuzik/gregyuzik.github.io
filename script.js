@@ -20,7 +20,7 @@ function getCurrentWallpaper() {
 
 function getThemeName(asset) {
     const t = themes.find(t => t.asset === asset);
-    return t ? `${t.emoji} ${t.name}` : '🎨';
+    return t ? `${t.emoji} <span class="theme-name-text">${t.name}</span>` : '🎨';
 }
 
 function setWallpaper(asset) {
@@ -37,9 +37,10 @@ function setWallpaper(asset) {
     };
     img.src = `assets/${asset}`;
     localStorage.setItem('klosyt_wallpaper', asset);
+    sessionStorage.setItem('klosyt_wallpaper', asset);
     // Update theme pill text
     const pill = document.getElementById('theme-pill');
-    if (pill) pill.textContent = getThemeName(asset);
+    if (pill) pill.innerHTML = getThemeName(asset);
 }
 
 function rotateWallpaper() {
@@ -50,13 +51,15 @@ function rotateWallpaper() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Random wallpaper on each page load
-    const wp = themes[Math.floor(Math.random() * themes.length)].asset;
+    // Use stored wallpaper if navigating between pages, random only on first visit
+    const stored = sessionStorage.getItem('klosyt_wallpaper');
+    const wp = stored || themes[Math.floor(Math.random() * themes.length)].asset;
     document.querySelector('.hero-background').style.backgroundImage = `url('assets/${wp}')`;
+    sessionStorage.setItem('klosyt_wallpaper', wp);
     localStorage.setItem('klosyt_wallpaper', wp);
     // Set initial theme pill text
     const pill = document.getElementById('theme-pill');
-    if (pill) pill.textContent = getThemeName(wp);
+    if (pill) pill.innerHTML = getThemeName(wp);
 
 
     // Dynamic App Icon update
@@ -137,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
-                    // 0.35x scroll rate, capped at 400px so items never fully disappear
-                    const offset = Math.min(window.scrollY * 0.35, 400);
+                    // Parallax scroll — items drift up continuously as page scrolls
+                    const offset = window.scrollY * 0.35;
                     floatingClothes.style.transform = `translateY(${-offset}px)`;
                     ticking = false;
                 });
