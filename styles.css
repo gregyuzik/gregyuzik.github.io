@@ -739,6 +739,10 @@ main {
 
 /* Tablet and smaller */
 @media (max-width: 768px) {
+    #floating-clothes .glass-item-card:nth-child(3n) {
+        display: none;
+    }
+
     .glass-nav {
         padding: 10px 20px;
         gap: 1rem;
