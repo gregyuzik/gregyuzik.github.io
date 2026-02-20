@@ -232,8 +232,17 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     transform: translateZ(10px);
+}
+
+.platforms {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    transform: translateZ(15px);
+    letter-spacing: 0.02em;
 }
 
 /* Responsive */
