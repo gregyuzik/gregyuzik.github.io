@@ -6,60 +6,462 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klosyt - Your AI Closet</title>
     <meta name="description"
-        content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly. Coming soon.">
+        content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly.">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/AppIcon.png">
-
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://klosyt.com/">
-    <meta property="og:title" content="Klosyt - Your AI Closet">
-    <meta property="og:description"
-        content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly. Coming soon.">
-    <meta property="og:image" content="https://klosyt.com/assets/AppIcon.png">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://klosyt.com/">
-    <meta name="twitter:title" content="Klosyt - Your AI Closet">
-    <meta name="twitter:description"
-        content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly. Coming soon.">
-    <meta name="twitter:image" content="https://klosyt.com/assets/AppIcon.png">
-
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Random Theme Generator (Background only for Hero) -->
+    <script>
+        (function () {
+            const themes = ['alligator', 'blue', 'gray', 'green', 'mink', 'orange', 'pink', 'purple', 'red', 'redvelvet', 'snakeskin', 'white', 'yellow'];
+            let currentTheme = sessionStorage.getItem('klosyt_theme');
+            let themeTimestamp = sessionStorage.getItem('klosyt_theme_ts');
+            let now = new Date().getTime();
+
+            if (!currentTheme || !themeTimestamp || now - themeTimestamp > 3600000) {
+                currentTheme = themes[Math.floor(Math.random() * themes.length)];
+                sessionStorage.setItem('klosyt_theme', currentTheme);
+                sessionStorage.setItem('klosyt_theme_ts', now);
+            }
+            document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="background-container"></div>
 
-    <main class="placeholder-container">
-        <div class="glass-panel">
-            <div class="logo-container">
-                <img src="assets/AppIcon.png" alt="Klosyt App Icon" class="app-icon">
+    <!-- Hero Background Banner -->
+    <div class="hero-background"></div>
+
+    <!-- Global Floating Clothing Items (parallax middle layer) -->
+    <div id="floating-clothes">
+        <!-- Large items (120px) -->
+        <div class="glass-item-card card-blue"
+            style="top: 2%; left: 8%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-8deg); animation-delay: 0s;">
+            👕</div>
+        <div class="glass-item-card card-blue"
+            style="top: 15%; left: 75%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(10deg); animation-delay: 2.5s;">
+            👖</div>
+        <div class="glass-item-card card-orange"
+            style="top: 30%; left: 42%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(5deg); animation-delay: 1.2s;">
+            🧥</div>
+        <div class="glass-item-card card-purple"
+            style="top: 48%; left: 15%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-12deg); animation-delay: 3.8s;">
+            👗</div>
+        <div class="glass-item-card card-green"
+            style="top: 62%; left: 80%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(7deg); animation-delay: 0.5s;">
+            👟</div>
+        <div class="glass-item-card card-blue"
+            style="top: 78%; left: 35%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-6deg); animation-delay: 4.2s;">
+            🧢</div>
+        <div class="glass-item-card card-purple"
+            style="top: 90%; left: 65%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(11deg); animation-delay: 1.8s;">
+            🩱</div>
+
+        <!-- Medium items (85px) -->
+        <div class="glass-item-card card-blue"
+            style="top: 5%; left: 45%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(14deg); animation-delay: 1.5s;">
+            👔</div>
+        <div class="glass-item-card card-red"
+            style="top: 12%; left: 25%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-5deg); animation-delay: 3.3s;">
+            🧣</div>
+        <div class="glass-item-card card-blue"
+            style="top: 22%; left: 88%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(9deg); animation-delay: 0.8s;">
+            🩳</div>
+        <div class="glass-item-card card-teal"
+            style="top: 35%; left: 68%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-11deg); animation-delay: 5s;">
+            🧤</div>
+        <div class="glass-item-card card-orange"
+            style="top: 42%; left: 5%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(6deg); animation-delay: 2.2s;">
+            👞</div>
+        <div class="glass-item-card card-yellow"
+            style="top: 55%; left: 55%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-14deg); animation-delay: 4.5s;">
+            👒</div>
+        <div class="glass-item-card card-green"
+            style="top: 68%; left: 22%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(8deg); animation-delay: 1s;">
+            🥿</div>
+        <div class="glass-item-card card-red"
+            style="top: 75%; left: 90%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-9deg); animation-delay: 3.5s;">
+            🎒</div>
+        <div class="glass-item-card card-pink"
+            style="top: 85%; left: 10%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(13deg); animation-delay: 0.3s;">
+            👜</div>
+        <div class="glass-item-card card-blue"
+            style="top: 95%; left: 48%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-7deg); animation-delay: 2.8s;">
+            🧦</div>
+
+        <!-- Small items (65px) -->
+        <div class="glass-item-card card-yellow"
+            style="top: 1%; left: 30%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(16deg); animation-delay: 4s;">
+            💍</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 8%; left: 60%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-13deg); animation-delay: 2s;">
+            🕶️</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 18%; left: 5%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(4deg); animation-delay: 5.5s;">
+            ⌚</div>
+        <div class="glass-item-card card-red"
+            style="top: 20%; left: 52%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-10deg); animation-delay: 0.6s;">
+            🧵</div>
+        <div class="glass-item-card card-pink"
+            style="top: 28%; left: 18%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(12deg); animation-delay: 3s;">
+            🎀</div>
+        <div class="glass-item-card card-yellow"
+            style="top: 38%; left: 92%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-6deg); animation-delay: 1.5s;">
+            👑</div>
+        <div class="glass-item-card card-orange"
+            style="top: 45%; left: 60%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(9deg); animation-delay: 4.8s;">
+            🩴</div>
+        <div class="glass-item-card card-blue"
+            style="top: 52%; left: 30%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-15deg); animation-delay: 0.2s;">
+            💎</div>
+        <div class="glass-item-card card-orange"
+            style="top: 58%; left: 88%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(3deg); animation-delay: 2.5s;">
+            🧶</div>
+        <div class="glass-item-card card-red"
+            style="top: 65%; left: 48%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-8deg); animation-delay: 5.2s;">
+            👘</div>
+        <div class="glass-item-card card-orange"
+            style="top: 72%; left: 5%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(11deg); animation-delay: 1.3s;">
+            🥾</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 82%; left: 55%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-4deg); animation-delay: 3.7s;">
+            🎩</div>
+        <div class="glass-item-card card-blue"
+            style="top: 88%; left: 82%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(15deg); animation-delay: 0.9s;">
+            🧢</div>
+        <div class="glass-item-card card-blue"
+            style="top: 93%; left: 20%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-12deg); animation-delay: 4.5s;">
+            🩲</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="glass-nav">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/favicon.png" alt="Klosyt">
+                <span>Klosyt</span>
+            </a>
+            <div class="nav-links">
+
+                <a href="#pricing">👑 Klosyt+</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="javascript:void(0)" onclick="rotateWallpaper()" title="Change wallpaper"><span id="theme-pill"
+                        class="theme-pill">🎨</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section container text-center">
+
+        <div class="hero-content glass-panel reveal">
+            <div class="hero-brand">
+                <span class="hero-brand-name">Klosyt</span>
+                <img src="assets/HangerIcon.png" alt="" class="hero-hanger-icon">
+            </div>
+            <p class="hero-subtitle">Your wardrobe, digitized.</p>
+            <p class="subtitle-large" style="color: rgba(255,255,255,0.9);">
+                Organize your closet, plan your outfits, and discover your personal style with your AI Stylist.
+            </p>
+            <div class="btn-group">
+                <a href="#" onclick="return false;" class="btn btn-primary">Get Klosyt (Coming Soon)</a>
+                <a href="#views" class="btn btn-secondary">Explore features</a>
             </div>
 
-            <h1 class="title">Klosyt</h1>
-            <p class="subtitle">Your AI Closet</p>
-
-            <p class="description">
-                We're currently building a revolutionary way to organize your closet, plan your outfits, and discover
-                your personal style.
+            <p style="margin-top: 2rem; color: var(--text-tertiary); font-size: 0.95rem; font-weight: 500;">
+                Available soon for iPhone, iPad, Mac, Apple TV, and Vision Pro.
             </p>
+        </div>
+    </section>
 
-            <p class="platforms">
-                Available soon for iOS, macOS, visionOS, and tvOS.
-            </p>
+    <section id="how-it-works" class="container section-spacing text-center reveal">
+        <div class="glass-panel" style="padding: 3rem 2rem;">
+            <h2 class="section-title">As simple as snapping a photo</h2>
 
-            <div class="status-badge">
-                <span class="pulse-dot"></span>
-                Coming Soon
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; margin-top: 4rem;">
+                <div style="flex: 1; min-width: 250px;">
+                    <span class="icon-large">📸</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">1. Snap</h3>
+                    <p class="body-text">Capture any clothing item. We automatically clear the background.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <span class="icon-large">🏷️</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">2. Categorize</h3>
+                    <p class="body-text">AI automatically detects colors, patterns, and categories for you.</p>
+                </div>
+                <div style="flex: 1; min-width: 250px;">
+                    <span class="icon-large">✨</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">3. Style</h3>
+                    <p class="body-text">Klosyt AI Stylist creates outfits based on activity and realtime weather.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section id="features" class="container section-spacing">
+        <div class="feature-grid">
+
+
+            <!-- Feature 1: Wide Card -->
+            <div class="premium-card feature-span-2 reveal">
+                <div
+                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 class="section-title">Your personal<br>AI Stylist</h2>
+                        <p class="body-text" style="font-size: 1.25rem;">Don't know what to wear? Klosyt's on-device
+                            AI analyzes realtime weather and your exact wardrobe to suggest perfectly styled outfits
+                            for any activity. Just open the app and get dressed.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px; text-align: center;">
+                        <span style="font-size: 10rem; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">🤖</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature: Import Methods (first) -->
+            <div class="premium-card grid-card reveal">
+                <div>
+                    <h2 class="section-title" style="font-size: 2.5rem;">Import your way</h2>
+                    <p class="body-text">Snap a photo, use an existing photo or share directly from any app.</p>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <span style="font-size: 3rem;">📸</span>
+                    <span style="font-size: 3rem;">🔗</span>
+                    <span style="font-size: 3rem;">📤</span>
+                </div>
+            </div>
+
+            <!-- Feature: Gelcap Filters -->
+            <div class="premium-card grid-card reveal">
+                <div>
+                    <h2 class="section-title" style="font-size: 2.5rem;">Filter instantly</h2>
+                    <p class="body-text">The GelCap filter system easily allows you to narrow your wardrobe by category,
+                        season, color, material, and pattern in a single tap. Smart search finding anything effortless.
+                    </p>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <span class="bubble" style="font-size: 1.5rem; padding: 10px 24px; letter-spacing: 0.3rem;">👕 ☀️ 🎨
+                        🧵 🏁</span>
+                </div>
+            </div>
+
+            <!-- Feature: Sync everywhere -->
+            <div class="premium-card grid-card reveal">
+                <div>
+                    <h2 class="section-title" style="font-size: 2.5rem;">Sync everywhere</h2>
+                    <p class="body-text">Your entire wardrobe is safely backed up to
+                        iCloud and synced instantly across iPhone, iPad, Mac, Apple TV, and Vision Pro.</p>
+                </div>
+                <div style="text-align: right; margin-top: 2rem;">
+                    <span style="font-size: 6rem;">☁️</span>
+                </div>
+            </div>
+
+            <!-- Feature: Multi-Platform -->
+            <div class="premium-card grid-card reveal">
+                <div>
+                    <h2 class="section-title" style="font-size: 2.5rem;">Multi-Platform</h2>
+                    <p class="body-text">Native on every Apple device — no compromises, no web wrappers.</p>
+                </div>
+                <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <span style="font-size: 2.5rem;" title="iPhone">📱</span>
+                    <span style="font-size: 2.5rem;" title="iPad">💻</span>
+                    <span style="font-size: 2.5rem;" title="Mac">🖥️</span>
+                    <span style="font-size: 2.5rem;" title="Apple TV">📺</span>
+                    <span style="font-size: 2.5rem;" title="Vision Pro">🥽</span>
+                </div>
+            </div>
+
+            <!-- Privacy: Wide Card -->
+            <div class="premium-card feature-span-2 reveal">
+                <div
+                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 class="section-title">🔒 Your privacy is built-in</h2>
+                        <p class="body-text" style="font-size: 1.25rem;">Klosyt uses on-device processing and stores
+                            your
+                            wardrobe data exclusively in your private iCloud account. Your information is never shared
+                            with
+                            us or any third parties.</p>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
-    </main>
+    </section>
 
+    <!-- Different Views Section -->
+    <section id="views" class="container section-spacing text-center reveal">
+
+        <div class="feature-grid" style="margin-top: 3rem; text-align: left;">
+            <div class="premium-card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Klosyt</h3>
+                <p class="body-text">Your infinite, organized digital wardrobe. Filter by season, color, and category
+                    instantly.</p>
+                <div class="feature-bubbles">
+                    <span class="bubble">📸 Photo Import</span>
+                    <span class="bubble">🔗 URL Import</span>
+                    <span class="bubble">📤 Share Clothes</span>
+                    <span class="bubble">🔍 Sort & Filter</span>
+                    <span class="bubble">🗂️ Grid & Wardrobe Views</span>
+                </div>
+            </div>
+            <div class="premium-card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Outfits</h3>
+                <p class="body-text">A freeform playground to mix and match items and save your favorite looks.</p>
+                <div class="feature-bubbles">
+                    <span class="bubble">🕴️ Mix & Match</span>
+                    <span class="bubble">📅 Plan Ahead</span>
+                    <span class="bubble">☀️ Weather Ready</span>
+                    <span class="bubble">📤 Share Your Style</span>
+                    <span class="bubble">❤️ Favorites</span>
+                </div>
+            </div>
+            <div class="premium-card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI Stylist</h3>
+                <p class="body-text">Let Apple Intelligence analyze the weather and your library to suggest perfectly
+                    timed outfits.</p>
+                <div class="feature-bubbles">
+                    <span class="bubble">🧠 On-Device AI</span>
+                    <span class="bubble">🌤️ Weather-Aware</span>
+                    <span class="bubble">🏃 Activity-Based</span>
+                    <span class="bubble">🎛️ Filter Results</span>
+                    <span class="bubble">👕 More Items, Better Results</span>
+                </div>
+            </div>
+            <div class="premium-card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Calendar</h3>
+                <p class="body-text">Plan outfits for future events and vacations, keeping your style perfectly
+                    organized.</p>
+                <div class="feature-bubbles">
+                    <span class="bubble">📅 Plan Outfits</span>
+                    <span class="bubble">✅ Track What You Wore</span>
+                    <span class="bubble">🔄 Sync with Apple Calendar</span>
+                    <span class="bubble">🌦️ Weather Aware</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Subscription / Pricing Section -->
+    <section id="pricing" class="container section-spacing text-center reveal">
+
+        <div style="max-width: 500px; margin: 0 auto;">
+            <div class="premium-card" style="padding: 3rem 2rem;">
+
+                <!-- Crown icon -->
+                <div style="font-size: 4rem; margin-bottom: 1rem;">👑</div>
+
+                <!-- Title pill -->
+                <div
+                    style="display: inline-block; padding: 10px 28px; border-radius: 100px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Klosyt+</span>
+                </div>
+
+                <!-- Trial text -->
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">
+                    Try everything free for 30 days, then just $0.99/month. Cancel anytime. Never lose access to your
+                    library.
+                </p>
+
+                <!-- Feature rows matching app paywall -->
+                <div style="text-align: left; display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem;">
+                    <div class="paywall-feature">
+                        <span class="paywall-icon"
+                            style="background: rgba(192, 115, 255, 0.2); color: #c073ff;">✨</span>
+                        <div>
+                            <strong>AI Stylist</strong>
+                            <p>Weather-aware outfit suggestions</p>
+                        </div>
+                    </div>
+                    <div class="paywall-feature">
+                        <span class="paywall-icon" style="background: rgba(0, 122, 255, 0.2); color: #007aff;">👗</span>
+                        <div>
+                            <strong>Outfits</strong>
+                            <p>Mix, match, and save your looks</p>
+                        </div>
+                    </div>
+                    <div class="paywall-feature">
+                        <span class="paywall-icon" style="background: rgba(52, 199, 89, 0.2); color: #34c759;">📅</span>
+                        <div>
+                            <strong>Calendar</strong>
+                            <p>Plan outfits for any day or event</p>
+                        </div>
+                    </div>
+                    <div class="paywall-feature">
+                        <span class="paywall-icon"
+                            style="background: rgba(255, 153, 64, 0.2); color: #ff9940;">🎨</span>
+                        <div>
+                            <strong>Themes & Wallpapers</strong>
+                            <p>Customize your app's look</p>
+                        </div>
+                    </div>
+                    <div class="paywall-feature">
+                        <span class="paywall-icon"
+                            style="background: rgba(102, 191, 255, 0.2); color: #66bfff;">🔓</span>
+                        <div>
+                            <strong>Klosyt is Always Free</strong>
+                            <p>Never lose access to your library</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support text -->
+                <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-bottom: 2rem;">
+                    Your subscription supports real-time weather data and continued development.
+                </p>
+
+                <!-- Subscribe button -->
+                <a href="#" onclick="return false;" class="btn btn-primary"
+                    style="width: 100%; max-width: 350px; display: inline-block;">Get Klosyt (Coming Soon)</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+            <p style="color: var(--text-tertiary); font-size: 0.9rem;">&copy; 2026 Klosyt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simplified Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll reveal animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 

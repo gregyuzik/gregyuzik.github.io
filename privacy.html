@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Klosyt</title>
+    <meta name="description" content="Our commitment to your privacy at Klosyt.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/AppIcon.png">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://klosyt.com/privacy.html">
+    <meta property="og:title" content="Privacy Policy - Klosyt">
+    <meta property="og:description" content="Our commitment to your privacy at Klosyt.">
+    <meta property="og:image" content="https://klosyt.com/assets/AppIcon.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://klosyt.com/privacy.html">
+    <meta name="twitter:title" content="Privacy Policy - Klosyt">
+    <meta name="twitter:description" content="Our commitment to your privacy at Klosyt.">
+    <meta name="twitter:image" content="https://klosyt.com/assets/AppIcon.png">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Random Theme Generator -->
+    <script>
+        (function () {
+            const themes = ['alligator', 'blue', 'gray', 'green', 'mink', 'orange', 'pink', 'purple', 'red', 'redvelvet', 'snakeskin', 'white', 'yellow'];
+            let currentTheme = sessionStorage.getItem('klosyt_theme');
+            let themeTimestamp = sessionStorage.getItem('klosyt_theme_ts');
+            let now = new Date().getTime();
+
+            // Refresh theme if not set, or if it's been more than 1 hour (3600000 ms)
+            if (!currentTheme || !themeTimestamp || now - themeTimestamp > 3600000) {
+                currentTheme = themes[Math.floor(Math.random() * themes.length)];
+                sessionStorage.setItem('klosyt_theme', currentTheme);
+                sessionStorage.setItem('klosyt_theme_ts', now);
+            }
+
+            document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
+            // Darken lighter themes slightly more for text contrast
+            if (['white', 'yellow', 'pink'].includes(currentTheme)) {
+                document.documentElement.style.setProperty('--bg-brightness', '0.5');
+            } else {
+                document.documentElement.style.setProperty('--bg-brightness', '0.7');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="hero-background"></div>
+
+    <!-- Global Floating Clothing Items (parallax middle layer) -->
+    <div id="floating-clothes">
+        <!-- Large items (120px) -->
+        <div class="glass-item-card card-blue"
+            style="top: 2%; left: 8%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-8deg); animation-delay: 0s;">
+            👕</div>
+        <div class="glass-item-card card-blue"
+            style="top: 15%; left: 75%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(10deg); animation-delay: 2.5s;">
+            👖</div>
+        <div class="glass-item-card card-orange"
+            style="top: 30%; left: 42%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(5deg); animation-delay: 1.2s;">
+            🧥</div>
+        <div class="glass-item-card card-purple"
+            style="top: 48%; left: 15%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-12deg); animation-delay: 3.8s;">
+            👗</div>
+        <div class="glass-item-card card-green"
+            style="top: 62%; left: 80%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(7deg); animation-delay: 0.5s;">
+            👟</div>
+        <div class="glass-item-card card-blue"
+            style="top: 78%; left: 35%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(-6deg); animation-delay: 4.2s;">
+            🧢</div>
+        <div class="glass-item-card card-purple"
+            style="top: 90%; left: 65%; width: 120px; height: 120px; font-size: 3.5rem; transform: rotate(11deg); animation-delay: 1.8s;">
+            🩱</div>
+
+        <!-- Medium items (85px) -->
+        <div class="glass-item-card card-blue"
+            style="top: 5%; left: 45%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(14deg); animation-delay: 1.5s;">
+            👔</div>
+        <div class="glass-item-card card-red"
+            style="top: 12%; left: 25%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-5deg); animation-delay: 3.3s;">
+            🧣</div>
+        <div class="glass-item-card card-blue"
+            style="top: 22%; left: 88%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(9deg); animation-delay: 0.8s;">
+            🩳</div>
+        <div class="glass-item-card card-teal"
+            style="top: 35%; left: 68%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-11deg); animation-delay: 5s;">
+            🧤</div>
+        <div class="glass-item-card card-orange"
+            style="top: 42%; left: 5%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(6deg); animation-delay: 2.2s;">
+            👞</div>
+        <div class="glass-item-card card-yellow"
+            style="top: 55%; left: 55%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-14deg); animation-delay: 4.5s;">
+            👒</div>
+        <div class="glass-item-card card-green"
+            style="top: 68%; left: 22%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(8deg); animation-delay: 1s;">
+            🥿</div>
+        <div class="glass-item-card card-red"
+            style="top: 75%; left: 90%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-9deg); animation-delay: 3.5s;">
+            🎒</div>
+        <div class="glass-item-card card-pink"
+            style="top: 85%; left: 10%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(13deg); animation-delay: 0.3s;">
+            👜</div>
+        <div class="glass-item-card card-blue"
+            style="top: 95%; left: 48%; width: 85px; height: 85px; font-size: 2.5rem; transform: rotate(-7deg); animation-delay: 2.8s;">
+            🧦</div>
+
+        <!-- Small items (65px) -->
+        <div class="glass-item-card card-yellow"
+            style="top: 1%; left: 30%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(16deg); animation-delay: 4s;">
+            💍</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 8%; left: 60%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-13deg); animation-delay: 2s;">
+            🕶️</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 18%; left: 5%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(4deg); animation-delay: 5.5s;">
+            ⌚</div>
+        <div class="glass-item-card card-red"
+            style="top: 20%; left: 52%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-10deg); animation-delay: 0.6s;">
+            🧵</div>
+        <div class="glass-item-card card-pink"
+            style="top: 28%; left: 18%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(12deg); animation-delay: 3s;">
+            🎀</div>
+        <div class="glass-item-card card-yellow"
+            style="top: 38%; left: 92%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-6deg); animation-delay: 1.5s;">
+            👑</div>
+        <div class="glass-item-card card-orange"
+            style="top: 45%; left: 60%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(9deg); animation-delay: 4.8s;">
+            🩴</div>
+        <div class="glass-item-card card-blue"
+            style="top: 52%; left: 30%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-15deg); animation-delay: 0.2s;">
+            💎</div>
+        <div class="glass-item-card card-orange"
+            style="top: 58%; left: 88%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(3deg); animation-delay: 2.5s;">
+            🧶</div>
+        <div class="glass-item-card card-red"
+            style="top: 65%; left: 48%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-8deg); animation-delay: 5.2s;">
+            👘</div>
+        <div class="glass-item-card card-orange"
+            style="top: 72%; left: 5%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(11deg); animation-delay: 1.3s;">
+            🥾</div>
+        <div class="glass-item-card card-indigo"
+            style="top: 82%; left: 55%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-4deg); animation-delay: 3.7s;">
+            🎩</div>
+        <div class="glass-item-card card-blue"
+            style="top: 88%; left: 82%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(15deg); animation-delay: 0.9s;">
+            🧢</div>
+        <div class="glass-item-card card-blue"
+            style="top: 93%; left: 20%; width: 65px; height: 65px; font-size: 1.8rem; transform: rotate(-12deg); animation-delay: 4.5s;">
+            🩲</div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="glass-nav">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/favicon.png" alt="Klosyt">
+                <span>Klosyt</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#pricing">👑 Klosyt+</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html" class="active">Privacy</a>
+                <a href="javascript:void(0)" onclick="rotateWallpaper()" title="Change wallpaper"><span id="theme-pill"
+                        class="theme-pill">🎨</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <main class="content-wrapper">
+        <section class="support-header">
+            <div class="glass-panel text-left">
+                <h1 class="section-title">Privacy Policy</h1>
+
+                <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
+                    <h3>Data Handling Overview</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Klosyt utilizes on-device processing and Apple's secure iCloud infrastructure to protect user
+                        privacy. All images and wardrobe data reside solely within your private iCloud account. At no
+                        point is your data collected by, transmitted to, or shared with Klosyt or external third
+                        parties.
+                    </p>
+                </div>
+
+                <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
+                    <h3>Location & Weather Data</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        To act as your personal AI stylist, Klosyt requests location data solely to fetch accurate local
+                        weather conditions via <strong>Apple WeatherKit</strong>. This ensures your outfit suggestions
+                        are appropriate for the day's forecast. <strong>We never track, store, or transmit your precise
+                            location to our servers.</strong> All weather queries are handled securely through Apple's
+                        native services, and your location is processed entirely on-device.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p class="copyright">&copy; 2026 Klosyt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
