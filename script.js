@@ -51,9 +51,11 @@ function rotateWallpaper() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Use stored wallpaper if navigating between pages, random only on first visit
-    const stored = sessionStorage.getItem('klosyt_wallpaper');
-    const wp = stored || themes[Math.floor(Math.random() * themes.length)].asset;
+    // Restore user's saved theme (localStorage persists across visits),
+    // fall back to session choice, then default to Blue Velvet
+    const wp = localStorage.getItem('klosyt_wallpaper')
+        || sessionStorage.getItem('klosyt_wallpaper')
+        || 'wallpaper_blue.jpg';
     document.querySelector('.hero-background').style.backgroundImage = `url('assets/${wp}')`;
     sessionStorage.setItem('klosyt_wallpaper', wp);
     localStorage.setItem('klosyt_wallpaper', wp);
