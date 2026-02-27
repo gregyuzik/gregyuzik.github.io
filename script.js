@@ -75,10 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pill) pill.innerHTML = getThemeName(wp);
 
     // Dynamic App Icon update
-    const currentTheme = localStorage.getItem('klosyt_theme') || 'blue';
     const appIcons = document.querySelectorAll('.dynamic-app-icon');
     appIcons.forEach(icon => {
-        icon.src = `assets/AppIcon_${currentTheme}.png`;
+        icon.src = 'assets/AppIcon.png';
     });
 
     const glassPanel = document.querySelector('.glass-panel');
