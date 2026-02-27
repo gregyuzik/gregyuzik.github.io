@@ -9,10 +9,7 @@ const themes = [
     { asset: 'wallpaper_purple.jpg', name: 'Purple Cashmere', emoji: '🟣', icon: 'AppIcon-purple.png' },
     { asset: 'wallpaper_pink.jpg', name: 'Pink Mohair', emoji: '💗', icon: 'AppIcon-pink.png' },
     { asset: 'wallpaper_white.jpg', name: 'White Knit', emoji: '⚪', icon: 'AppIcon-white.png' },
-    { asset: 'wallpaper_gray.jpg', name: 'Gray Houndstooth', emoji: '🩶', icon: 'AppIcon-gray.png' },
-    { asset: 'wallpaper_snakeskin.jpg', name: 'Snakeskin', emoji: '🐍', icon: 'AppIcon-blue.png' },
-    { asset: 'wallpaper_alligator.jpg', name: 'Alligator', emoji: '🐊', icon: 'AppIcon-blue.png' },
-    { asset: 'wallpaper_mink.jpg', name: 'Mink', emoji: '🐻', icon: 'AppIcon-blue.png' }
+    { asset: 'wallpaper_gray.jpg', name: 'Gray Houndstooth', emoji: '🩶', icon: 'AppIcon-gray.png' }
 ];
 
 function getCurrentWallpaper() {
