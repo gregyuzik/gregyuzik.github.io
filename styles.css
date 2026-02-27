@@ -992,6 +992,164 @@ main {
     }
 }
 
+/* Support Page — Getting Started Steps */
+.getting-started-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    counter-reset: step;
+}
+
+@media (min-width: 768px) {
+    .getting-started-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.step-card {
+    position: relative;
+    padding-left: 0;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 122, 255, 0.2);
+    color: #66b3ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(0, 122, 255, 0.3);
+    flex-shrink: 0;
+}
+
+/* Support Page — Tips Grid */
+.tips-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tip-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.tip-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.tip-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+
+.tip-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Support Page — Section Dividers */
+.support-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+}
+
+.support-section .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+/* Support Page — Subscription Info Card */
+.subscription-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.subscription-info .sub-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.subscription-info strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.subscription-info p {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Troubleshooting expandable */
+.troubleshoot-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1rem 0;
+    color: var(--text-primary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s ease;
+}
+
+.troubleshoot-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.troubleshoot-item summary::before {
+    content: '▸';
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    transition: transform 0.2s ease;
+}
+
+.troubleshoot-item[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.troubleshoot-item summary:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.troubleshoot-answer {
+    padding: 0.75rem 0 1.25rem 1.65rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 /* Theme Picker Panel */
 #theme-picker {
     position: fixed;
