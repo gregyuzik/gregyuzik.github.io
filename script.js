@@ -1,17 +1,18 @@
 // Wallpaper themes — names and emojis match the app exactly
+// Each theme includes its matching color app icon
 const themes = [
-    { asset: 'wallpaper_blue.jpg', name: 'Blue Velvet', emoji: '🔵' },
-    { asset: 'wallpaper_red.jpg', name: 'Red Leather', emoji: '🔴' },
-    { asset: 'wallpaper_orange.jpg', name: 'Orange Leopard', emoji: '🟠' },
-    { asset: 'wallpaper_yellow.jpg', name: 'Yellow Plaid', emoji: '🟡' },
-    { asset: 'wallpaper_green.jpg', name: 'Green Canvas', emoji: '🟢' },
-    { asset: 'wallpaper_purple.jpg', name: 'Purple Cashmere', emoji: '🟣' },
-    { asset: 'wallpaper_pink.jpg', name: 'Pink Mohair', emoji: '💗' },
-    { asset: 'wallpaper_white.jpg', name: 'White Knit', emoji: '⚪' },
-    { asset: 'wallpaper_gray.jpg', name: 'Gray Houndstooth', emoji: '🩶' },
-    { asset: 'wallpaper_snakeskin.jpg', name: 'Snakeskin', emoji: '🐍' },
-    { asset: 'wallpaper_alligator.jpg', name: 'Alligator', emoji: '🐊' },
-    { asset: 'wallpaper_mink.jpg', name: 'Mink', emoji: '🐻' }
+    { asset: 'wallpaper_blue.jpg', name: 'Blue Velvet', emoji: '🔵', icon: 'AppIcon-blue.png' },
+    { asset: 'wallpaper_red.jpg', name: 'Red Leather', emoji: '🔴', icon: 'AppIcon-red.png' },
+    { asset: 'wallpaper_orange.jpg', name: 'Orange Leopard', emoji: '🟠', icon: 'AppIcon-orange.png' },
+    { asset: 'wallpaper_yellow.jpg', name: 'Yellow Plaid', emoji: '🟡', icon: 'AppIcon-yellow.png' },
+    { asset: 'wallpaper_green.jpg', name: 'Green Canvas', emoji: '🟢', icon: 'AppIcon-green.png' },
+    { asset: 'wallpaper_purple.jpg', name: 'Purple Cashmere', emoji: '🟣', icon: 'AppIcon-purple.png' },
+    { asset: 'wallpaper_pink.jpg', name: 'Pink Mohair', emoji: '💗', icon: 'AppIcon-pink.png' },
+    { asset: 'wallpaper_white.jpg', name: 'White Knit', emoji: '⚪', icon: 'AppIcon-white.png' },
+    { asset: 'wallpaper_gray.jpg', name: 'Gray Houndstooth', emoji: '🩶', icon: 'AppIcon-gray.png' },
+    { asset: 'wallpaper_snakeskin.jpg', name: 'Snakeskin', emoji: '🐍', icon: 'AppIcon-blue.png' },
+    { asset: 'wallpaper_alligator.jpg', name: 'Alligator', emoji: '🐊', icon: 'AppIcon-blue.png' },
+    { asset: 'wallpaper_mink.jpg', name: 'Mink', emoji: '🐻', icon: 'AppIcon-blue.png' }
 ];
 
 function getCurrentWallpaper() {
@@ -21,6 +22,25 @@ function getCurrentWallpaper() {
 function getThemeName(asset) {
     const t = themes.find(t => t.asset === asset);
     return t ? `${t.emoji} <span class="theme-name-text">${t.name}</span>` : '🎨';
+}
+
+function getThemeIcon(asset) {
+    const t = themes.find(t => t.asset === asset);
+    return t ? t.icon : 'AppIcon-blue.png';
+}
+
+function updateIcons(iconFile) {
+    const iconPath = `assets/${iconFile}`;
+    // Update all dynamic app icon images (nav logo + hero hanger)
+    document.querySelectorAll('.dynamic-app-icon').forEach(img => {
+        img.src = iconPath;
+    });
+    // Update favicon
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) favicon.href = iconPath;
+    // Update apple-touch-icon
+    const touchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+    if (touchIcon) touchIcon.href = iconPath;
 }
 
 function setWallpaper(asset) {
@@ -48,6 +68,8 @@ function setWallpaper(asset) {
     // Update theme pill text
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(asset);
+    // Update icons to match theme
+    updateIcons(getThemeIcon(asset));
 }
 
 function rotateWallpaper() {
@@ -74,11 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(wp);
 
-    // Dynamic App Icon update
-    const appIcons = document.querySelectorAll('.dynamic-app-icon');
-    appIcons.forEach(icon => {
-        icon.src = 'assets/AppIcon.png';
-    });
+    // Dynamic App Icon update — match icons to current theme
+    updateIcons(getThemeIcon(wp));
 
     const glassPanel = document.querySelector('.glass-panel');
     const container = document.querySelector('.placeholder-container');
