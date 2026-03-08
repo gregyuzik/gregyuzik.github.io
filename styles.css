@@ -362,6 +362,8 @@ body {
     box-shadow:
         0 12px 40px rgba(26, 61, 143, 0.3),
         inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .icon-grid {
@@ -376,6 +378,7 @@ body {
     border-radius: 16px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
 }
 
 /* Multiple tiles in a row */
