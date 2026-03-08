@@ -303,329 +303,533 @@
     </div>
 
     <main class="content-wrapper">
-        <!-- Support Header Section -->
-        <section class="support-header">
-            <div class="glass-panel text-center">
-                <h1 class="section-title">How can we help?</h1>
-                <p class="description">Find answers to common questions below.</p>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-
-            <div class="faq-grid">
-                <!-- FAQ Item 1 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">📸</div>
-                    <h3>Taking the perfect pictures</h3>
-                    <p>For the best results when importing clothing, hang your item against a solid, contrasting
-                        background. Ensure the lighting is bright and even to help our AI accurately remove the
-                        background and capture the true color.</p>
+        <!-- ══════════════════════════════
+             SUPPORT HEADER — Pantone card
+             ══════════════════════════════ -->
+        <section class="support-header container text-center">
+            <div class="pantone-card" style="--swatch: #007aff; --swatch-2: #5ac8fa; max-width: 560px; margin: 0 auto;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">💬</div>
                 </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">📥</div>
-                    <h3>How to Import</h3>
-                    <p>You can add items by taking a new photo directly in the app, importing existing photos from
-                        your camera roll, or pasting URLs from your favorite clothing stores. You can also share
-                        directly from any app — for example, browse a store in Safari and tap Share to send the URL or
-                        image straight to Klosyt. As long as it's a URL or image, Klosyt can import it. Klosyt
-                        automatically drops the background so your digital closet looks pristine.</p>
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
                 </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">👗</div>
-                    <h3>Making Outfits</h3>
-                    <p>Head to the Outfits tab to mix and match your tops, bottoms, and shoes. You can drag and organize
-                        layers exactly how you wear them, and save your favorite combinations for later.</p>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">✨</div>
-                    <h3>Using AI Suggestions</h3>
-                    <p>Don't know what to wear? Tap the AI Stylist button! Our on-device intelligence analyzes
-                        realtime weather and your exact wardrobe to suggest the perfect outfit for any activity.</p>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Backup and Restore</h3>
-                    <p>Your Klosyt data is precious. Enable iCloud sync in the app settings to securely back up your
-                        entire wardrobe. If you get a new device, simply sign in with the same Apple ID and your closet
-                        will seamlessly restore.</p>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">📱💻🖥️📺🥽</div>
-                    <h3>Multi-Platform</h3>
-                    <p>Your digital closet goes wherever you do. Klosyt is available as a native app across iPhone,
-                        iPad, Mac, Apple TV, and Vision Pro, ensuring you always have your wardrobe at your fingertips.
-                    </p>
-                </div>
-
-                <!-- FAQ Item 7 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">🏷️</div>
-                    <h3>Managing Your Items</h3>
-                    <p>Tap any item in your library to view its details. From there you can edit the category, season,
-                        color, material, and pattern. Need a new photo? Retake it directly from the detail view.
-                        Deleted items go to the trash first, so you can recover them if needed.</p>
-                </div>
-
-                <!-- FAQ Item 8 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">📅</div>
-                    <h3>Calendar & Planning</h3>
-                    <p>Plan your outfits for upcoming days or events using the Calendar tab. You can assign saved
-                        outfits to specific dates, track what you wore in the past, and optionally sync with your
-                        Apple Calendar so outfit reminders show up alongside your schedule.</p>
-                </div>
-
-                <!-- FAQ Item 9 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Sharing & Exporting</h3>
-                    <p>Share your favorite outfits as beautiful cards with friends. You can also share individual
-                        clothing items. Use the iOS Share Extension to import images or URLs directly from Safari,
-                        Instagram, or any other app — just tap Share and choose Klosyt.</p>
-                </div>
-
-                <!-- FAQ Item 10 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Filtering & Sorting</h3>
-                    <p>Klosyt's GelCap filter system lets you narrow your wardrobe instantly. Filter by category,
-                        season, color, material, or pattern with a single tap. Use the search bar to find any item
-                        by name. Switch between grid and wardrobe views depending on how you like to browse.</p>
-                </div>
-
-                <!-- FAQ Item 11 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Themes & Wallpapers</h3>
-                    <p>Make Klosyt your own! With Klosyt+, you can choose from a variety of stunning wallpapers
-                        and themes to customize the look & feel of your app. Your chosen theme syncs across all
-                        your Apple devices.</p>
-                </div>
-
-                <!-- FAQ Item 12 -->
-                <div class="faq-card glass-panel-sm text-left">
-                    <div class="feature-icon">📦</div>
-                    <h3>Object Capture (3D Scanning)</h3>
-                    <p>On iPhone Pro models with LiDAR, you can create stunning 3D scans of your clothing items.
-                        Walk around the item to capture it from every angle. The 3D model is saved alongside the
-                        standard photo in your library.</p>
+                <div class="pantone-card-body" style="text-align: center;">
+                    <h1 class="card-title card-title-large">How can we help?</h1>
+                    <p class="card-description">Find answers to common questions below.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Getting Started Section -->
-        <section class="support-section">
+        <!-- ══════════════════════════════════
+             FAQ — Pantone card grid
+             ══════════════════════════════════ -->
+        <section class="faq-section container section-spacing">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+
+            <div class="splash-grid" style="margin-top: 2rem;">
+                <!-- FAQ 1: Photos -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #636366; --swatch-2: #8e8e93;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📸</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Taking the perfect pictures</h3>
+                        <p class="card-description">For the best results when importing clothing, hang your item against
+                            a solid, contrasting background. Ensure the lighting is bright and even to help our AI
+                            accurately remove the background and capture the true color.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2: Import -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #007aff; --swatch-2: #34aadc;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📥</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">How to Import</h3>
+                        <p class="card-description">Add items by taking a photo, importing from your camera roll, or
+                            pasting URLs from clothing stores. You can also share directly from any app — browse in
+                            Safari and tap Share to send straight to Klosyt. Klosyt automatically drops the background
+                            so your closet looks pristine.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3: Outfits -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #ff3b60; --swatch-2: #e8254d;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">👗</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Making Outfits</h3>
+                        <p class="card-description">Head to the Outfits tab to mix and match your tops, bottoms, and
+                            shoes. Drag and organize layers exactly how you wear them, and save your favorite
+                            combinations for later.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4: AI -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #ffd60a; --swatch-2: #ffcc00;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">✨</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Using AI Suggestions</h3>
+                        <p class="card-description">Don't know what to wear? Tap the AI Stylist button! Our on-device
+                            intelligence analyzes realtime weather and your exact wardrobe to suggest the perfect outfit
+                            for any activity.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5: Backup -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #b0d4f1; --swatch-2: #e8f0f8;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">☁️</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Backup and Restore</h3>
+                        <p class="card-description">Your Klosyt data is precious. Enable iCloud sync in the app settings
+                            to securely back up your entire wardrobe. If you get a new device, sign in with the same
+                            Apple ID and your closet will seamlessly restore.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6: Multi-Platform -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #1c1c1e; --swatch-2: #007aff;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📱</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Multi-Platform</h3>
+                        <p class="card-description">Your digital closet goes wherever you do. Klosyt is a native app
+                            across iPhone, iPad, Mac, Apple TV, and Vision Pro — your wardrobe is always at your
+                            fingertips.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7: Managing Items -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #ff9f0a; --swatch-2: #ffb340;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🏷️</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Managing Your Items</h3>
+                        <p class="card-description">Tap any item to view its details. Edit the category, season, color,
+                            material, and pattern. Retake photos directly from the detail view. Deleted items go to the
+                            trash first so you can recover them.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8: Calendar -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #ff3b30; --swatch-2: #ff6961;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📅</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Calendar &amp; Planning</h3>
+                        <p class="card-description">Plan your outfits for upcoming days or events using the Calendar
+                            tab. Assign saved outfits to specific dates, track what you wore, and sync with your Apple
+                            Calendar.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 9: Sharing -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #8e8e93; --swatch-2: #aeaeb2;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🔗</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Sharing &amp; Exporting</h3>
+                        <p class="card-description">Share your favorite outfits as beautiful Pantone-style cards. Use
+                            the iOS Share Extension to import images or URLs directly from Safari, Instagram, or any
+                            other app.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 10: Filtering -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #636366; --swatch-2: #8e8e93;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🔍</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Filtering &amp; Sorting</h3>
+                        <p class="card-description">Klosyt's GelCap filter system lets you narrow your wardrobe
+                            instantly. Filter by category, season, color, material, or pattern. Search by name and
+                            switch between grid and wardrobe views.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 11: Themes -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #ff3b30; --swatch-2: #ff9500;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🎨</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Themes &amp; Wallpapers</h3>
+                        <p class="card-description">Make Klosyt your own! With Klosyt+, choose from stunning wallpapers
+                            and themes to customize your app's look &amp; feel. Your chosen theme syncs across all your
+                            Apple devices.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 12: 3D Scanning -->
+                <div class="pantone-card pantone-splash reveal" style="--swatch: #a2845e; --swatch-2: #c7a97b;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📦</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Object Capture (3D Scanning)</h3>
+                        <p class="card-description">On iPhone Pro models with LiDAR, create stunning 3D scans of your
+                            clothing items. Walk around the item to capture every angle. The 3D model is saved alongside
+                            the standard photo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             GETTING STARTED — 4 step cards
+             ══════════════════════════════════ -->
+        <section class="container section-spacing text-center">
             <h2 class="section-title">Getting Started</h2>
-            <div class="getting-started-grid">
-                <div class="faq-card glass-panel-sm text-left step-card">
-                    <div class="step-number">1</div>
-                    <h3>Add your first item</h3>
-                    <p>Tap the + button on the Klosyt tab. Take a photo, choose one from your camera roll, or paste a
-                        URL from a clothing store. Klosyt automatically removes the background so your library looks
-                        clean and polished.</p>
-                </div>
-                <div class="faq-card glass-panel-sm text-left step-card">
-                    <div class="step-number">2</div>
-                    <h3>Organize automatically</h3>
-                    <p>After importing, Klosyt's AI detects the item's category, color, pattern, and more. You can
-                        adjust any details manually if you'd like. Add a season tag so the AI knows when to suggest
-                        it.</p>
-                </div>
-                <div class="faq-card glass-panel-sm text-left step-card">
-                    <div class="step-number">3</div>
-                    <h3>Build your first outfit</h3>
-                    <p>Head to the Outfits tab and tap +. Pick a top, bottom, shoes, and any accessories from your
-                        library. Drag to reorder layers, then save your look. You can save as many outfits as you
-                        want.</p>
-                </div>
-                <div class="faq-card glass-panel-sm text-left step-card">
-                    <div class="step-number">4</div>
-                    <h3>Get AI suggestions</h3>
-                    <p>Open the AI Stylist tab, choose an activity, and let Klosyt analyze the current weather and
-                        your wardrobe to suggest the perfect outfit. The more items you add, the better the suggestions
-                        become!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tips & Tricks Section -->
-        <section class="support-section">
-            <h2 class="section-title">Tips & Tricks</h2>
-            <div class="tips-grid">
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">💡</div>
-                    <div>
-                        <h3>Better background removal</h3>
-                        <p>Hang items on a contrasting background — a white shirt on a dark door, or a dark jacket
-                            against a light wall. Avoid busy patterns behind the item.</p>
+            <div class="steps-row" style="margin-top: 2rem;">
+                <div class="pantone-card pantone-step reveal" style="--swatch: #34c759;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">➕</div>
+                    </div>
+                    <div class="pantone-card-swatch">
+                        <div class="swatch-primary"></div>
+                    </div>
+                    <div class="pantone-card-body">
+                        <h3 class="card-title">1. Add your first item</h3>
+                        <p class="card-description">Take a photo, choose from your camera roll, or paste a URL. Klosyt
+                            automatically removes the background.</p>
                     </div>
                 </div>
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">📤</div>
-                    <div>
-                        <h3>Import from any shopping app</h3>
-                        <p>Browsing online? Tap the Share button in Safari, Instagram, or any app and choose Klosyt
-                            to instantly import the image. No screenshots needed.</p>
+                <div class="pantone-card pantone-step reveal" style="--swatch: #ff9f0a;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🏷️</div>
+                    </div>
+                    <div class="pantone-card-swatch">
+                        <div class="swatch-primary"></div>
+                    </div>
+                    <div class="pantone-card-body">
+                        <h3 class="card-title">2. Organize automatically</h3>
+                        <p class="card-description">AI detects category, color, pattern, and more. Add season tags so
+                            the AI knows when to suggest it.</p>
                     </div>
                 </div>
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">📅</div>
-                    <div>
-                        <h3>Never repeat an outfit</h3>
-                        <p>Use the Calendar to track what you've worn. Klosyt remembers, so you can always mix things
-                            up and avoid repeating outfits back-to-back.</p>
+                <div class="pantone-card pantone-step reveal" style="--swatch: #007aff;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">👔</div>
+                    </div>
+                    <div class="pantone-card-swatch">
+                        <div class="swatch-primary"></div>
+                    </div>
+                    <div class="pantone-card-body">
+                        <h3 class="card-title">3. Build your first outfit</h3>
+                        <p class="card-description">Pick items from your library, drag to reorder layers, then save your
+                            look.</p>
                     </div>
                 </div>
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">🧠</div>
-                    <div>
-                        <h3>More items = smarter AI</h3>
-                        <p>The AI Stylist works best with a full wardrobe. Import all your everyday clothing and watch
-                            the suggestions get increasingly relevant and creative.</p>
+                <div class="pantone-card pantone-step reveal" style="--swatch: #ffd60a;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">✨</div>
                     </div>
-                </div>
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">🏷️</div>
-                    <div>
-                        <h3>Tag seasons accurately</h3>
-                        <p>Mark items with the correct season — summer, winter, or all-season. This helps the AI
-                            Stylist choose weather-appropriate outfits every time.</p>
+                    <div class="pantone-card-swatch">
+                        <div class="swatch-primary"></div>
                     </div>
-                </div>
-                <div class="faq-card glass-panel-sm text-left tip-card">
-                    <div class="tip-icon">☁️</div>
-                    <div>
-                        <h3>Enable iCloud sync early</h3>
-                        <p>Turn on iCloud sync in Settings right away. Your wardrobe will be backed up automatically
-                            and available on all your Apple devices.</p>
+                    <div class="pantone-card-body">
+                        <h3 class="card-title">4. Get AI suggestions</h3>
+                        <p class="card-description">Choose an activity and let Klosyt analyze weather and your wardrobe
+                            for the perfect outfit.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Manage Your Subscription Section -->
-        <section class="support-section">
+        <!-- ══════════════════════════════════
+             TIPS — Wide Pantone card
+             ══════════════════════════════════ -->
+        <section class="container section-spacing">
+            <div class="feature-grid">
+                <div class="pantone-card card-wide reveal" style="--swatch: #ffcc00; --swatch-2: #ffd60a;">
+                    <div class="pantone-card-inner">
+                        <div class="pantone-card-hero">
+                            <div class="glass-emoji-tile">💡</div>
+                        </div>
+                        <div class="wide-content">
+                            <div class="pantone-card-swatch dual">
+                                <div class="swatch-primary"></div>
+                                <div class="swatch-secondary"></div>
+                            </div>
+                            <div class="pantone-card-body">
+                                <h2 class="card-title card-title-large">Tips &amp; Tricks</h2>
+                                <div class="wide-feature-list">
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(255, 204, 0, 0.2); color: #ffcc00;">💡</span>
+                                        <div>
+                                            <strong>Better background removal</strong>
+                                            <p>Hang items on a contrasting background — white shirt on dark door, dark
+                                                jacket on light wall.</p>
+                                        </div>
+                                    </div>
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(90, 155, 213, 0.2); color: #5b9bd5;">📤</span>
+                                        <div>
+                                            <strong>Import from any shopping app</strong>
+                                            <p>Tap the Share button in Safari, Instagram, or any app and choose Klosyt.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(217, 59, 36, 0.2); color: #d93b24;">📅</span>
+                                        <div>
+                                            <strong>Never repeat an outfit</strong>
+                                            <p>Use the Calendar to track what you've worn so you always mix things up.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(175, 82, 222, 0.2); color: #af52de;">🧠</span>
+                                        <div>
+                                            <strong>More items = smarter AI</strong>
+                                            <p>Import all your everyday clothing — the more items, the better the
+                                                suggestions.</p>
+                                        </div>
+                                    </div>
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(255, 149, 0, 0.2); color: #ff9500;">🏷️</span>
+                                        <div>
+                                            <strong>Tag seasons accurately</strong>
+                                            <p>Mark items as summer, winter, or all-season for weather-appropriate
+                                                outfits.</p>
+                                        </div>
+                                    </div>
+                                    <div class="splash-feature-row">
+                                        <span class="splash-feature-icon"
+                                            style="background: rgba(90, 200, 250, 0.2); color: #5ac8fa;">☁️</span>
+                                        <div>
+                                            <strong>Enable iCloud sync early</strong>
+                                            <p>Turn on iCloud sync right away so your wardrobe is backed up and synced
+                                                everywhere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════
+             SUBSCRIPTION — Pantone card (matching index)
+             ══════════════════════════════════════════════ -->
+        <section class="container section-spacing text-center">
             <h2 class="section-title">Manage Your Subscription</h2>
-            <div class="glass-panel-sm text-left">
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-                    Klosyt+ unlocks premium features including AI Stylist, Outfits, Calendar, and Themes.
-                    Your subscription is managed through Apple, so you're always in control.
-                </p>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <div class="subscription-info">
-                        <span class="sub-icon" style="background: rgba(52, 199, 89, 0.2); color: #34c759;">💳</span>
-                        <div>
-                            <strong>Free 30-Day Trial</strong>
-                            <p>Try everything free for 30 days. No charge until the trial ends.</p>
-                        </div>
+            <div style="max-width: 500px; margin: 2rem auto 0;">
+                <div class="pantone-card" style="--swatch: #ffd60a; --swatch-2: #ffb340;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">👑</div>
                     </div>
-                    <div class="subscription-info">
-                        <span class="sub-icon" style="background: rgba(0, 122, 255, 0.2); color: #007aff;">⚙️</span>
-                        <div>
-                            <strong>Manage in Settings</strong>
-                            <p>Go to Settings → Apple ID → Subscriptions on your device to manage or cancel.</p>
-                        </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
                     </div>
-                    <div class="subscription-info">
-                        <span class="sub-icon" style="background: rgba(255, 153, 64, 0.2); color: #ff9940;">🔄</span>
-                        <div>
-                            <strong>Restore Purchases</strong>
-                            <p>Got a new device? Open Klosyt Settings and tap "Restore Purchases" to reactivate.</p>
-                        </div>
-                    </div>
-                    <div class="subscription-info">
-                        <span class="sub-icon" style="background: rgba(102, 191, 255, 0.2); color: #66bfff;">🔓</span>
-                        <div>
-                            <strong>Free Tier Always Available</strong>
-                            <p>Your clothing library is always free. You never lose access to your items.</p>
+                    <div class="pantone-card-body" style="text-align: left;">
+                        <h3 class="card-title">Klosyt+</h3>
+                        <p class="card-description" style="margin-bottom: 1rem;">Unlocks AI Stylist, Outfits, Calendar,
+                            and Themes. Managed through Apple.</p>
+                        <div class="pantone-features-list">
+                            <div class="splash-feature-row">
+                                <span class="splash-feature-icon"
+                                    style="background: rgba(52, 199, 89, 0.2); color: #34c759;">💳</span>
+                                <div>
+                                    <strong>Free 30-Day Trial</strong>
+                                    <p>Try everything free for 30 days. No charge until the trial ends.</p>
+                                </div>
+                            </div>
+                            <div class="splash-feature-row">
+                                <span class="splash-feature-icon"
+                                    style="background: rgba(0, 122, 255, 0.2); color: #007aff;">⚙️</span>
+                                <div>
+                                    <strong>Manage in Settings</strong>
+                                    <p>Settings → Apple ID → Subscriptions to manage or cancel.</p>
+                                </div>
+                            </div>
+                            <div class="splash-feature-row">
+                                <span class="splash-feature-icon"
+                                    style="background: rgba(255, 153, 64, 0.2); color: #ff9940;">🔄</span>
+                                <div>
+                                    <strong>Restore Purchases</strong>
+                                    <p>Open Klosyt Settings and tap "Restore Purchases" to reactivate.</p>
+                                </div>
+                            </div>
+                            <div class="splash-feature-row">
+                                <span class="splash-feature-icon"
+                                    style="background: rgba(102, 191, 255, 0.2); color: #66bfff;">🔓</span>
+                                <div>
+                                    <strong>Free Tier Always Available</strong>
+                                    <p>Your clothing library is always free. Never lose access to your items.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Troubleshooting Section -->
-        <section class="support-section">
-            <h2 class="section-title">Troubleshooting</h2>
-            <div class="glass-panel-sm text-left">
-                <details class="troubleshoot-item">
-                    <summary>iCloud sync isn't working</summary>
-                    <div class="troubleshoot-answer">
-                        Make sure iCloud is enabled for Klosyt in your device's Settings → Apple ID → iCloud.
-                        Ensure you're signed into the same Apple ID on all devices. If sync seems stuck, try
-                        toggling iCloud off and on for Klosyt. A stable Wi-Fi connection is recommended for the
-                        initial sync of large wardrobes.
+        <!-- ══════════════════════════════════════════
+             TROUBLESHOOTING — Wide Pantone card
+             ══════════════════════════════════════════ -->
+        <section class="container section-spacing">
+            <div class="feature-grid">
+                <div class="pantone-card card-wide reveal" style="--swatch: #8e8e93; --swatch-2: #636366;">
+                    <div class="pantone-card-inner">
+                        <div class="pantone-card-hero">
+                            <div class="glass-emoji-tile">🔧</div>
+                        </div>
+                        <div class="wide-content">
+                            <div class="pantone-card-swatch dual">
+                                <div class="swatch-primary"></div>
+                                <div class="swatch-secondary"></div>
+                            </div>
+                            <div class="pantone-card-body">
+                                <h2 class="card-title card-title-large">Troubleshooting</h2>
+                                <div class="wide-feature-list">
+                                    <details class="troubleshoot-item">
+                                        <summary>iCloud sync isn't working</summary>
+                                        <div class="troubleshoot-answer">
+                                            Make sure iCloud is enabled for Klosyt in Settings → Apple ID → iCloud.
+                                            Ensure you're signed into the same Apple ID on all devices. Try toggling
+                                            iCloud off and on. A stable Wi-Fi connection is recommended for the initial
+                                            sync.
+                                        </div>
+                                    </details>
+                                    <details class="troubleshoot-item">
+                                        <summary>Background removal isn't ideal</summary>
+                                        <div class="troubleshoot-answer">
+                                            Photograph items against a solid, contrasting background with even lighting.
+                                            Avoid busy or patterned surfaces. You can retake the photo from the item's
+                                            detail view.
+                                        </div>
+                                    </details>
+                                    <details class="troubleshoot-item">
+                                        <summary>Weather or location isn't updating</summary>
+                                        <div class="troubleshoot-answer">
+                                            Make sure Location Services are enabled for Klosyt in Settings → Privacy
+                                            &amp; Security → Location Services. Select "While Using the App" or "Always"
+                                            to allow weather updates.
+                                        </div>
+                                    </details>
+                                    <details class="troubleshoot-item">
+                                        <summary>How do I restore purchases?</summary>
+                                        <div class="troubleshoot-answer">
+                                            Open Klosyt → Settings → "Restore Purchases" to reactivate your Klosyt+
+                                            subscription. Make sure you're signed into the same Apple ID.
+                                        </div>
+                                    </details>
+                                    <details class="troubleshoot-item">
+                                        <summary>Items appear blurry or low quality</summary>
+                                        <div class="troubleshoot-answer">
+                                            Images may still be downloading from iCloud. Ensure a stable internet
+                                            connection and wait for the sync to complete. Photos taken in-app are stored
+                                            at full resolution.
+                                        </div>
+                                    </details>
+                                    <details class="troubleshoot-item">
+                                        <summary>How do I delete an item?</summary>
+                                        <div class="troubleshoot-answer">
+                                            Tap an item → detail view → delete button. Deleted items go to the Trash for
+                                            30 days and can be recovered. Access the Trash from Settings.
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </details>
-                <details class="troubleshoot-item">
-                    <summary>Background removal isn't ideal</summary>
-                    <div class="troubleshoot-answer">
-                        For best results, photograph items against a solid, contrasting background with even
-                        lighting. Avoid placing items on busy or patterned surfaces. If the result isn't perfect,
-                        you can retake the photo from the item's detail view. Items with colors very similar to
-                        the background are the hardest to process.
-                    </div>
-                </details>
-                <details class="troubleshoot-item">
-                    <summary>Weather or location isn't updating</summary>
-                    <div class="troubleshoot-answer">
-                        Klosyt uses your location for weather-aware outfit suggestions via Apple WeatherKit.
-                        Make sure Location Services are enabled for Klosyt in Settings → Privacy & Security →
-                        Location Services. Select "While Using the App" or "Always" to allow weather updates.
-                    </div>
-                </details>
-                <details class="troubleshoot-item">
-                    <summary>How do I restore purchases?</summary>
-                    <div class="troubleshoot-answer">
-                        Open Klosyt and go to Settings. Tap "Restore Purchases" to reactivate your Klosyt+
-                        subscription. This is helpful after setting up a new device or reinstalling the app.
-                        Make sure you're signed into the same Apple ID used for the original purchase.
-                    </div>
-                </details>
-                <details class="troubleshoot-item">
-                    <summary>Items appear blurry or low quality</summary>
-                    <div class="troubleshoot-answer">
-                        Klosyt stores full-resolution images for all your items. If images appear blurry, they
-                        may still be downloading from iCloud. Ensure a stable internet connection and wait for
-                        the sync to complete. Photos taken directly in the app are stored at high resolution.
-                    </div>
-                </details>
-                <details class="troubleshoot-item">
-                    <summary>How do I delete an item?</summary>
-                    <div class="troubleshoot-answer">
-                        Tap on any item to open its detail view, then tap the delete button. Deleted items are
-                        moved to the Trash, where they can be recovered for 30 days. After that, they are
-                        permanently removed. You can access the Trash from Settings.
-                    </div>
-                </details>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Support -->
-        <section class="section-padding">
-            <div class="faq-card glass-panel-sm text-left"
-                style="max-width: 600px; margin: 0 auto; text-align: center;">
-                <div class="feature-icon">📧</div>
-                <h3>Need More Help?</h3>
-                <p>If you have questions, need assistance, or want to report an issue, we're here to help.
-                    Reach out to our support team and we'll get back to you as soon as possible.</p>
-                <a href="mailto:support@klosyt.com"
-                    style="display: inline-block; margin-top: 16px; padding: 12px 32px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: white; text-decoration: none; font-weight: 600; backdrop-filter: blur(10px); transition: background 0.3s;">
-                    support@klosyt.com
-                </a>
+        <!-- ══════════════════════════════════
+             CONTACT — Pantone card
+             ══════════════════════════════════ -->
+        <section class="container section-spacing text-center">
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div class="pantone-card" style="--swatch: #007aff; --swatch-2: #34aadc;">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">📧</div>
+                    </div>
+                    <div class="pantone-card-swatch dual">
+                        <div class="swatch-primary"></div>
+                        <div class="swatch-secondary"></div>
+                    </div>
+                    <div class="pantone-card-body" style="text-align: center;">
+                        <h3 class="card-title">Need More Help?</h3>
+                        <p class="card-description">If you have questions, need assistance, or want to report an issue,
+                            we're here to help.</p>
+                        <a href="mailto:support@klosyt.com" class="btn btn-primary"
+                            style="margin-top: 1.5rem; display: inline-block;">
+                            support@klosyt.com
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 

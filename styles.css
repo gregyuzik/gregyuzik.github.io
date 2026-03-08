@@ -71,8 +71,8 @@ body {
 }
 
 .section-spacing {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .text-center {
@@ -944,9 +944,7 @@ main {
 }
 
 .support-header {
-    padding: 10rem 2rem 3rem;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 7rem 0 2rem;
 }
 
 .description {
@@ -1165,7 +1163,7 @@ main {
     }
 
     .section-spacing {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
 
     .feature-grid {
@@ -1315,6 +1313,22 @@ main {
 
     .pantone-step {
         min-width: 100%;
+        max-width: 100%;
+    }
+
+    .splash-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pantone-card.card-wide .glass-emoji-tile {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        font-size: 2.5rem;
+    }
+
+    .steps-row {
+        gap: 1rem;
     }
 
     .icon-large {
@@ -1333,7 +1347,26 @@ main {
     }
 
     .section-spacing {
-        padding: 3rem 0;
+        padding: 2rem 0;
+    }
+
+    .icon-grid-glass {
+        padding: 8px;
+    }
+
+    .icon-grid {
+        gap: 5px;
+    }
+
+    .icon-grid img {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+    }
+
+    .pantone-card-hero {
+        padding: 1.25rem 1rem;
+        min-height: 100px;
     }
 
     .container {
@@ -1346,7 +1379,7 @@ main {
     }
 
     .support-header {
-        padding: 7rem 1rem 2rem;
+        padding: 5rem 0 1rem;
     }
 
     .glass-panel-sm {
@@ -1863,6 +1896,33 @@ main {
 
     .card-indigo {
         background: rgba(88, 86, 214, 0.15);
+    }
+
+    /* Splash feature rows — light backgrounds */
+    .splash-feature-row {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .splash-feature-row strong {
+        color: var(--text-primary);
+    }
+
+    .splash-feature-row p {
+        color: var(--text-secondary);
+    }
+
+    /* Troubleshoot items — light mode */
+    .troubleshoot-item summary {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .troubleshoot-item summary:hover {
+        color: rgba(0, 0, 0, 0.85);
+    }
+
+    .troubleshoot-answer {
+        color: var(--text-secondary);
     }
 
     /* Buttons */
