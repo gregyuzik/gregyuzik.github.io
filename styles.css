@@ -5,7 +5,6 @@ html {
 :root {
     /* Color Palette - Restrained & Premium */
     --accent-primary: #007aff;
-    /* Classic iOS Blue */
     --accent-red: #ff3b30;
     --accent-purple: #af52de;
     --accent-pink: #ff2d55;
@@ -20,6 +19,10 @@ html {
 
     --border-light: rgba(255, 255, 255, 0.1);
     --border-heavy: rgba(255, 255, 255, 0.2);
+
+    /* Pantone Card Defaults */
+    --swatch-color: #007aff;
+    --swatch-secondary: transparent;
 
     /* Animation */
     --transition-fast: 0.2s ease-out;
@@ -84,7 +87,6 @@ body {
     width: 100%;
     height: 100vh;
     height: 100dvh;
-    /* Dynamic viewport height for mobile Safari */
     z-index: -10;
     overflow: hidden;
     background-image: var(--current-wallpaper, url('assets/wallpaper_blue.jpg'));
@@ -104,7 +106,6 @@ body {
     z-index: 100;
 }
 
-/* Sub-page nav wrapper compatibility */
 .nav-content {
     width: 90%;
     max-width: 800px;
@@ -274,32 +275,294 @@ body {
     z-index: 10;
 }
 
-/* Refined Premium Cards */
-.premium-card {
+/* ==========================================================
+   PANTONE CARD DESIGN SYSTEM
+   Based on Klosyt's share cards & splash screen components:
+   
+   Structure:
+   ┌──────────────────────┐
+   │  Hero Area           │ ← color-tinted gradient bg
+   │  ┌────────────┐      │
+   │  │ Emoji on   │      │ ← liquid glass square tile
+   │  │ glass tile │      │
+   │  └────────────┘      │
+   │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│ ← 8px color swatch strip
+   │  Title                │ ← white/light body bg
+   │  Subtitle             │
+   │  Description          │
+   └──────────────────────┘
+   ========================================================== */
+
+.pantone-card {
+    --swatch: var(--swatch-color, #007aff);
+    --swatch-2: var(--swatch-secondary, transparent);
+    background: #1a1a1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.pantone-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Pantone Card: Hero / Content Area — dark gradient tinted by swatch color */
+.pantone-card-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(145deg,
+            color-mix(in srgb, var(--swatch) 15%, #0d0d14) 0%,
+            color-mix(in srgb, var(--swatch) 8%, #111118) 100%);
+    min-height: 160px;
+    position: relative;
+}
+
+/* ── Liquid Glass Emoji Tile ──
+   Frosted glass square with emoji centered inside.
+   Matches EmojiHeroSquare from the app's splash screens. */
+.glass-emoji-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(30px) saturate(1.8);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 32px color-mix(in srgb, var(--swatch) 30%, transparent),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+/* ── 3×3 App Icon Grid on Liquid Glass ──
+   Replicates the app's OnboardingView hero:
+   9 app icons in a 3×3 grid on a frosted glass square */
+.icon-grid-glass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px) saturate(1.8);
+    -webkit-backdrop-filter: blur(30px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 12px 40px rgba(26, 61, 143, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.icon-grid img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Multiple tiles in a row */
+.glass-tile-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-tile-row .glass-emoji-tile {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    font-size: 2.5rem;
+}
+
+.glass-tile-row.compact .glass-emoji-tile {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    font-size: 2rem;
+}
+
+/* Pantone Card: Color Swatch Strip — 8px bar */
+.pantone-card-swatch {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.pantone-card-swatch .swatch-primary {
+    flex: 1;
+    background: var(--swatch);
+}
+
+.pantone-card-swatch .swatch-secondary {
+    flex: 0;
+    background: var(--swatch-2);
+}
+
+/* Dual-color variant: 2/3 primary + 1/3 secondary */
+.pantone-card-swatch.dual .swatch-primary {
+    flex: 2;
+}
+
+.pantone-card-swatch.dual .swatch-secondary {
+    flex: 1;
+}
+
+/* Pantone Card: Body / Details Area — light background, dark text
+   (Matches the white body area of share cards & splash screens) */
+.pantone-card-body {
+    padding: 1.75rem 2rem 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.pantone-card-body .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.pantone-card-body .card-title.card-title-large {
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+}
+
+.pantone-card-body .card-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Pantone feature row — emoji title + description (like OnboardingFeatureRow) */
+.pantone-feature-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pantone-feature-row .feature-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.pantone-feature-row .feature-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.pantone-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0.75rem;
+}
+
+/* Wide Pantone card (spans 2 columns) */
+.pantone-card.card-wide {
+    grid-column: 1 / -1;
+}
+
+.pantone-card.card-wide .pantone-card-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.pantone-card.card-wide .pantone-card-hero {
+    flex: 0 0 240px;
+    min-height: auto;
+    padding: 2.5rem;
+}
+
+.pantone-card.card-wide .wide-content {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pantone-card.card-wide .pantone-card-swatch {
+    width: 100%;
+}
+
+.pantone-card.card-wide .pantone-card-body {
+    flex: 1;
+}
+
+.pantone-card.card-wide .glass-emoji-tile {
+    width: 140px;
+    height: 140px;
+    border-radius: 28px;
+    font-size: 4.5rem;
+}
+
+/* Feature list inside wide Pantone cards */
+.wide-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+
+/* Glass panel (hero section) */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(30px) saturate(1.4);
+    -webkit-backdrop-filter: blur(30px) saturate(1.4);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 3rem;
+    overflow: hidden;
+}
+
+.glass-panel-sm {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(20px) saturate(1.3);
     -webkit-backdrop-filter: blur(20px) saturate(1.3);
     border: 1px solid var(--border-light);
-    border-radius: 32px;
-    padding: 3rem;
-    position: relative;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* Hero swatch strip (below the hero glass panel) */
+.hero-swatch {
+    width: 100%;
+    height: 8px;
+    display: flex;
+    border-radius: 0 0 20px 20px;
     overflow: hidden;
-    transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+    margin-top: -1px;
 }
 
-.premium-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-heavy);
-}
-
-.premium-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+.hero-swatch span {
+    flex: 1;
 }
 
 /* Buttons */
@@ -364,13 +627,6 @@ body {
     grid-column: 1 / -1;
 }
 
-.grid-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 400px;
-}
-
 .icon-large {
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -378,113 +634,44 @@ body {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
-/* Pricing Grid */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+/* How-It-Works Steps: Pantone step cards */
+.steps-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    max-width: 900px;
-    margin: 4rem auto 0;
+    margin-top: 3rem;
 }
 
-@media (min-width: 768px) {
-    .pricing-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+.pantone-step {
+    flex: 1;
+    min-width: 220px;
+    max-width: 320px;
 }
 
-.pricing-card {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
+.pantone-step .pantone-card-hero {
+    padding: 2rem;
+    min-height: 140px;
 }
 
-.pricing-header {
-    border-bottom: 1px solid var(--border-light);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-}
-
-.pricing-price {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 1rem 0;
-}
-
-.pricing-features {
-    list-style: none;
-    flex-grow: 1;
-    margin-bottom: 2rem;
-}
-
-.pricing-features li {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-secondary);
-}
-
-.pricing-features li::before {
-    content: '✓';
-    color: var(--text-primary);
-    font-weight: bold;
-}
-
-.pricing-featured {
-    border-color: rgba(255, 255, 255, 0.3);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-/* Floating Liquid Glass Clothing Cards */
-.glass-item-card {
-    position: absolute;
+.pantone-step .glass-emoji-tile {
     width: 100px;
     height: 100px;
-    border-radius: 22%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3.5rem;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px) saturate(1.5);
-    -webkit-backdrop-filter: blur(20px) saturate(1.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    animation: drift 14s infinite alternate ease-in-out;
-    opacity: 0.65;
-    pointer-events: auto;
-    transition: opacity 0.3s ease;
+    border-radius: 22px;
+    font-size: 3rem;
 }
 
-.glass-item-card:hover {
-    opacity: 1;
+.pantone-step .pantone-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    text-align: center;
 }
 
-/* Individual card color tints — matches app UI */
-.card-red {
-    background: rgba(255, 80, 70, 0.25);
+.pantone-step .card-title {
+    font-size: 1.3rem;
 }
 
-.card-green {
-    background: rgba(52, 199, 89, 0.25);
-}
-
-.card-blue {
-    background: rgba(0, 122, 255, 0.25);
-}
-
-.card-orange {
-    background: rgba(255, 149, 0, 0.25);
-}
-
-.card-purple {
-    background: rgba(175, 82, 222, 0.25);
-}
-
-.card-teal {
-    background: rgba(48, 176, 199, 0.25);
+.pantone-step .card-description {
+    font-size: 0.95rem;
 }
 
 /* Feature Bubble Pills */
@@ -507,6 +694,94 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 100px;
     white-space: nowrap;
+}
+
+/* ── Splash-Screen Pantone Cards ──
+   Matches iOS MacTabSplashViews:
+   Hero → Title → Swatch strip → 2×2 feature rows → centered 5th row */
+
+.splash-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: left;
+    align-items: stretch;
+}
+
+@media (min-width: 768px) {
+    .splash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.pantone-splash {
+    width: 100%;
+    height: 100%;
+}
+
+/* Swatch strip inside the card body (below the title) */
+.splash-swatch {
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+/* 2×2 feature-row grid */
+.splash-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+/* Individual feature row — icon tile + text block */
+.splash-feature-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.splash-feature-row strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.splash-feature-row p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+/* Colored icon tile */
+.splash-feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Centered bottom row (5th feature) */
+.splash-feature-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.splash-feature-center .splash-feature-row {
+    max-width: 280px;
+    width: 100%;
 }
 
 /* Paywall Feature Rows */
@@ -543,6 +818,55 @@ body {
     flex-shrink: 0;
 }
 
+/* Floating Liquid Glass Clothing Cards */
+.glass-item-card {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(1.5);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    animation: drift 14s infinite alternate ease-in-out;
+    opacity: 0.65;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.glass-item-card:hover {
+    opacity: 1;
+}
+
+.card-red {
+    background: rgba(255, 80, 70, 0.25);
+}
+
+.card-green {
+    background: rgba(52, 199, 89, 0.25);
+}
+
+.card-blue {
+    background: rgba(0, 122, 255, 0.25);
+}
+
+.card-orange {
+    background: rgba(255, 149, 0, 0.25);
+}
+
+.card-purple {
+    background: rgba(175, 82, 222, 0.25);
+}
+
+.card-teal {
+    background: rgba(48, 176, 199, 0.25);
+}
+
 .card-yellow {
     background: rgba(255, 204, 0, 0.25);
 }
@@ -575,7 +899,6 @@ footer,
     z-index: 1;
 }
 
-/* Sub-page content wrapper */
 .content-wrapper {
     position: relative;
     z-index: 1;
@@ -615,7 +938,7 @@ main {
     transform: translateY(0);
 }
 
-/* Sub-page Styles (Support, Privacy, Terms, Contact) */
+/* Sub-page Styles */
 .text-left {
     text-align: left;
 }
@@ -624,24 +947,6 @@ main {
     padding: 10rem 2rem 3rem;
     max-width: 900px;
     margin: 0 auto;
-}
-
-.glass-panel {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(30px) saturate(1.4);
-    -webkit-backdrop-filter: blur(30px) saturate(1.4);
-    border: 1px solid var(--border-light);
-    border-radius: 28px;
-    padding: 3rem;
-}
-
-.glass-panel-sm {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px) saturate(1.3);
-    -webkit-backdrop-filter: blur(20px) saturate(1.3);
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
-    padding: 2rem;
 }
 
 .description {
@@ -740,9 +1045,67 @@ main {
     text-align: center;
 }
 
+/* Pricing Grid (legacy compat) */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.pricing-header {
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.pricing-features {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+.pricing-features li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: var(--text-primary);
+    font-weight: bold;
+}
+
+.pricing-featured {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
 /* ===== Responsive Design ===== */
 
-/* Tablet and smaller */
 @media (max-width: 768px) {
     #floating-clothes .glass-item-card:nth-child(3n) {
         display: none;
@@ -784,34 +1147,58 @@ main {
 
     .glass-panel {
         padding: 2rem 1.5rem;
-        border-radius: 20px;
     }
 
-    .premium-card {
-        padding: 2rem;
-        border-radius: 24px;
+    .pantone-card {
+        border-radius: 18px;
+    }
+
+    .pantone-card-body {
+        padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .glass-emoji-tile {
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        font-size: 3rem;
     }
 
     .section-spacing {
         padding: 4rem 0;
     }
 
-    .pricing-header .pricing-price {
-        font-size: 3rem;
-    }
-
     .feature-grid {
         gap: 1.5rem;
     }
 
-    .feature-span-2 {
+    .feature-span-2,
+    .pantone-card.card-wide {
         grid-column: span 1;
     }
 
+    .pantone-card.card-wide .pantone-card-inner {
+        flex-direction: column;
+    }
 
+    .pantone-card.card-wide .pantone-card-hero {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .pantone-card.card-wide .glass-emoji-tile {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
+        font-size: 4rem;
+    }
+
+    .steps-row {
+        gap: 1.5rem;
+    }
 }
 
-/* Mobile phones */
 @media (max-width: 600px) {
     .nav-container {
         top: 10px;
@@ -853,7 +1240,6 @@ main {
         flex-shrink: 0;
     }
 
-    /* Show only emoji on small screens */
     .theme-pill .theme-name-text {
         display: none;
     }
@@ -862,9 +1248,6 @@ main {
         padding: 3px 6px;
         font-size: 0.8rem;
     }
-
-
-
 
     #floating-clothes {
         overflow: hidden;
@@ -888,22 +1271,50 @@ main {
         border-radius: 16px;
     }
 
-    .premium-card {
-        padding: 1.5rem;
-        border-radius: 20px;
+    .pantone-card {
+        border-radius: 16px;
     }
 
-    .grid-card {
-        min-height: auto;
-        text-align: center;
+    .pantone-card-hero {
+        padding: 1.5rem 1rem;
+        min-height: 120px;
     }
 
-    .grid-card div {
-        text-align: center;
+    .pantone-card-body {
+        padding: 1rem 1.25rem 1.25rem;
     }
 
-    .grid-card .section-title {
-        font-size: 1.8rem !important;
+    .pantone-card-body .card-title {
+        font-size: 1.25rem;
+    }
+
+    .pantone-card-body .card-description {
+        font-size: 0.95rem;
+    }
+
+    .glass-emoji-tile {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        font-size: 2.5rem;
+    }
+
+    .glass-tile-row .glass-emoji-tile {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        font-size: 1.8rem;
+    }
+
+    .glass-tile-row.compact .glass-emoji-tile {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        font-size: 1.5rem;
+    }
+
+    .pantone-step {
+        min-width: 100%;
     }
 
     .icon-large {
@@ -934,7 +1345,6 @@ main {
         padding: 3rem 1rem;
     }
 
-    /* Privacy / Support sub-pages */
     .support-header {
         padding: 7rem 1rem 2rem;
     }
@@ -956,9 +1366,20 @@ main {
     .contact-card ul {
         padding-left: 1.2rem;
     }
+
+    .splash-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .splash-feature-row strong {
+        font-size: 0.82rem;
+    }
+
+    .splash-feature-row p {
+        font-size: 0.72rem;
+    }
 }
 
-/* Very small phones — stack table rows vertically */
 @media (max-width: 480px) {
 
     .contact-card table,
@@ -1028,7 +1449,6 @@ main {
     flex-shrink: 0;
 }
 
-/* Support Page — Tips Grid */
 .tips-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1064,7 +1484,6 @@ main {
     line-height: 1.5;
 }
 
-/* Support Page — Section Dividers */
 .support-section {
     max-width: 900px;
     margin: 0 auto;
@@ -1076,7 +1495,6 @@ main {
     margin-bottom: 1.5rem;
 }
 
-/* Support Page — Subscription Info Card */
 .subscription-info {
     display: flex;
     align-items: center;
@@ -1110,7 +1528,6 @@ main {
     line-height: 1.3;
 }
 
-/* Troubleshooting expandable */
 .troubleshoot-item summary {
     cursor: pointer;
     font-weight: 600;
@@ -1243,5 +1660,324 @@ main {
 
     #theme-picker.open {
         right: 12px;
+    }
+}
+
+/* ==========================================================
+   LIGHT MODE — prefers-color-scheme: light
+   Inverts the dark-first design: white card bgs, dark text,
+   brighter hero background, lighter glass effects.
+   ========================================================== */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-base: #f5f5f7;
+        --bg-surface: #ffffff;
+        --bg-card: rgba(0, 0, 0, 0.03);
+
+        --text-primary: #1d1d1f;
+        --text-secondary: rgba(0, 0, 0, 0.55);
+        --text-tertiary: rgba(0, 0, 0, 0.35);
+
+        --border-light: rgba(0, 0, 0, 0.1);
+        --border-heavy: rgba(0, 0, 0, 0.2);
+    }
+
+    body {
+        background-color: var(--bg-base);
+        color: var(--text-primary);
+    }
+
+    /* Hero background — brighter so light wallpapers show nicely */
+    .hero-background {
+        filter: brightness(0.85) saturate(1.1);
+    }
+
+    /* Hero text gradient — dark on light */
+    .hero-brand-name,
+    .hero-title {
+        background: linear-gradient(135deg, #1d1d1f 30%, rgba(29, 29, 31, 0.7) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+        color: rgba(0, 0, 0, 0.55);
+    }
+
+    /* Navigation — light frosted glass */
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .glass-nav:hover {
+        background: rgba(255, 255, 255, 0.75);
+    }
+
+    .nav-logo {
+        color: var(--text-primary);
+    }
+
+    .nav-links a {
+        color: var(--text-secondary);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--text-primary);
+    }
+
+    .theme-pill {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-pill:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Pantone cards — white background, dark text */
+    .pantone-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .pantone-card:hover {
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Pantone card hero — lighter tint */
+    .pantone-card-hero {
+        background: linear-gradient(145deg,
+                color-mix(in srgb, var(--swatch) 20%, #f0f0f5) 0%,
+                color-mix(in srgb, var(--swatch) 12%, #f5f5fa) 100%);
+    }
+
+    /* Glass emoji tile — clear liquid glass */
+    .glass-emoji-tile {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow:
+            0 8px 32px color-mix(in srgb, var(--swatch) 20%, transparent),
+            inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Icon grid glass */
+    .icon-grid-glass {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow:
+            0 12px 40px rgba(0, 0, 0, 0.08),
+            inset 0 1px 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .icon-grid img {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Pantone card body — light bg */
+    .pantone-card-body {
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+    .pantone-card-body .card-title {
+        color: var(--text-primary);
+    }
+
+    .pantone-card-body .card-description {
+        color: var(--text-secondary);
+    }
+
+    /* Pantone feature rows */
+    .pantone-feature-row .feature-title {
+        color: var(--text-primary);
+    }
+
+    .pantone-feature-row .feature-desc {
+        color: var(--text-secondary);
+    }
+
+    /* Feature bubbles */
+    .bubble {
+        color: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Paywall feature rows */
+    .paywall-feature {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .paywall-feature strong {
+        color: var(--text-primary);
+    }
+
+    .paywall-feature p {
+        color: var(--text-secondary);
+    }
+
+    /* Floating glass clothing cards */
+    .glass-item-card {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(20px) saturate(1.3);
+        -webkit-backdrop-filter: blur(20px) saturate(1.3);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+    }
+
+    .card-red {
+        background: rgba(255, 80, 70, 0.15);
+    }
+
+    .card-green {
+        background: rgba(52, 199, 89, 0.15);
+    }
+
+    .card-blue {
+        background: rgba(0, 122, 255, 0.15);
+    }
+
+    .card-orange {
+        background: rgba(255, 149, 0, 0.15);
+    }
+
+    .card-purple {
+        background: rgba(175, 82, 222, 0.15);
+    }
+
+    .card-teal {
+        background: rgba(48, 176, 199, 0.15);
+    }
+
+    .card-yellow {
+        background: rgba(255, 204, 0, 0.15);
+    }
+
+    .card-pink {
+        background: rgba(255, 45, 85, 0.15);
+    }
+
+    .card-indigo {
+        background: rgba(88, 86, 214, 0.15);
+    }
+
+    /* Buttons */
+    .btn-primary {
+        background: var(--text-primary);
+        color: #ffffff;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-secondary {
+        background: rgba(0, 0, 0, 0.05);
+        color: var(--text-primary);
+        border: 1px solid var(--border-light);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    /* Glass panels */
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid var(--border-light);
+    }
+
+    .glass-panel-sm {
+        background: rgba(255, 255, 255, 0.35);
+        border: 1px solid var(--border-light);
+    }
+
+    /* Glass button */
+    .glass-btn {
+        background: var(--text-primary);
+        color: #ffffff;
+    }
+
+    .glass-btn:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* FAQ / support */
+    .faq-card:hover {
+        border-color: var(--border-heavy);
+    }
+
+    .faq-card p {
+        color: var(--text-secondary);
+    }
+
+    /* Pricing featured */
+    .pricing-featured {
+        border-color: rgba(0, 0, 0, 0.15);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 100%);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Step number */
+    .step-number {
+        background: rgba(0, 122, 255, 0.12);
+        color: #007aff;
+        border: 1px solid rgba(0, 122, 255, 0.2);
+    }
+
+    /* Subscription info */
+    .subscription-info {
+        background: rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    /* Troubleshoot */
+    .troubleshoot-item summary {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .troubleshoot-item summary:hover {
+        color: rgba(0, 0, 0, 0.85);
+    }
+
+    /* Theme picker — light glass */
+    #theme-picker {
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .theme-picker-header {
+        color: rgba(0, 0, 0, 0.45);
+    }
+
+    .theme-option:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-option.active {
+        background: rgba(0, 0, 0, 0.08);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+    }
+
+    .theme-name {
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    #theme-picker::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.12);
+    }
+
+    /* 480px light-mode table cards */
+    @media (max-width: 480px) {
+        .contact-card tr {
+            background: rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
     }
 }

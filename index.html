@@ -15,12 +15,9 @@
     <!-- Theme Loader — Blue Velvet default, persists user choice via localStorage -->
     <script>
         (function () {
-            // Restore user's saved theme from localStorage (persists across visits),
-            // fall back to sessionStorage, then default to Blue Velvet
             let currentTheme = localStorage.getItem('klosyt_theme')
                 || sessionStorage.getItem('klosyt_theme')
                 || 'blue';
-            // Persist to both storage layers
             localStorage.setItem('klosyt_theme', currentTheme);
             sessionStorage.setItem('klosyt_theme', currentTheme);
             document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
@@ -270,7 +267,6 @@
                 <span>Klosyt</span>
             </a>
             <div class="nav-links">
-
                 <a href="#pricing">👑 Klosyt+</a>
                 <a href="support.html">Support</a>
                 <a href="privacy.html">Privacy</a>
@@ -280,280 +276,470 @@
         </nav>
     </div>
 
-    <!-- Hero Section -->
+    <!-- ══════════════════════════════════════════════════════
+         HERO SECTION — Pantone splash card with 3×3 icon grid
+         Replicates the app's OnboardingView exactly:
+         Hero area with 3×3 app icon grid on liquid glass →
+         ROYGBIV swatch strip → Pantone-style body text
+         ══════════════════════════════════════════════════════ -->
     <section class="hero-section container text-center">
+        <div class="hero-content">
+            <div class="pantone-card" style="--swatch: #1a3d8f; --swatch-2: #2a5ca8; max-width: 560px; margin: 0 auto;">
 
-        <div class="hero-content glass-panel reveal">
-            <div class="hero-brand">
-                <img src="assets/HangerIcon.png" alt="" class="hero-hanger-icon dynamic-app-icon">
-                <span class="hero-brand-name">Klosyt</span>
-            </div>
-            <p class="hero-subtitle">Your wardrobe, digitized.</p>
-            <p class="subtitle-large" style="color: rgba(255,255,255,0.9);">
-                Organize your closet, plan your outfits, and discover your personal style with your AI Stylist.
-            </p>
-            <div class="btn-group">
-                <a href="#" onclick="return false;" class="btn btn-primary">Get Klosyt (Coming Soon)</a>
-            </div>
+                <!-- Hero area — dark gradient with 3×3 app icon grid on liquid glass -->
+                <div class="pantone-card-hero" style="padding: 2.5rem; min-height: 280px;">
+                    <div class="icon-grid-glass">
+                        <div class="icon-grid">
+                            <img src="assets/AppIcon-red.png" alt="Red theme">
+                            <img src="assets/AppIcon-orange.png" alt="Orange theme">
+                            <img src="assets/AppIcon-yellow.png" alt="Yellow theme">
+                            <img src="assets/AppIcon-green.png" alt="Green theme">
+                            <img src="assets/AppIcon-blue.png" alt="Blue theme">
+                            <img src="assets/AppIcon-purple.png" alt="Purple theme">
+                            <img src="assets/AppIcon-pink.png" alt="Pink theme">
+                            <img src="assets/AppIcon-gray.png" alt="Gray theme">
+                            <img src="assets/AppIcon-white.png" alt="White theme">
+                        </div>
+                    </div>
+                </div>
 
-            <p style="margin-top: 2rem; color: var(--text-tertiary); font-size: 0.95rem; font-weight: 500;">
-                Available soon for iPhone, iPad, Mac, Apple TV, and Vision Pro.
-            </p>
+                <!-- Pantone card body — share-card-style text -->
+                <div class="pantone-card-body" style="text-align: left;">
+                    <h1 class="card-title card-title-large">Klosyt</h1>
+                    <p class="card-description" style="margin-bottom: 1rem;">
+                        ✨ Your AI-powered digital closet
+                    </p>
+
+                    <!-- ROYGBIV swatch strip -->
+                    <div class="pantone-card-swatch splash-swatch">
+                        <span style="flex:1; background: #cc2626;"></span>
+                        <span style="flex:1; background: #e68a00;"></span>
+                        <span style="flex:1; background: #d9cc26;"></span>
+                        <span style="flex:1; background: #33a63f;"></span>
+                        <span style="flex:1; background: #264091;"></span>
+                        <span style="flex:1; background: #8033a6;"></span>
+                        <span style="flex:1; background: #d9598c;"></span>
+                        <span style="flex:1; background: #737373;"></span>
+                        <span style="flex:1; background: #e0e0e0;"></span>
+                    </div>
+
+                    <div class="pantone-features-list">
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📸 Snap It or Link It</span>
+                            <span class="feature-desc">Catalog items from photos or links</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🧠 AI-Powered Styling</span>
+                            <span class="feature-desc">Smart outfit picks, right on-device</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📅 Plan & Track Outfits</span>
+                            <span class="feature-desc">Schedule looks, track what you wore</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">☁️ Synced Across Devices</span>
+                            <span class="feature-desc">Always current on all your devices</span>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" style="margin-top: 1.5rem;">
+                        <a href="#" onclick="return false;" class="btn btn-primary" style="width: 100%;">Get Klosyt
+                            (Coming Soon)</a>
+                    </div>
+
+                    <p
+                        style="margin-top: 1rem; color: var(--text-tertiary); font-size: 0.85rem; font-weight: 500; text-align: center;">
+                        Available soon for iPhone, iPad, Mac, Apple TV, and Vision Pro.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- ════════════════════════════
+         HOW IT WORKS — 3 step cards
+         ════════════════════════════ -->
     <section id="how-it-works" class="container section-spacing text-center reveal">
-        <div class="glass-panel" style="padding: 3rem 2rem;">
-            <h2 class="section-title">As simple as snapping a photo</h2>
-
-
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; margin-top: 4rem;">
-                <div style="flex: 1; min-width: 250px;">
-                    <span class="icon-large">📸</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">1. Snap</h3>
-                    <p class="body-text">Capture any clothing item. We automatically clear the background.</p>
+        <h2 class="section-title">As simple as snapping a photo</h2>
+        <div class="steps-row">
+            <!-- Step 1: Snap -->
+            <div class="pantone-card pantone-step reveal" style="--swatch: #4a4a4a;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">📸</div>
                 </div>
-                <div style="flex: 1; min-width: 250px;">
-                    <span class="icon-large">🏷️</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">2. Categorize</h3>
-                    <p class="body-text">AI automatically detects colors, patterns, and categories.</p>
+                <div class="pantone-card-swatch">
+                    <div class="swatch-primary"></div>
                 </div>
-                <div style="flex: 1; min-width: 250px;">
-                    <span class="icon-large">✨</span>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">3. Style</h3>
-                    <p class="body-text">Klosyt AI Stylist creates outfits based on activity and realtime weather.</p>
+                <div class="pantone-card-body">
+                    <h3 class="card-title">1. Snap</h3>
+                    <p class="card-description">Capture any clothing item. We automatically clear the background.</p>
+                </div>
+            </div>
+            <!-- Step 2: Categorize -->
+            <div class="pantone-card pantone-step reveal" style="--swatch: #ff6723;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">🏷️</div>
+                </div>
+                <div class="pantone-card-swatch">
+                    <div class="swatch-primary"></div>
+                </div>
+                <div class="pantone-card-body">
+                    <h3 class="card-title">2. Categorize</h3>
+                    <p class="card-description">AI automatically detects colors, patterns, and categories.</p>
+                </div>
+            </div>
+            <!-- Step 3: Style -->
+            <div class="pantone-card pantone-step reveal" style="--swatch: #ffd700;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">✨</div>
+                </div>
+                <div class="pantone-card-swatch">
+                    <div class="swatch-primary"></div>
+                </div>
+                <div class="pantone-card-body">
+                    <h3 class="card-title">3. Style</h3>
+                    <p class="card-description">Klosyt AI Stylist creates outfits based on activity and realtime
+                        weather.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature Grid -->
+    <!-- ══════════════════════════════════════════
+         APP VIEWS — 4 splash Pantone cards
+         Matching iOS OnboardingViews:
+         Klosyt | Outfits | AI Stylist | Calendar
+         ══════════════════════════════════════════ -->
+    <section id="views" class="container section-spacing text-center reveal">
+        <h2 class="section-title">Your closet, reimagined</h2>
+        <p class="subtitle-large">Four powerful views to organize, style, and plan your wardrobe.</p>
+
+        <div class="splash-grid">
+
+            <!-- Splash Card 1: Klosyt (Closet) — matches OnboardingView -->
+            <div class="pantone-card pantone-splash reveal" style="--swatch: #1a3d8f; --swatch-2: #2a5ca8;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">👕</div>
+                </div>
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
+                </div>
+                <div class="pantone-card-body" style="text-align: left;">
+                    <h3 class="card-title">Klosyt</h3>
+                    <p class="card-description">Your infinite, organized digital wardrobe.</p>
+                    <div class="pantone-features-list">
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📸 Snap It or Link It</span>
+                            <span class="feature-desc">Catalog items from photos or links</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🔍 Sort & Filter</span>
+                            <span class="feature-desc">Find items by season, color, category, or pattern</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🗂️ Grid & Wardrobe Views</span>
+                            <span class="feature-desc">Browse your closet your way</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Splash Card 2: Outfits — matches OutfitsOnboardingView -->
+            <div class="pantone-card pantone-splash reveal" style="--swatch: #4d73bf; --swatch-2: #b38f26;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">👔</div>
+                </div>
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
+                </div>
+                <div class="pantone-card-body" style="text-align: left;">
+                    <h3 class="card-title">Outfits</h3>
+                    <p class="card-description">Mix, match, and save your looks.</p>
+                    <div class="pantone-features-list">
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🧩 Create Outfits</span>
+                            <span class="feature-desc">Drag & drop items into outfits</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📤 Share Your Style</span>
+                            <span class="feature-desc">Beautiful Pantone-style share cards</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">⭐ Save Favorites</span>
+                            <span class="feature-desc">Quick access to your best looks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Splash Card 3: AI Stylist — matches SuggestionsOnboardingView -->
+            <div class="pantone-card pantone-splash reveal" style="--swatch: #d9a61a; --swatch-2: #8c6d11;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">✨</div>
+                </div>
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
+                </div>
+                <div class="pantone-card-body" style="text-align: left;">
+                    <h3 class="card-title">AI Stylist</h3>
+                    <p class="card-description">Your personal styling assistant.</p>
+                    <div class="pantone-features-list">
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">💜 AI-Powered Outfits</span>
+                            <span class="feature-desc">Smart suggestions from your wardrobe</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🌤️ Weather-Aware</span>
+                            <span class="feature-desc">Outfits matched to today's forecast</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🧠 On-Device AI</span>
+                            <span class="feature-desc">Private — never leaves your device</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Splash Card 4: Calendar — matches CalendarOnboardingView -->
+            <div class="pantone-card pantone-splash reveal" style="--swatch: #bf2626; --swatch-2: #8c1a1a;">
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">📅</div>
+                </div>
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
+                </div>
+                <div class="pantone-card-body" style="text-align: left;">
+                    <h3 class="card-title">Calendar</h3>
+                    <p class="card-description">Track what you wear, every day.</p>
+                    <div class="pantone-features-list">
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📌 Log Your Outfits</span>
+                            <span class="feature-desc">Tap any day to log what you wore</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">📊 Wear Insights</span>
+                            <span class="feature-desc">See patterns and favorites emerge</span>
+                        </div>
+                        <div class="pantone-feature-row">
+                            <span class="feature-title">🔄 Outfit History</span>
+                            <span class="feature-desc">Never forget what you wore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         FEATURES — Two wide Pantone cards
+         Card 1: AI & Styling  |  Card 2: Platform & Privacy
+         ══════════════════════════════════════════ -->
     <section id="features" class="container section-spacing">
         <div class="feature-grid">
 
-
-            <!-- Feature 1: Wide Card -->
-            <div class="premium-card feature-span-2 reveal">
-                <div
-                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <h2 class="section-title">Your personal<br>AI Stylist</h2>
-                        <p class="body-text" style="font-size: 1.25rem;">Don't know what to wear? Klosyt's on-device
-                            AI analyzes realtime weather and your exact wardrobe to suggest perfectly styled outfits
-                            for any activity. Just open the app and get dressed.</p>
+            <!-- Card 1: AI & Styling -->
+            <div class="pantone-card card-wide reveal" style="--swatch: #5b86bf; --swatch-2: #d4a726;">
+                <div class="pantone-card-inner">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">✨</div>
                     </div>
-                    <div style="flex: 1; min-width: 300px; text-align: center;">
-                        <span style="font-size: 10rem; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));">🤖</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feature: Import Methods (first) -->
-            <div class="premium-card grid-card reveal">
-                <div>
-                    <h2 class="section-title" style="font-size: 2.5rem;">Import your way</h2>
-                    <p class="body-text">Snap a photo, use an existing photo or share directly from any app.</p>
-                </div>
-                <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center;">
-                    <span style="font-size: 3rem;">📸</span>
-                    <span style="font-size: 3rem;">🔗</span>
-                    <span style="font-size: 3rem;">📤</span>
-                </div>
-            </div>
-
-            <!-- Feature: Gelcap Filters -->
-            <div class="premium-card grid-card reveal">
-                <div>
-                    <h2 class="section-title" style="font-size: 2.5rem;">Filter instantly</h2>
-                    <p class="body-text">The GelCap filter system easily allows you to narrow your wardrobe by category,
-                        season, color, material, and pattern in a single tap. Smart search makes finding anything
-                        effortless.
-                    </p>
-                </div>
-                <div style="margin-top: 1.5rem;">
-                    <span class="bubble" style="font-size: 1.5rem; padding: 10px 24px; letter-spacing: 0.3rem;">👕 ☀️ 🎨
-                        🧵 🏁</span>
-                </div>
-            </div>
-
-            <!-- Feature: Sync everywhere -->
-            <div class="premium-card grid-card reveal">
-                <div>
-                    <h2 class="section-title" style="font-size: 2.5rem;">Sync everywhere</h2>
-                    <p class="body-text">Your entire wardrobe is safely backed up to
-                        iCloud and synced instantly across iPhone, iPad, Mac, Apple TV, and Vision Pro.</p>
-                </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <span style="font-size: 6rem;">☁️</span>
-                </div>
-            </div>
-
-            <!-- Feature: Multi-Platform -->
-            <div class="premium-card grid-card reveal">
-                <div>
-                    <h2 class="section-title" style="font-size: 2.5rem;">Multi-Platform</h2>
-                    <p class="body-text">Native on every Apple device — no compromises, no web wrappers.</p>
-                </div>
-                <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center;">
-                    <span style="font-size: 2.5rem;" title="iPhone">📱</span>
-                    <span style="font-size: 2.5rem;" title="iPad">💻</span>
-                    <span style="font-size: 2.5rem;" title="Mac">🖥️</span>
-                    <span style="font-size: 2.5rem;" title="Apple TV">📺</span>
-                    <span style="font-size: 2.5rem;" title="Vision Pro">🥽</span>
-                </div>
-            </div>
-
-            <!-- Privacy: Wide Card -->
-            <div class="premium-card feature-span-2 reveal">
-                <div
-                    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <h2 class="section-title">🔒 Your privacy is built-in</h2>
-                        <p class="body-text" style="font-size: 1.25rem;">Klosyt uses on-device processing and stores
-                            your
-                            wardrobe data exclusively in your private iCloud account. Your information is never shared
-                            with
-                            us or any third parties.</p>
+                    <div class="wide-content">
+                        <div class="pantone-card-swatch dual">
+                            <div class="swatch-primary"></div>
+                            <div class="swatch-secondary"></div>
+                        </div>
+                        <div class="pantone-card-body">
+                            <h2 class="card-title card-title-large">Smart styling,<br>zero effort</h2>
+                            <div class="wide-feature-list">
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(175, 82, 222, 0.2); color: #af52de;">🤖</span>
+                                    <div>
+                                        <strong>On-Device AI Stylist</strong>
+                                        <p>Weather-aware outfit suggestions from your exact wardrobe</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(90, 155, 213, 0.2); color: #5b9bd5;">📸</span>
+                                    <div>
+                                        <strong>Import Your Way</strong>
+                                        <p>Snap a photo, share from any app, or paste a link</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(255, 149, 0, 0.2); color: #ff9500;">🔍</span>
+                                    <div>
+                                        <strong>Filter Instantly</strong>
+                                        <p>Find items by season, color, category, material, or pattern</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(217, 59, 36, 0.2); color: #d93b24;">📅</span>
+                                    <div>
+                                        <strong>Outfit Calendar</strong>
+                                        <p>Plan ahead, track what you wore, sync with Apple Calendar</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
+            <!-- Card 2: Platform & Privacy -->
+            <div class="pantone-card card-wide reveal" style="--swatch: #333333; --swatch-2: #87ceeb;">
+                <div class="pantone-card-inner">
+                    <div class="pantone-card-hero">
+                        <div class="glass-emoji-tile">🔒</div>
+                    </div>
+                    <div class="wide-content">
+                        <div class="pantone-card-swatch dual">
+                            <div class="swatch-primary"></div>
+                            <div class="swatch-secondary"></div>
+                        </div>
+                        <div class="pantone-card-body">
+                            <h2 class="card-title card-title-large">Private, synced,<br>everywhere</h2>
+                            <div class="wide-feature-list">
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(52, 199, 89, 0.2); color: #34c759;">🔐</span>
+                                    <div>
+                                        <strong>Privacy Built-In</strong>
+                                        <p>On-device processing, your iCloud only — never shared</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(90, 200, 250, 0.2); color: #5ac8fa;">☁️</span>
+                                    <div>
+                                        <strong>Synced Everywhere</strong>
+                                        <p>Backed up to iCloud and instantly synced across all devices</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(88, 86, 214, 0.2); color: #5856d6;">📱</span>
+                                    <div>
+                                        <strong>Native on Every Apple Device</strong>
+                                        <p>iPhone, iPad, Mac, Apple TV, and Vision Pro — no compromises</p>
+                                    </div>
+                                </div>
+                                <div class="splash-feature-row">
+                                    <span class="splash-feature-icon"
+                                        style="background: rgba(255, 45, 85, 0.2); color: #ff2d55;">✨</span>
+                                    <div>
+                                        <strong>Personalized For You</strong>
+                                        <p>Learns your style preferences over time</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
 
-    <!-- Different Views Section -->
-    <section id="views" class="container section-spacing text-center reveal">
-
-        <div class="feature-grid" style="margin-top: 3rem; text-align: left;">
-            <div class="premium-card">
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Klosyt</h3>
-                <p class="body-text">Your infinite, organized digital wardrobe. Filter by season, color, and category
-                    instantly.</p>
-                <div class="feature-bubbles">
-                    <span class="bubble">📸 Photo Import</span>
-                    <span class="bubble">🔗 URL Import</span>
-                    <span class="bubble">📤 Share Clothes</span>
-                    <span class="bubble">🔍 Sort & Filter</span>
-                    <span class="bubble">🗂️ Grid & Wardrobe Views</span>
-                </div>
-            </div>
-            <div class="premium-card">
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Outfits</h3>
-                <p class="body-text">A freeform playground to mix and match items and save your favorite looks.</p>
-                <div class="feature-bubbles">
-                    <span class="bubble">🕴️ Mix & Match</span>
-                    <span class="bubble">📅 Plan Ahead</span>
-                    <span class="bubble">☀️ Weather Ready</span>
-                    <span class="bubble">📤 Share Your Style</span>
-                    <span class="bubble">❤️ Favorites</span>
-                </div>
-            </div>
-            <div class="premium-card">
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">AI Stylist</h3>
-                <p class="body-text">Let Apple Intelligence analyze the weather and your library to suggest perfectly
-                    timed outfits.</p>
-                <div class="feature-bubbles">
-                    <span class="bubble">🧠 On-Device AI</span>
-                    <span class="bubble">🌤️ Weather-Aware</span>
-                    <span class="bubble">🏃 Activity-Based</span>
-                    <span class="bubble">🎛️ Filter Results</span>
-                    <span class="bubble">👕 More Items, Better Results</span>
-                </div>
-            </div>
-            <div class="premium-card">
-                <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Calendar</h3>
-                <p class="body-text">Plan outfits for future events and vacations, keeping your style perfectly
-                    organized.</p>
-                <div class="feature-bubbles">
-                    <span class="bubble">📅 Plan Outfits</span>
-                    <span class="bubble">✅ Track What You Wore</span>
-                    <span class="bubble">🔄 Sync with Apple Calendar</span>
-                    <span class="bubble">🌦️ Weather Aware</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Subscription / Pricing Section -->
+    <!-- ══════════════════════════════════
+         PRICING — Klosyt+ Pantone card
+         ══════════════════════════════════ -->
     <section id="pricing" class="container section-spacing text-center reveal">
-
         <div style="max-width: 500px; margin: 0 auto;">
-            <div class="premium-card" style="padding: 3rem 2rem;">
+            <div class="pantone-card" style="--swatch: #ffcc00; --swatch-2: #ff9500;">
 
-                <!-- Crown icon -->
-                <div style="font-size: 4rem; margin-bottom: 1rem;">👑</div>
-
-                <!-- Title pill -->
-                <div
-                    style="display: inline-block; padding: 10px 28px; border-radius: 100px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); margin-bottom: 1.5rem;">
-                    <span style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Klosyt+</span>
+                <!-- Crown hero -->
+                <div class="pantone-card-hero">
+                    <div class="glass-emoji-tile">👑</div>
                 </div>
 
-                <!-- Trial text -->
-                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">
-                    Try everything free for 30 days, then just $0.99/month. Cancel anytime. Never lose access to your
-                    library.
-                </p>
-
-                <!-- Feature rows matching app paywall -->
-                <div style="text-align: left; display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem;">
-                    <div class="paywall-feature">
-                        <span class="paywall-icon"
-                            style="background: rgba(192, 115, 255, 0.2); color: #c073ff;">✨</span>
-                        <div>
-                            <strong>AI Stylist</strong>
-                            <p>Weather-aware outfit suggestions</p>
-                        </div>
-                    </div>
-                    <div class="paywall-feature">
-                        <span class="paywall-icon" style="background: rgba(0, 122, 255, 0.2); color: #007aff;">👗</span>
-                        <div>
-                            <strong>Outfits</strong>
-                            <p>Mix, match, and save your looks</p>
-                        </div>
-                    </div>
-                    <div class="paywall-feature">
-                        <span class="paywall-icon" style="background: rgba(52, 199, 89, 0.2); color: #34c759;">📅</span>
-                        <div>
-                            <strong>Calendar</strong>
-                            <p>Plan outfits for any day or event</p>
-                        </div>
-                    </div>
-                    <div class="paywall-feature">
-                        <span class="paywall-icon"
-                            style="background: rgba(255, 153, 64, 0.2); color: #ff9940;">🎨</span>
-                        <div>
-                            <strong>Themes & Wallpapers</strong>
-                            <p>Customize your app's look</p>
-                        </div>
-                    </div>
-                    <div class="paywall-feature">
-                        <span class="paywall-icon"
-                            style="background: rgba(102, 191, 255, 0.2); color: #66bfff;">🔓</span>
-                        <div>
-                            <strong>Klosyt is Always Free</strong>
-                            <p>Never lose access to your library</p>
-                        </div>
-                    </div>
+                <!-- Gold swatch strip -->
+                <div class="pantone-card-swatch dual">
+                    <div class="swatch-primary"></div>
+                    <div class="swatch-secondary"></div>
                 </div>
 
-                <!-- Support text -->
-                <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-bottom: 2rem;">
-                    Your subscription supports real-time weather data and continued development.
-                </p>
+                <!-- Details body -->
+                <div class="pantone-card-body" style="text-align: left;">
 
-                <!-- Subscribe button -->
-                <a href="#" onclick="return false;" class="btn btn-primary"
-                    style="width: 100%; max-width: 350px; display: inline-block;">Get Klosyt (Coming Soon)</a>
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <div
+                            style="display: inline-block; padding: 10px 28px; border-radius: 100px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);">
+                            <span
+                                style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Klosyt+</span>
+                        </div>
+                    </div>
+
+                    <p
+                        style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem; text-align: center;">
+                        Try everything free for 30 days, then just $0.99/month. Cancel anytime. Never lose access to
+                        your
+                        library.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 2rem;">
+                        <div class="paywall-feature">
+                            <span class="paywall-icon"
+                                style="background: rgba(192, 115, 255, 0.2); color: #c073ff;">✨</span>
+                            <div>
+                                <strong>AI Stylist</strong>
+                                <p>Weather-aware outfit suggestions</p>
+                            </div>
+                        </div>
+                        <div class="paywall-feature">
+                            <span class="paywall-icon"
+                                style="background: rgba(0, 122, 255, 0.2); color: #007aff;">👔</span>
+                            <div>
+                                <strong>Outfits</strong>
+                                <p>Mix, match, and save your looks</p>
+                            </div>
+                        </div>
+                        <div class="paywall-feature">
+                            <span class="paywall-icon"
+                                style="background: rgba(52, 199, 89, 0.2); color: #34c759;">📅</span>
+                            <div>
+                                <strong>Calendar</strong>
+                                <p>Plan outfits for any day or event</p>
+                            </div>
+                        </div>
+                        <div class="paywall-feature">
+                            <span class="paywall-icon"
+                                style="background: rgba(255, 153, 64, 0.2); color: #ff9940;">🎨</span>
+                            <div>
+                                <strong>Themes & Wallpapers</strong>
+                                <p>Customize your app's look</p>
+                            </div>
+                        </div>
+                        <div class="paywall-feature">
+                            <span class="paywall-icon"
+                                style="background: rgba(102, 191, 255, 0.2); color: #66bfff;">🔓</span>
+                            <div>
+                                <strong>Klosyt is Always Free</strong>
+                                <p>Never lose access to your library</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-bottom: 2rem; text-align: center;">
+                        Your subscription supports real-time weather data and continued development.
+                    </p>
+
+                    <div style="text-align: center;">
+                        <a href="#" onclick="return false;" class="btn btn-primary"
+                            style="width: 100%; max-width: 350px; display: inline-block;">Get Klosyt (Coming Soon)</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer>
@@ -567,10 +753,9 @@
         </div>
     </footer>
 
-    <!-- Simplified Animation Script -->
+    <!-- Scroll Reveal -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Scroll reveal animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -584,7 +769,6 @@
             });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
         });
     </script>
     <script src="script.js"></script>
