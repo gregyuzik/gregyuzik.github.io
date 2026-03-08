@@ -56,6 +56,8 @@ function setWallpaper(asset) {
     // Persist wallpaper asset name
     localStorage.setItem('klosyt_wallpaper', asset);
     sessionStorage.setItem('klosyt_wallpaper', asset);
+    // Mark as manually selected (disables auto color-scheme switching)
+    localStorage.setItem('klosyt_wallpaper_manual', 'true');
     // Sync the inline-script theme key (short name, e.g. 'blue' from 'wallpaper_blue.jpg')
     const shortName = asset.replace('wallpaper_', '').replace('.jpg', '');
     localStorage.setItem('klosyt_theme', shortName);
@@ -77,14 +79,19 @@ function rotateWallpaper() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Restore user's saved theme (localStorage persists across visits),
-    // fall back to session choice, then default to Blue Velvet
-    const wp = localStorage.getItem('klosyt_wallpaper')
-        || sessionStorage.getItem('klosyt_wallpaper')
-        || 'wallpaper_blue.jpg';
+    // ---------- Default wallpaper: Blue Velvet ----------
+    // Always default to Blue Velvet. Light/dark card styling is handled
+    // entirely by CSS @media (prefers-color-scheme) rules in styles.css.
+    const autoWallpaper = 'wallpaper_blue.jpg';
+
+    const isManual = localStorage.getItem('klosyt_wallpaper_manual') === 'true';
+    const wp = isManual
+        ? (localStorage.getItem('klosyt_wallpaper') || autoWallpaper)
+        : autoWallpaper;
+
     document.querySelector('.hero-background').style.backgroundImage = `url('assets/${wp}')`;
-    sessionStorage.setItem('klosyt_wallpaper', wp);
     localStorage.setItem('klosyt_wallpaper', wp);
+    sessionStorage.setItem('klosyt_wallpaper', wp);
     // Keep klosyt_theme in sync with wallpaper asset
     const shortName = wp.replace('wallpaper_', '').replace('.jpg', '');
     localStorage.setItem('klosyt_theme', shortName);
@@ -95,6 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic App Icon update — match icons to current theme
     updateIcons(getThemeIcon(wp));
+
+
+
 
     const glassPanel = document.querySelector('.glass-panel');
     const container = document.querySelector('.placeholder-container');
@@ -130,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Quick Snappy Scroll Animations (Intersection Observer)
-    const animateElements = document.querySelectorAll('.feature-card, .cta-section .glass-panel, .section-title, .slide-up-element, .display-title:not(.hero-section .display-title), .subtitle:not(.hero-section .subtitle), .glass-panel:not(.hero-section .glass-panel)');
+    const animateElements = document.querySelectorAll('.pantone-card, .cta-section .glass-panel, .section-title, .slide-up-element, .display-title:not(.hero-section .display-title), .subtitle:not(.hero-section .subtitle), .glass-panel:not(.hero-section .glass-panel)');
 
     // Add initial state class to elements
     animateElements.forEach(el => {
