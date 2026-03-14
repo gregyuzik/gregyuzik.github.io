@@ -1,6 +1,6 @@
 # Terms of Use (EULA)
 
-**Last Updated: February 21, 2026**
+**Last Updated: March 13, 2026**
 
 Please read these Terms of Use ("Terms") carefully before using Klosyt ("the App"), developed by the Klosyt team ("Developer," "we," "us," or "our").
 
@@ -11,6 +11,8 @@ By downloading, installing, or using Klosyt, you agree to be bound by these Term
 ## Description of Service
 
 Klosyt is a wardrobe management application available on iOS, macOS, tvOS, and visionOS. It allows you to catalog clothing items, create outfits, receive weather-based suggestions, and plan what to wear.
+
+Klosyt's AI Stylist uses real-time weather data provided by Apple WeatherKit to generate personalized outfit suggestions. When you request an outfit suggestion, the AI analyzes current and forecasted weather conditions for your location — such as temperature, precipitation, and wind — alongside your wardrobe to recommend appropriate clothing. All AI processing is performed on-device; weather data is fetched from Apple's servers and is not sent to us or any third party.
 
 ## Your Privacy Comes First
 
@@ -71,4 +73,4 @@ We may update these Terms from time to time. Changes will be reflected by updati
 
 ## Governing Law
 
-These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law provisions.
+These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law provisions. Nothing in these Terms affects any mandatory consumer protection rights you may have under the laws of your country of residence.
