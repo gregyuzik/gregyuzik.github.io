@@ -2106,7 +2106,7 @@ main {
 .lang-dropdown {
     display: none;
     position: absolute;
-    bottom: calc(100% + 8px);
+    top: calc(100% + 8px);
     right: 0;
     min-width: 180px;
     max-height: 400px;
