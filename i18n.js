@@ -113,6 +113,7 @@
     async function setLanguage(locale) {
         if (!SUPPORTED_LOCALES.includes(locale)) locale = 'en';
         localStorage.setItem(STORAGE_KEY, locale);
+        localStorage.setItem('klosyt_lang_explicit', '1');
 
         currentTranslations = await loadTranslations(locale);
         applyTranslations();
@@ -166,6 +167,12 @@
     /* ───── Init ───── */
 
     async function init() {
+        // One-time migration: clear language that was auto-detected by old code.
+        // Only keep the value if the user explicitly chose via the switcher.
+        if (!localStorage.getItem('klosyt_lang_explicit')) {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+
         // Always load English as fallback
         fallbackTranslations = await loadTranslations('en');
 
