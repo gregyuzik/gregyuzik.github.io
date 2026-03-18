@@ -288,16 +288,19 @@
     <!-- Navigation -->
     <div class="nav-container">
         <nav class="glass-nav">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/favicon.png" alt="Klosyt" class="dynamic-app-icon">
-                <span>Klosyt</span>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#pricing" data-i18n="nav.klosytPlus">👑 Klosyt+</a>
-                <a href="support.html" class="active" data-i18n="footer.support">Support</a>
-                <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
-                <a href="javascript:void(0)" onclick="rotateWallpaper()" title="Change wallpaper"><span id="theme-pill"
-                        class="theme-pill">🎨</span></a>
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="assets/AppIcon-blue.png" alt="Klosyt" class="nav-icon dynamic-app-icon">
+                    <span class="nav-logo-text">Klosyt</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#pricing" class="nav-link" data-i18n="nav.klosytPlus">👑 Klosyt+</a>
+                    <a href="support.html" class="nav-link active" data-i18n="footer.support">Support</a>
+                    <a href="privacy.html" class="nav-link" data-i18n="footer.privacy">Privacy</a>
+                    <button class="theme-pill" id="theme-pill" onclick="rotateWallpaper()" title="Change theme">
+                        🔵 <span class="theme-name-text">Blue Velvet</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </div>
