@@ -353,8 +353,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    border-radius: 24px;
+    padding: 24px;
+    border-radius: 36px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(30px) saturate(1.8);
     -webkit-backdrop-filter: blur(30px) saturate(1.8);
@@ -366,19 +366,12 @@ body {
     overflow: hidden;
 }
 
-.icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.icon-grid img {
-    width: 88px;
-    height: 88px;
-    border-radius: 18px;
+.hero-app-icon {
+    width: 176px;
+    height: 176px;
+    border-radius: 36px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
 }
 
 /* Multiple tiles in a row */
@@ -1354,17 +1347,14 @@ main {
     }
 
     .icon-grid-glass {
-        padding: 8px;
+        padding: 16px;
+        border-radius: 28px;
     }
 
-    .icon-grid {
-        gap: 5px;
-    }
-
-    .icon-grid img {
-        width: 52px;
-        height: 52px;
-        border-radius: 12px;
+    .hero-app-icon {
+        width: 120px;
+        height: 120px;
+        border-radius: 28px;
     }
 
     .pantone-card-hero {
@@ -1809,7 +1799,7 @@ main {
             inset 0 1px 1px rgba(255, 255, 255, 0.5);
     }
 
-    .icon-grid img {
+    .hero-app-icon {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
 
