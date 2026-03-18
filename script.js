@@ -28,14 +28,11 @@ function getThemeIcon(asset) {
 
 function updateIcons(iconFile) {
     const iconPath = `assets/${iconFile}`;
-    // Update all dynamic app icon images (nav logo + hero hanger)
     document.querySelectorAll('.dynamic-app-icon').forEach(img => {
         img.src = iconPath;
     });
-    // Update favicon
     const favicon = document.querySelector('link[rel="icon"]');
     if (favicon) favicon.href = iconPath;
-    // Update apple-touch-icon
     const touchIcon = document.querySelector('link[rel="apple-touch-icon"]');
     if (touchIcon) touchIcon.href = iconPath;
 }
@@ -46,28 +43,22 @@ function setWallpaper(asset) {
     const img = new Image();
     img.onload = () => {
         bg.style.transition = 'opacity 0.4s ease';
-        bg.style.opacity = '0.3';
+        bg.style.opacity = '0.15';
         setTimeout(() => {
             bg.style.backgroundImage = `url('assets/${asset}')`;
-            bg.style.opacity = '1';
+            bg.style.opacity = '0.4';
         }, 400);
     };
     img.src = `assets/${asset}`;
-    // Persist wallpaper asset name
     localStorage.setItem('klosyt_wallpaper', asset);
     sessionStorage.setItem('klosyt_wallpaper', asset);
-    // Mark as manually selected (disables auto color-scheme switching)
     localStorage.setItem('klosyt_wallpaper_manual', 'true');
-    // Sync the inline-script theme key (short name, e.g. 'blue' from 'wallpaper_blue.jpg')
     const shortName = asset.replace('wallpaper_', '').replace('.jpg', '');
     localStorage.setItem('klosyt_theme', shortName);
     sessionStorage.setItem('klosyt_theme', shortName);
-    // Update CSS variable so it stays in sync
     document.documentElement.style.setProperty('--current-wallpaper', `url('assets/${asset}')`);
-    // Update theme pill text
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(asset);
-    // Update icons to match theme
     updateIcons(getThemeIcon(asset));
 }
 
@@ -79,105 +70,49 @@ function rotateWallpaper() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ---------- Default wallpaper: Blue Velvet ----------
-    // Always default to Blue Velvet. Light/dark card styling is handled
-    // entirely by CSS @media (prefers-color-scheme) rules in styles.css.
+    // Default wallpaper: Blue Velvet
     const autoWallpaper = 'wallpaper_blue.jpg';
-
     const isManual = localStorage.getItem('klosyt_wallpaper_manual') === 'true';
     const wp = isManual
         ? (localStorage.getItem('klosyt_wallpaper') || autoWallpaper)
         : autoWallpaper;
 
-    document.querySelector('.hero-background').style.backgroundImage = `url('assets/${wp}')`;
+    const bg = document.querySelector('.hero-background');
+    if (bg) bg.style.backgroundImage = `url('assets/${wp}')`;
     localStorage.setItem('klosyt_wallpaper', wp);
     sessionStorage.setItem('klosyt_wallpaper', wp);
-    // Keep klosyt_theme in sync with wallpaper asset
     const shortName = wp.replace('wallpaper_', '').replace('.jpg', '');
     localStorage.setItem('klosyt_theme', shortName);
     sessionStorage.setItem('klosyt_theme', shortName);
-    // Set initial theme pill text
     const pill = document.getElementById('theme-pill');
     if (pill) pill.innerHTML = getThemeName(wp);
-
-    // Dynamic App Icon update — match icons to current theme
     updateIcons(getThemeIcon(wp));
 
+    // Scroll reveal with Intersection Observer
+    const reveals = document.querySelectorAll('.reveal');
 
-
-
-    const glassPanel = document.querySelector('.glass-panel');
-    const container = document.querySelector('.placeholder-container');
-
-    // 3D Tilt Effect on mousemove (only if elements exist)
-    if (glassPanel && container) {
-        container.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
-
-            glassPanel.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-
-        // Reset tilt on mouseleave
-        container.addEventListener('mouseleave', () => {
-            glassPanel.style.transition = 'transform 0.5s ease';
-            glassPanel.style.transform = `rotateY(0deg) rotateX(0deg) translateY(0)`;
-
-            // Remove the transition after it completes so mousemove is responsive again
-            setTimeout(() => {
-                glassPanel.style.transition = 'transform 0.1s ease-out';
-            }, 500);
-        });
-    }
-
-    // Check if form exists before adding listener (it might be removed on some pages)
-    const form = document.querySelector('.notify-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Handle form submit logic here if needed
-        });
-    }
-
-    // Quick Snappy Scroll Animations (Intersection Observer)
-    const animateElements = document.querySelectorAll('.pantone-card, .cta-section .glass-panel, .section-title, .slide-up-element, .display-title:not(.hero-section .display-title), .subtitle:not(.hero-section .subtitle), .glass-panel:not(.hero-section .glass-panel)');
-
-    // Add initial state class to elements
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-    });
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -10% 0px', // Trigger slightly before the bottom
-        threshold: 0
-    };
-
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Ensure inline delay is respected if present
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                // Unobserve after animating once to keep it snappy and permanent
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0
+    });
 
-    // Start observing
-    animateElements.forEach(el => scrollObserver.observe(el));
+    reveals.forEach(el => revealObserver.observe(el));
 
-    // Subtle parallax scroll for floating clothes — middle-layer 3D depth
+    // Subtle parallax scroll for floating clothes
     const floatingClothes = document.getElementById('floating-clothes');
     if (floatingClothes) {
         let ticking = false;
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
-                    // Parallax scroll — items drift up continuously as page scrolls
                     const offset = window.scrollY * 0.35;
                     floatingClothes.style.transform = `translateY(${-offset}px)`;
                     ticking = false;
