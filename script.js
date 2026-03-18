@@ -71,11 +71,38 @@ function setWallpaper(asset) {
     updateIcons(getThemeIcon(asset));
 }
 
-function rotateWallpaper() {
+function buildThemeDropdown() {
+    const switcher = document.getElementById('theme-switcher');
+    const btn = document.getElementById('theme-btn');
+    const dropdown = document.getElementById('theme-dropdown');
+    if (!switcher || !btn || !dropdown) return;
+
     const current = getCurrentWallpaper();
-    const currentIndex = themes.findIndex(t => t.asset === current);
-    const nextIndex = (currentIndex + 1) % themes.length;
-    setWallpaper(themes[nextIndex].asset);
+
+    themes.forEach(t => {
+        const option = document.createElement('button');
+        option.className = 'theme-option';
+        if (t.asset === current) option.classList.add('active');
+        option.textContent = `${t.emoji} ${t.name}`;
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setWallpaper(t.asset);
+            dropdown.querySelectorAll('.theme-option').forEach(o => o.classList.remove('active'));
+            option.classList.add('active');
+            switcher.classList.remove('open');
+        });
+        dropdown.appendChild(option);
+    });
+
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        switcher.classList.toggle('open');
+    });
+
+    document.addEventListener('click', () => {
+        switcher.classList.remove('open');
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,6 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic App Icon update — match icons to current theme
     updateIcons(getThemeIcon(wp));
+
+    // Build theme dropdown
+    buildThemeDropdown();
 
 
 
