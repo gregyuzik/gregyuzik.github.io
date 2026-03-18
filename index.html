@@ -270,8 +270,12 @@
                 <a href="#pricing" data-i18n="nav.klosytPlus">👑 Klosyt+</a>
                 <a href="support.html" data-i18n="footer.support">Support</a>
                 <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
-                <a href="javascript:void(0)" onclick="rotateWallpaper()" title="Change wallpaper"><span id="theme-pill"
-                        class="theme-pill">🎨</span></a>
+                <div class="theme-switcher" id="theme-switcher">
+                    <a href="javascript:void(0)" class="theme-btn" id="theme-btn" title="Change theme">
+                        <span id="theme-pill" class="theme-pill">🎨</span>
+                    </a>
+                    <div class="theme-dropdown" id="theme-dropdown"></div>
+                </div>
             </div>
         </nav>
     </div>
