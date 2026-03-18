@@ -36,26 +36,11 @@
     /* ───── Language detection ───── */
 
     function detectLanguage() {
-        // 1. User's explicit choice
+        // Only use language if the user explicitly chose one via the switcher.
+        // Default to English (the HTML's native language) to avoid flash of
+        // mixed languages from browser auto-detection.
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved && SUPPORTED_LOCALES.includes(saved)) return saved;
-
-        // 2. Browser language
-        const browserLangs = navigator.languages || [navigator.language || 'en'];
-        for (const lang of browserLangs) {
-            // Exact match first
-            if (SUPPORTED_LOCALES.includes(lang)) return lang;
-            // Map common variants
-            if (lang.startsWith('zh')) {
-                if (lang.includes('TW') || lang.includes('HK') || lang.includes('Hant')) return 'zh-Hant';
-                return 'zh-Hans';
-            }
-            if (lang.startsWith('pt') && lang.includes('BR')) return 'pt-BR';
-            if (lang.startsWith('nb') || lang.startsWith('no')) return 'nb';
-            // Base language match
-            const base = lang.split('-')[0];
-            if (SUPPORTED_LOCALES.includes(base)) return base;
-        }
         return 'en';
     }
 
