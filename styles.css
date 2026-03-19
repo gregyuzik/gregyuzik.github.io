@@ -367,6 +367,27 @@ body{
 }
 .lang-row span:hover{background:var(--glass-hover)}
 
+/* ── Legal / Support pages ── */
+
+.legal-content{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:1.25rem}
+.legal-card{border-radius:var(--radius);padding:2rem}
+.legal-card h3{font-size:1.15rem;font-weight:700;margin-bottom:.75rem}
+.legal-card p{color:var(--text-2);line-height:1.7;font-size:.95rem}
+.legal-card p+p{margin-top:.75rem}
+.legal-card ul{color:var(--text-2);line-height:1.8;padding-left:1.5rem;margin-top:.5rem;font-size:.95rem}
+.legal-card a{color:#5ac8fa}
+
+.legal-table{width:100%;border-collapse:collapse;font-size:.88rem;color:var(--text-2);margin-top:.75rem}
+.legal-table th{text-align:left;padding:8px 12px;color:var(--text-1);border-bottom:1px solid var(--glass-border)}
+.legal-table td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.04)}
+
+.faq-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+
+@media(max-width:768px){
+    .faq-grid-2{grid-template-columns:1fr}
+    .legal-card{padding:1.5rem}
+}
+
 /* ── Footer ── */
 
 .foot{padding:4rem 0;position:relative;z-index:1}

@@ -1,695 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Klosyt</title>
+    <title>Privacy Policy — Klosyt</title>
     <meta name="description" content="Our commitment to your privacy at Klosyt.">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/AppIcon.png">
-
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://klosyt.com/privacy.html">
-    <meta property="og:title" content="Privacy Policy - Klosyt">
+    <meta property="og:title" content="Privacy Policy — Klosyt">
     <meta property="og:description" content="Our commitment to your privacy at Klosyt.">
     <meta property="og:image" content="https://klosyt.com/assets/AppIcon.png">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://klosyt.com/privacy.html">
-    <meta name="twitter:title" content="Privacy Policy - Klosyt">
-    <meta name="twitter:description" content="Our commitment to your privacy at Klosyt.">
-    <meta name="twitter:image" content="https://klosyt.com/assets/AppIcon.png">
-
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Theme Loader — Blue Velvet default, persists user choice via localStorage -->
-    <script>
-        (function () {
-            // Restore user's saved theme from localStorage (persists across visits),
-            // fall back to sessionStorage, then default to Blue Velvet
-            let currentTheme = localStorage.getItem('klosyt_theme')
-                || sessionStorage.getItem('klosyt_theme')
-                || 'blue';
-            // Persist to both storage layers
-            localStorage.setItem('klosyt_theme', currentTheme);
-            sessionStorage.setItem('klosyt_theme', currentTheme);
-            document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
-            // Darken lighter themes slightly more for text contrast
-            if (['white', 'yellow', 'pink'].includes(currentTheme)) {
-                document.documentElement.style.setProperty('--bg-brightness', '0.5');
-            } else {
-                document.documentElement.style.setProperty('--bg-brightness', '0.7');
-            }
-        })();
-    </script>
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
-
 <body>
-    <div class="hero-background"></div>
 
-    <!-- Global Floating Clothing Items (parallax middle layer) -->
-    <div id="floating-clothes">
-        <div class="glass-item-card card-orange"
-            style="top: 1.8%; left: 75%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-14deg); animation-delay: 5.3s;">
-            👗</div>
-        <div class="glass-item-card card-green"
-            style="top: 2.7%; left: 2%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(10deg); animation-delay: 2.7s;">
-            👕</div>
-        <div class="glass-item-card card-blue"
-            style="top: 3.4%; left: 88%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(18deg); animation-delay: 2.0s;">
-            👟</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 4.4%; left: 44%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(6deg); animation-delay: 3.6s;">
-            🧥</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 4.6%; left: 33%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(16deg); animation-delay: 4.5s;">
-            👖</div>
-        <div class="glass-item-card card-teal"
-            style="top: 8.7%; left: 74%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-8deg); animation-delay: 0.1s;">
-            🧣</div>
-        <div class="glass-item-card card-blue"
-            style="top: 9.8%; left: 22%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(4deg); animation-delay: 3.7s;">
-            🩱</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 10.1%; left: 44%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-1deg); animation-delay: 5.2s;">
-            👔</div>
-        <div class="glass-item-card card-green"
-            style="top: 10.5%; left: 10%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(1deg); animation-delay: 3.0s;">
-            🧢</div>
-        <div class="glass-item-card card-pink"
-            style="top: 10.5%; left: 93%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-13deg); animation-delay: 2.3s;">
-            🩳</div>
-        <div class="glass-item-card card-green"
-            style="top: 14.6%; left: 32%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-12deg); animation-delay: 5.9s;">
-            👞</div>
-        <div class="glass-item-card card-red"
-            style="top: 14.6%; left: 77%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 1.0s;">
-            🥿</div>
-        <div class="glass-item-card card-orange"
-            style="top: 16.0%; left: 3%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(16deg); animation-delay: 2.4s;">
-            🧤</div>
-        <div class="glass-item-card card-blue"
-            style="top: 16.1%; left: 46%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 5.9s;">
-            👒</div>
-        <div class="glass-item-card card-teal"
-            style="top: 16.4%; left: 98%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(6deg); animation-delay: 0.7s;">
-            🎒</div>
-        <div class="glass-item-card card-pink"
-            style="top: 22.1%; left: 94%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 5.2s;">
-            ⌚</div>
-        <div class="glass-item-card card-blue"
-            style="top: 22.4%; left: 56%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(5deg); animation-delay: 1.7s;">
-            💍</div>
-        <div class="glass-item-card card-pink"
-            style="top: 22.5%; left: 8%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(7deg); animation-delay: 2.7s;">
-            👜</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 22.5%; left: 21%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(4deg); animation-delay: 4.1s;">
-            🧦</div>
-        <div class="glass-item-card card-pink"
-            style="top: 22.8%; left: 71%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-9deg); animation-delay: 4.1s;">
-            🕶️</div>
-        <div class="glass-item-card card-teal"
-            style="top: 27.1%; left: 3%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-8deg); animation-delay: 0.8s;">
-            🧵</div>
-        <div class="glass-item-card card-red"
-            style="top: 28.3%; left: 96%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(11deg); animation-delay: 4.0s;">
-            💎</div>
-        <div class="glass-item-card card-red"
-            style="top: 28.7%; left: 27%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(9deg); animation-delay: 0.9s;">
-            🎀</div>
-        <div class="glass-item-card card-pink"
-            style="top: 29.0%; left: 66%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-6deg); animation-delay: 3.7s;">
-            🩴</div>
-        <div class="glass-item-card card-purple"
-            style="top: 29.4%; left: 47%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-13deg); animation-delay: 2.8s;">
-            👑</div>
-        <div class="glass-item-card card-blue"
-            style="top: 33.4%; left: 43%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(8deg); animation-delay: 2.8s;">
-            🥾</div>
-        <div class="glass-item-card card-purple"
-            style="top: 34.4%; left: 24%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(9deg); animation-delay: 3.0s;">
-            👘</div>
-        <div class="glass-item-card card-red"
-            style="top: 35.2%; left: 66%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(15deg); animation-delay: 0.2s;">
-            🎩</div>
-        <div class="glass-item-card card-pink"
-            style="top: 36.2%; left: 1%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-16deg); animation-delay: 0.1s;">
-            🧶</div>
-        <div class="glass-item-card card-orange"
-            style="top: 36.2%; left: 93%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-7deg); animation-delay: 4.0s;">
-            🩲</div>
-        <div class="glass-item-card card-teal"
-            style="top: 40.2%; left: 87%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(6deg); animation-delay: 1.7s;">
-            👢</div>
-        <div class="glass-item-card card-green"
-            style="top: 40.8%; left: 78%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-16deg); animation-delay: 5.2s;">
-            👛</div>
-        <div class="glass-item-card card-teal"
-            style="top: 41.4%; left: 53%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-3deg); animation-delay: 4.6s;">
-            🎽</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 42.1%; left: 33%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-5deg); animation-delay: 5.1s;">
-            👙</div>
-        <div class="glass-item-card card-green"
-            style="top: 42.5%; left: 6%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(0deg); animation-delay: 3.0s;">
-            👠</div>
-        <div class="glass-item-card card-orange"
-            style="top: 45.9%; left: 24%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(10deg); animation-delay: 2.9s;">
-            💄</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 47.3%; left: 50%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(8deg); animation-delay: 3.0s;">
-            🧲</div>
-        <div class="glass-item-card card-green"
-            style="top: 47.4%; left: 6%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(15deg); animation-delay: 5.9s;">
-            🩰</div>
-        <div class="glass-item-card card-pink"
-            style="top: 47.5%; left: 67%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(11deg); animation-delay: 4.6s;">
-            👕</div>
-        <div class="glass-item-card card-red"
-            style="top: 49.0%; left: 91%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(0deg); animation-delay: 4.5s;">
-            👖</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 52.4%; left: 3%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-8deg); animation-delay: 1.0s;">
-            🧥</div>
-        <div class="glass-item-card card-teal"
-            style="top: 53.4%; left: 94%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(12deg); animation-delay: 3.8s;">
-            🩱</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 53.6%; left: 26%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(5deg); animation-delay: 0.8s;">
-            👗</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 55.3%; left: 75%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(12deg); animation-delay: 0.8s;">
-            🧢</div>
-        <div class="glass-item-card card-red"
-            style="top: 55.5%; left: 56%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-11deg); animation-delay: 6.0s;">
-            👟</div>
-        <div class="glass-item-card card-teal"
-            style="top: 59.0%; left: 9%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 4.1s;">
-            👔</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 60.6%; left: 75%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-14deg); animation-delay: 1.7s;">
-            🧤</div>
-        <div class="glass-item-card card-red"
-            style="top: 60.7%; left: 100%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-6deg); animation-delay: 0.5s;">
-            👞</div>
-        <div class="glass-item-card card-purple"
-            style="top: 60.9%; left: 29%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-4deg); animation-delay: 1.4s;">
-            🧣</div>
-        <div class="glass-item-card card-teal"
-            style="top: 61.1%; left: 51%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(17deg); animation-delay: 4.0s;">
-            🩳</div>
-        <div class="glass-item-card card-purple"
-            style="top: 64.8%; left: 87%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-9deg); animation-delay: 4.3s;">
-            🧦</div>
-        <div class="glass-item-card card-red"
-            style="top: 65.2%; left: 29%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(12deg); animation-delay: 5.8s;">
-            🥿</div>
-        <div class="glass-item-card card-purple"
-            style="top: 65.4%; left: 52%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(1deg); animation-delay: 2.9s;">
-            🎒</div>
-        <div class="glass-item-card card-blue"
-            style="top: 66.2%; left: 7%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(11deg); animation-delay: 2.7s;">
-            👒</div>
-        <div class="glass-item-card card-blue"
-            style="top: 67.0%; left: 67%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(7deg); animation-delay: 5.3s;">
-            👜</div>
-        <div class="glass-item-card card-pink"
-            style="top: 71.4%; left: 96%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-10deg); animation-delay: 4.5s;">
-            🎀</div>
-        <div class="glass-item-card card-teal"
-            style="top: 71.5%; left: 1%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(16deg); animation-delay: 5.2s;">
-            💍</div>
-        <div class="glass-item-card card-blue"
-            style="top: 72.4%; left: 52%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(17deg); animation-delay: 5.1s;">
-            ⌚</div>
-        <div class="glass-item-card card-purple"
-            style="top: 73.3%; left: 25%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(6deg); animation-delay: 6.0s;">
-            🕶️</div>
-        <div class="glass-item-card card-orange"
-            style="top: 74.1%; left: 69%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(16deg); animation-delay: 5.9s;">
-            🧵</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 77.6%; left: 74%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(15deg); animation-delay: 0.8s;">
-            🧶</div>
-        <div class="glass-item-card card-green"
-            style="top: 79.0%; left: 95%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-1deg); animation-delay: 0.1s;">
-            👘</div>
-        <div class="glass-item-card card-blue"
-            style="top: 79.9%; left: 48%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(14deg); animation-delay: 0.3s;">
-            💎</div>
-        <div class="glass-item-card card-green"
-            style="top: 80.1%; left: 12%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(4deg); animation-delay: 4.3s;">
-            👑</div>
-        <div class="glass-item-card card-green"
-            style="top: 80.3%; left: 22%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(16deg); animation-delay: 3.1s;">
-            🩴</div>
-        <div class="glass-item-card card-teal"
-            style="top: 83.9%; left: 96%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 0.9s;">
-            👙</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 85.3%; left: 55%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-9deg); animation-delay: 3.8s;">
-            🩲</div>
-        <div class="glass-item-card card-green"
-            style="top: 85.8%; left: 26%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(1deg); animation-delay: 4.1s;">
-            🎩</div>
-        <div class="glass-item-card card-pink"
-            style="top: 85.8%; left: 74%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(18deg); animation-delay: 1.5s;">
-            👠</div>
-        <div class="glass-item-card card-indigo"
-            style="top: 86.1%; left: 4%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(0deg); animation-delay: 1.5s;">
-            🥾</div>
-        <div class="glass-item-card card-green"
-            style="top: 90.4%; left: 48%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-10deg); animation-delay: 5.1s;">
-            👢</div>
-        <div class="glass-item-card card-green"
-            style="top: 90.8%; left: 100%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-9deg); animation-delay: 2.0s;">
-            💄</div>
-        <div class="glass-item-card card-yellow"
-            style="top: 92.4%; left: 27%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(-18deg); animation-delay: 1.1s;">
-            👛</div>
-        <div class="glass-item-card card-blue"
-            style="top: 92.5%; left: 71%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(0deg); animation-delay: 4.0s;">
-            🩰</div>
-        <div class="glass-item-card card-pink"
-            style="top: 93.4%; left: 0%; width: 100px; height: 100px; font-size: 3rem; transform: rotate(5deg); animation-delay: 2.7s;">
-            🎽</div>
-    </div>
+<div class="mesh-bg">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+</div>
 
-
-    <!-- Navigation -->
-    <div class="nav-container">
-        <nav class="glass-nav">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/favicon.png" alt="Klosyt" class="dynamic-app-icon">
-                <span>Klosyt</span>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#pricing" data-i18n="nav.klosytPlus">👑 Klosyt+</a>
-                <a href="support.html" data-i18n="footer.support">Support</a>
-                <a href="privacy.html" class="active" data-i18n="footer.privacy">Privacy</a>
-                <a href="javascript:void(0)" onclick="rotateWallpaper()" title="Change wallpaper"><span id="theme-pill"
-                        class="theme-pill">🎨</span></a>
+<header class="nav-wrap">
+    <nav class="glass nav-bar">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/favicon.png" alt="Klosyt" class="dynamic-app-icon nav-icon">
+            <span>Klosyt</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#features" data-i18n="nav.features">Features</a>
+            <a href="index.html#pricing" data-i18n="nav.klosytPlus">Klosyt+</a>
+            <a href="support.html" data-i18n="nav.support">Support</a>
+            <div class="theme-switcher" id="theme-switcher">
+                <button class="theme-toggle" id="theme-btn" aria-label="Change theme">
+                    <span id="theme-pill">🎨</span>
+                </button>
+                <div class="theme-menu glass" id="theme-dropdown"></div>
             </div>
-        </nav>
-    </div>
-
-    <main class="content-wrapper">
-        <section class="support-header container">
-            <div class="pantone-card" style="--swatch: #5856d6; --swatch-2: #007aff; max-width: 560px; margin: 0 auto;">
-                <div class="pantone-card-hero">
-                    <div class="glass-emoji-tile">🔒</div>
-                </div>
-                <div class="pantone-card-swatch dual">
-                    <div class="swatch-primary"></div>
-                    <div class="swatch-secondary"></div>
-                </div>
-                <div class="pantone-card-body" style="text-align: center;">
-                    <h1 class="card-title card-title-large" data-i18n="privacy.title">Privacy Policy</h1>
-                    <p class="card-description" data-i18n="privacy.lastUpdated">Last Updated: March 13, 2026</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="container" style="max-width: 900px; margin: 0 auto; padding-top: 2rem;">
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.promiseTitle">Our Privacy Promise</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.promiseOwner">
-                    Klosyt is owned, operated, and maintained by Gregory Yuzik ("us", or "we").
-                </p>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1rem;" data-i18n="privacy.promiseText">
-                    Your privacy isn't just a feature of Klosyt — it's the foundation. <strong>We do not collect,
-                        store, transmit, or have access to any of your personal data. Period.</strong>
-                </p>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1rem;" data-i18n="privacy.promiseDetail">
-                    Klosyt was built from the ground up so that your wardrobe, your photos, and your personal
-                    information never leave your device or your personal iCloud account. We cannot see your data,
-                    and we designed it that way on purpose.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.zeroTitle">Zero Data Collection</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="privacy.zeroIntro">
-                    We want to be completely transparent: <strong>Klosyt collects nothing.</strong>
-                </p>
-                <table style="width: 100%; border-collapse: collapse; color: var(--text-secondary); font-size: 0.9rem;">
-                    <thead>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                            <th style="text-align: left; padding: 8px 12px; color: var(--text-primary);" data-i18n="privacy.tableHeaderType">Data Type
-                            </th>
-                            <th style="text-align: center; padding: 8px 12px; color: var(--text-primary);" data-i18n="privacy.tableHeaderCollected">
-                                Collected?</th>
-                            <th style="text-align: left; padding: 8px 12px; color: var(--text-primary);" data-i18n="privacy.tableHeaderDetails">Details
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tablePhotos">Photos &amp; Images</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tablePhotosDetail">Stored only on your device and your personal iCloud
-                                account. We never receive or access them.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableLocation">Location</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableLocationDetail">Weather features use Apple's WeatherKit, which processes
-                                location entirely on Apple's servers. Your location is never sent to us.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableWardrobe">Wardrobe Data</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableWardrobeDetail">Clothing items, outfits, calendar entries, and
-                                preferences stay on your device and in your personal iCloud account.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableNames">Names or Emails</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableNamesDetail">We do not collect any personally identifiable
-                                information.</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableAnalytics">Usage Analytics</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableAnalyticsDetail">We do not track how you use the App.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableAds">Advertising Data</td>
-                            <td style="padding: 8px 12px; text-align: center;" data-i18n="privacy.tableNo">❌ No</td>
-                            <td style="padding: 8px 12px;" data-i18n="privacy.tableAdsDetail">There are no ads in Klosyt and no advertising SDKs.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.noTrackingTitle">No Tracking. No Analytics. No Exceptions.</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.noTrackingText">
-                    Klosyt contains <strong>zero</strong> analytics frameworks, <strong>zero</strong> advertising
-                    SDKs, and <strong>zero</strong> tracking technologies. We do not track you across apps or
-                    websites. We do not build profiles. We do not sell data — because we don't have any to sell.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.diagnosticsTitle">The Only Exception: Voluntary Diagnostics</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.diagnosticsText">
-                    If you experience an issue and choose to contact us for support, you may use the in-app
-                    diagnostic sharing feature to send us a report. This report may include your device model, OS
-                    version, app version, and storage statistics. <strong>This only happens when you explicitly
-                        choose to share it.</strong> We use this information solely to troubleshoot your issue and
-                    do not retain it beyond that purpose.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.dataYoursTitle">Your Data Stays Yours</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.dataYoursText">
-                    All of your content — photos, clothing items, outfits, preferences — is stored
-                    <strong>exclusively</strong> on your device and in your personal iCloud account using Apple's
-                    CloudKit. Your iCloud data is governed by <a href="https://www.apple.com/legal/privacy/"
-                        style="color: var(--accent-color);">Apple's Privacy Policy</a> and protected by Apple's
-                    encryption. We have no access to it whatsoever.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.permissionsTitle">Device Permissions</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="privacy.permissionsIntro">
-                    Klosyt may request the following device permissions. These are used entirely on-device and no
-                    data from these permissions is ever sent to us:
-                </p>
-                <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
-                    <li data-i18n="privacy.permCamera"><strong>Camera</strong> (iOS) — Used to photograph your clothing items. Photos are saved to
-                        your device and your personal iCloud account only. We never receive or access your images.
-                    </li>
-                    <li data-i18n="privacy.permLocation"><strong>Location</strong> — Used to provide weather-based outfit suggestions through Apple's
-                        WeatherKit. Your location is sent only to Apple's servers for weather data — it is never
-                        sent to us or any third party.</li>
-                    <li data-i18n="privacy.permCalendar"><strong>Calendar</strong> (iOS) — Used to save planned outfits to a dedicated Klosyt
-                        calendar. The App only reads and writes to its own calendar — your personal events are never
-                        accessed.</li>
-                    <li data-i18n="privacy.permNotifications"><strong>Notifications</strong> — Klosyt uses local notifications only (e.g., outfit
-                        reminders). These are processed entirely on your device and are never sent through our
-                        servers.</li>
-                </ul>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.appleServicesTitle">Apple Platform Services</h3>
-                <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
-                    <li data-i18n="privacy.appleWeatherKit"><strong>Apple WeatherKit</strong> — Provides weather data for outfit suggestions. Requests
-                        are processed by Apple's servers, not ours.</li>
-                    <li data-i18n="privacy.appleStoreKit"><strong>Apple StoreKit</strong> — Handles subscription purchases. All payment information is
-                        managed by Apple. We never receive or store your payment details.</li>
-                    <li data-i18n="privacy.appleCloudKit"><strong>Apple CloudKit</strong> — Syncs your wardrobe across your devices through your
-                        personal iCloud account. We cannot access this data.</li>
-                </ul>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1rem;" data-i18n="privacy.applePrivacyLink">
-                    For more information, see <a href="https://www.apple.com/legal/privacy/"
-                        style="color: var(--accent-color);">Apple's Privacy Policy</a>.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.subscriptionsTitle">Subscriptions</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.subscriptionsText">
-                    Klosyt+ is an optional auto-renewable subscription processed entirely by Apple through the App
-                    Store. We do not have access to your payment information. You can manage or cancel your
-                    subscription at any time in your Apple ID settings.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.childrensTitle">Children's Privacy</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.childrensText">
-                    We do not knowingly collect personal information from anyone, including children under 13. Since
-                    Klosyt collects no personal information from any user, there is no age-specific data handling
-                    required.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.internationalTitle">Your Rights (International)</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.internationalText">
-                    Regardless of where you live, Klosyt's privacy-first architecture means your rights are inherently protected:
-                </p>
-                <ul style="color: var(--text-secondary); line-height: 1.8; margin-top: 0.75rem; padding-left: 1.25rem;">
-                    <li data-i18n="privacy.internationalAccess"><strong>Right of Access</strong> — All your data is on your device and in your personal iCloud account. You have full access at all times.</li>
-                    <li data-i18n="privacy.internationalRectification"><strong>Right to Rectification</strong> — You can edit or update any data directly within the app.</li>
-                    <li data-i18n="privacy.internationalErasure"><strong>Right to Erasure</strong> — Delete items within the app or delete the app itself to remove all local data. iCloud data can be managed through your Apple ID settings.</li>
-                    <li data-i18n="privacy.internationalPortability"><strong>Right to Data Portability</strong> — Your data is stored in your personal iCloud account under your control.</li>
-                    <li data-i18n="privacy.internationalObjection"><strong>Right to Object</strong> — Since we perform no processing of your data, there is nothing to object to.</li>
-                </ul>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 0.75rem;" data-i18n="privacy.internationalGdpr">
-                    For users in the European Economic Area (EEA), these rights are guaranteed under the General Data Protection Regulation (GDPR). For users in Brazil, these rights are provided under the Lei Geral de Proteção de Dados (LGPD).
-                </p>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 0.5rem;" data-i18n="privacy.internationalDpo">
-                    For any privacy-related inquiries, contact us at <a href="mailto:support@Klosyt.com" style="color: var(--accent-color);">support@Klosyt.com</a>.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.changesTitle">Changes to This Policy</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.changesText">
-                    We may update this Privacy Policy from time to time. Changes will be reflected by updating the
-                    "Last Updated" date above. Continued use of the App after changes constitutes acceptance of the
-                    updated policy.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="privacy.contactTitle">Contact Us</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="privacy.contactText">
-                    If you have any questions or concerns about this Privacy Policy, please contact Klosyt at
-                    <a href="mailto:support@Klosyt.com" style="color: var(--accent-color);">support@Klosyt.com</a>.
-                </p>
-            </div>
-            </div>
-        </section>
-
-        <section class="container" style="padding-top: 3rem;">
-            <div class="pantone-card" style="--swatch: #ff9500; --swatch-2: #ff3b30; max-width: 560px; margin: 0 auto;">
-                <div class="pantone-card-hero">
-                    <div class="glass-emoji-tile">📜</div>
-                </div>
-                <div class="pantone-card-swatch dual">
-                    <div class="swatch-primary"></div>
-                    <div class="swatch-secondary"></div>
-                </div>
-                <div class="pantone-card-body" style="text-align: center;">
-                    <h1 class="card-title card-title-large" id="terms" data-i18n="terms.title">Terms of Use (EULA)</h1>
-                    <p class="card-description" data-i18n="terms.lastUpdated">Last Updated: March 13, 2026</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="container" style="max-width: 900px; margin: 0 auto; padding-top: 2rem;">
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.acceptanceTitle">Acceptance of Terms</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.acceptanceText">
-                    By downloading, installing, or using Klosyt ("the App"), you agree to be bound by these Terms.
-                    If you do not agree, do not use the App.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.serviceTitle">Description of Service</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.serviceText">
-                    Klosyt is a wardrobe management application available on iOS, macOS, tvOS, and visionOS. It
-                    allows you to catalog clothing items, create outfits, receive weather-based suggestions, and
-                    plan what to wear.
-                </p>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1rem;" data-i18n="terms.serviceAiText">
-                    Klosyt's AI Stylist uses real-time weather data provided by Apple WeatherKit to generate
-                    personalized outfit suggestions. When you request an outfit suggestion, the AI analyzes
-                    current and forecasted weather conditions for your location — such as temperature,
-                    precipitation, and wind — alongside your wardrobe to recommend appropriate clothing. All
-                    AI processing is performed on-device; weather data is fetched from Apple's servers and is
-                    not sent to us or any third party.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.privacyTitle">Your Privacy Comes First</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.privacyText">
-                    We believe your personal data belongs to you and only you. Klosyt is architected so that
-                    <strong>we never collect, access, or store any of your personal information.</strong> Your
-                    photos, wardrobe data, and preferences remain exclusively on your device and in your personal
-                    iCloud account.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.ownershipTitle">Your Content, Your Ownership</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.ownershipText">
-                    Everything you create in Klosyt — photos, clothing items, outfits, preferences, and all other
-                    content — <strong>belongs entirely to you.</strong> Your data is stored on your device and in
-                    your personal iCloud account. We do not access, collect, or claim any rights to your content. If
-                    you delete the App, your local data is removed with it; your iCloud data is managed through your
-                    Apple ID settings.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.subscriptionsTitle">Subscriptions</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.subscriptionsText">
-                    Klosyt offers an optional auto-renewable subscription ("Klosyt+") that unlocks premium features
-                    including AI outfit suggestions, outfit planning, calendar tracking, and themes. <strong>The
-                        free tier provides unlimited wardrobe storage and core functionality forever</strong> — you
-                    will never lose access to your clothing library.
-                </p>
-                <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem; margin-top: 1rem;">
-                    <li data-i18n="terms.subBilling1">Payment is charged to your Apple ID account at confirmation of purchase.</li>
-                    <li data-i18n="terms.subBilling2">Subscriptions automatically renew unless canceled at least 24 hours before the end of the
-                        current billing period.</li>
-                    <li data-i18n="terms.subBilling3">Your account will be charged for renewal within 24 hours prior to the end of the current
-                        period.</li>
-                    <li data-i18n="terms.subBilling4">You can manage and cancel subscriptions in your Apple ID account settings at any time.</li>
-                </ul>
-                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1rem;" data-i18n="terms.subTrialText">
-                    Klosyt+ may include a free trial period. If you do not cancel before the trial ends, you will be
-                    automatically charged the subscription price.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.ipTitle">Intellectual Property</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.ipText">
-                    The App, including its design, code, features, and branding, is our intellectual property and is
-                    protected by applicable copyright and trademark laws. You may not copy, modify, distribute, or
-                    reverse-engineer any part of the App.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.acceptableUseTitle">Acceptable Use</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.acceptableUseIntro">You agree not to:</p>
-                <ul style="color: var(--text-secondary); line-height: 1.8; margin-top: 0.5rem; padding-left: 1.25rem;">
-                    <li data-i18n="terms.acceptableUse1">Use the App for any unlawful purpose</li>
-                    <li data-i18n="terms.acceptableUse2">Attempt to reverse-engineer, decompile, or disassemble the App</li>
-                    <li data-i18n="terms.acceptableUse3">Circumvent any security or access controls</li>
-                    <li data-i18n="terms.acceptableUse4">Redistribute or resell the App or any part of it</li>
-                </ul>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.disclaimerTitle">Disclaimer of Warranties</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.disclaimerText">
-                    The App is provided "as is" and "as available" without warranties of any kind, either express or
-                    implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful
-                    components. Weather data and outfit suggestions are provided for informational purposes only.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.liabilityTitle">Limitation of Liability</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.liabilityText">
-                    To the maximum extent permitted by law, we shall not be liable for any indirect, incidental,
-                    special, consequential, or punitive damages arising from your use of the App, including but not
-                    limited to loss of data, loss of profits, or damage to your device.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.thirdPartyTitle">Third-Party Services</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.thirdPartyText">
-                    The App uses Apple services including iCloud (CloudKit), WeatherKit, and StoreKit. Your use of
-                    these services is subject to Apple's terms and conditions. We are not responsible for the
-                    availability or performance of third-party services.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.terminationTitle">Termination</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.terminationText">
-                    We reserve the right to terminate or suspend access to the App at our discretion, without notice,
-                    for conduct that we believe violates these Terms or is harmful to other users or us.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.changesToTermsTitle">Changes to Terms</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.changesToTermsText">
-                    We may update these Terms from time to time. Changes will be reflected by updating the "Last
-                    Updated" date. Continued use of the App after changes constitutes acceptance of the updated
-                    Terms.
-                </p>
-            </div>
-
-            <div class="contact-card glass-panel-sm" style="margin-top: 2rem;">
-                <h3 data-i18n="terms.governingLawTitle">Governing Law</h3>
-                <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="terms.governingLawText">
-                    These Terms shall be governed by and construed in accordance with the laws of the United States,
-                    without regard to conflict of law provisions. Nothing in these Terms affects any mandatory consumer
-                    protection rights you may have under the laws of your country of residence.
-                </p>
-            </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="glass-footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="support.html" data-i18n="footer.support">Support</a>
-                <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
-            </div>
-            <p class="copyright" data-i18n="footer.copyright">&copy; 2026 Klosyt. All rights reserved.</p>
         </div>
-    </footer>
+    </nav>
+</header>
 
-    <script src="script.js"></script>
-    <script src="i18n.js"></script>
+<!-- Privacy Policy -->
+<section class="section" style="padding-top:7rem">
+    <div class="wrap tc">
+        <h1 class="sec-title fade-up" data-i18n="privacy.title">Privacy Policy</h1>
+        <p class="hero-sub fade-up" data-i18n="privacy.lastUpdated">Last Updated: March 13, 2026</p>
+    </div>
+</section>
+
+<section class="section" style="padding-top:0">
+    <div class="wrap legal-content">
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.promiseTitle">Our Privacy Promise</h3>
+            <p data-i18n="privacy.promiseOwner">Klosyt is owned, operated, and maintained by Gregory Yuzik ("us", or "we").</p>
+            <p data-i18n="privacy.promiseText">Your privacy isn't just a feature of Klosyt — it's the foundation. <strong>We do not collect, store, transmit, or have access to any of your personal data. Period.</strong></p>
+            <p data-i18n="privacy.promiseDetail">Klosyt was built from the ground up so that your wardrobe, your photos, and your personal information never leave your device or your personal iCloud account. We cannot see your data, and we designed it that way on purpose.</p>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.zeroTitle">Zero Data Collection</h3>
+            <p data-i18n="privacy.zeroIntro">We want to be completely transparent: <strong>Klosyt collects nothing.</strong></p>
+            <table class="legal-table">
+                <thead><tr><th data-i18n="privacy.tableHeaderType">Data Type</th><th data-i18n="privacy.tableHeaderCollected">Collected?</th><th data-i18n="privacy.tableHeaderDetails">Details</th></tr></thead>
+                <tbody>
+                    <tr><td data-i18n="privacy.tablePhotos">Photos &amp; Images</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tablePhotosDetail">Stored only on your device and your personal iCloud account.</td></tr>
+                    <tr><td data-i18n="privacy.tableLocation">Location</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tableLocationDetail">Weather features use Apple's WeatherKit. Your location is never sent to us.</td></tr>
+                    <tr><td data-i18n="privacy.tableWardrobe">Wardrobe Data</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tableWardrobeDetail">Stays on your device and in your personal iCloud account.</td></tr>
+                    <tr><td data-i18n="privacy.tableNames">Names or Emails</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tableNamesDetail">We do not collect any personally identifiable information.</td></tr>
+                    <tr><td data-i18n="privacy.tableAnalytics">Usage Analytics</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tableAnalyticsDetail">We do not track how you use the App.</td></tr>
+                    <tr><td data-i18n="privacy.tableAds">Advertising Data</td><td data-i18n="privacy.tableNo">❌ No</td><td data-i18n="privacy.tableAdsDetail">There are no ads in Klosyt and no advertising SDKs.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.noTrackingTitle">No Tracking. No Analytics. No Exceptions.</h3>
+            <p data-i18n="privacy.noTrackingText">Klosyt contains <strong>zero</strong> analytics frameworks, <strong>zero</strong> advertising SDKs, and <strong>zero</strong> tracking technologies. We do not track you across apps or websites. We do not build profiles. We do not sell data — because we don't have any to sell.</p>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.diagnosticsTitle">The Only Exception: Voluntary Diagnostics</h3>
+            <p data-i18n="privacy.diagnosticsText">If you experience an issue and choose to contact us for support, you may use the in-app diagnostic sharing feature to send us a report. <strong>This only happens when you explicitly choose to share it.</strong></p>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.dataYoursTitle">Your Data Stays Yours</h3>
+            <p data-i18n="privacy.dataYoursText">All of your content is stored <strong>exclusively</strong> on your device and in your personal iCloud account using Apple's CloudKit. Your iCloud data is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> and protected by Apple's encryption.</p>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.permissionsTitle">Device Permissions</h3>
+            <p data-i18n="privacy.permissionsIntro">Klosyt may request the following device permissions. No data from these permissions is ever sent to us:</p>
+            <ul>
+                <li data-i18n="privacy.permCamera"><strong>Camera</strong> (iOS) — Used to photograph your clothing items.</li>
+                <li data-i18n="privacy.permLocation"><strong>Location</strong> — Used for weather-based outfit suggestions through Apple's WeatherKit.</li>
+                <li data-i18n="privacy.permCalendar"><strong>Calendar</strong> (iOS) — Used to save planned outfits to a dedicated Klosyt calendar.</li>
+                <li data-i18n="privacy.permNotifications"><strong>Notifications</strong> — Local notifications only (e.g., outfit reminders).</li>
+            </ul>
+        </div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.appleServicesTitle">Apple Platform Services</h3>
+            <ul>
+                <li data-i18n="privacy.appleWeatherKit"><strong>Apple WeatherKit</strong> — Provides weather data. Processed by Apple's servers, not ours.</li>
+                <li data-i18n="privacy.appleStoreKit"><strong>Apple StoreKit</strong> — Handles subscriptions. We never receive your payment details.</li>
+                <li data-i18n="privacy.appleCloudKit"><strong>Apple CloudKit</strong> — Syncs your wardrobe through your personal iCloud account.</li>
+            </ul>
+            <p data-i18n="privacy.applePrivacyLink">For more information, see <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+        </div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="privacy.subscriptionsTitle">Subscriptions</h3><p data-i18n="privacy.subscriptionsText">Klosyt+ is an optional auto-renewable subscription processed entirely by Apple through the App Store. We do not have access to your payment information.</p></div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="privacy.childrensTitle">Children's Privacy</h3><p data-i18n="privacy.childrensText">We do not knowingly collect personal information from anyone, including children under 13.</p></div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="privacy.internationalTitle">Your Rights (International)</h3>
+            <p data-i18n="privacy.internationalText">Regardless of where you live, Klosyt's privacy-first architecture means your rights are inherently protected:</p>
+            <ul>
+                <li data-i18n="privacy.internationalAccess"><strong>Right of Access</strong> — All your data is on your device and in your personal iCloud account.</li>
+                <li data-i18n="privacy.internationalRectification"><strong>Right to Rectification</strong> — You can edit or update any data directly within the app.</li>
+                <li data-i18n="privacy.internationalErasure"><strong>Right to Erasure</strong> — Delete items within the app or delete the app itself.</li>
+                <li data-i18n="privacy.internationalPortability"><strong>Right to Data Portability</strong> — Your data is stored in your personal iCloud account under your control.</li>
+                <li data-i18n="privacy.internationalObjection"><strong>Right to Object</strong> — Since we perform no processing of your data, there is nothing to object to.</li>
+            </ul>
+            <p data-i18n="privacy.internationalGdpr">For EEA users, these rights are guaranteed under the GDPR. For Brazilian users, under the LGPD.</p>
+            <p data-i18n="privacy.internationalDpo">For any privacy-related inquiries, contact us at <a href="mailto:support@Klosyt.com">support@Klosyt.com</a>.</p>
+        </div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="privacy.changesTitle">Changes to This Policy</h3><p data-i18n="privacy.changesText">We may update this Privacy Policy from time to time. Changes will be reflected by updating the "Last Updated" date above.</p></div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="privacy.contactTitle">Contact Us</h3><p data-i18n="privacy.contactText">If you have any questions, please contact Klosyt at <a href="mailto:support@Klosyt.com">support@Klosyt.com</a>.</p></div>
+
+    </div>
+</section>
+
+<!-- Terms of Use -->
+<section class="section">
+    <div class="wrap tc">
+        <h1 class="sec-title fade-up" id="terms" data-i18n="terms.title">Terms of Use (EULA)</h1>
+        <p class="hero-sub fade-up" data-i18n="terms.lastUpdated">Last Updated: March 13, 2026</p>
+    </div>
+</section>
+
+<section class="section" style="padding-top:0">
+    <div class="wrap legal-content">
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.acceptanceTitle">Acceptance of Terms</h3><p data-i18n="terms.acceptanceText">By downloading, installing, or using Klosyt ("the App"), you agree to be bound by these Terms. If you do not agree, do not use the App.</p></div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="terms.serviceTitle">Description of Service</h3>
+            <p data-i18n="terms.serviceText">Klosyt is a wardrobe management application available on iOS, macOS, tvOS, and visionOS.</p>
+            <p data-i18n="terms.serviceAiText">Klosyt's AI Stylist uses real-time weather data provided by Apple WeatherKit to generate personalized outfit suggestions. All AI processing is performed on-device.</p>
+        </div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.privacyTitle">Your Privacy Comes First</h3><p data-i18n="terms.privacyText">We believe your personal data belongs to you and only you. Klosyt is architected so that <strong>we never collect, access, or store any of your personal information.</strong></p></div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.ownershipTitle">Your Content, Your Ownership</h3><p data-i18n="terms.ownershipText">Everything you create in Klosyt <strong>belongs entirely to you.</strong> We do not access, collect, or claim any rights to your content.</p></div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="terms.subscriptionsTitle">Subscriptions</h3>
+            <p data-i18n="terms.subscriptionsText">Klosyt offers an optional auto-renewable subscription ("Klosyt+"). <strong>The free tier provides unlimited wardrobe storage and core functionality forever.</strong></p>
+            <ul>
+                <li data-i18n="terms.subBilling1">Payment is charged to your Apple ID account at confirmation of purchase.</li>
+                <li data-i18n="terms.subBilling2">Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.</li>
+                <li data-i18n="terms.subBilling3">Your account will be charged for renewal within 24 hours prior to the end of the current period.</li>
+                <li data-i18n="terms.subBilling4">You can manage and cancel subscriptions in your Apple ID account settings at any time.</li>
+            </ul>
+            <p data-i18n="terms.subTrialText">Klosyt+ may include a free trial period. If you do not cancel before the trial ends, you will be automatically charged.</p>
+        </div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.ipTitle">Intellectual Property</h3><p data-i18n="terms.ipText">The App, including its design, code, features, and branding, is our intellectual property.</p></div>
+
+        <div class="glass legal-card fade-up">
+            <h3 data-i18n="terms.acceptableUseTitle">Acceptable Use</h3>
+            <p data-i18n="terms.acceptableUseIntro">You agree not to:</p>
+            <ul>
+                <li data-i18n="terms.acceptableUse1">Use the App for any unlawful purpose</li>
+                <li data-i18n="terms.acceptableUse2">Attempt to reverse-engineer, decompile, or disassemble the App</li>
+                <li data-i18n="terms.acceptableUse3">Circumvent any security or access controls</li>
+                <li data-i18n="terms.acceptableUse4">Redistribute or resell the App or any part of it</li>
+            </ul>
+        </div>
+
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.disclaimerTitle">Disclaimer of Warranties</h3><p data-i18n="terms.disclaimerText">The App is provided "as is" without warranties of any kind.</p></div>
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.liabilityTitle">Limitation of Liability</h3><p data-i18n="terms.liabilityText">To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages.</p></div>
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.thirdPartyTitle">Third-Party Services</h3><p data-i18n="terms.thirdPartyText">The App uses Apple services including iCloud (CloudKit), WeatherKit, and StoreKit.</p></div>
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.terminationTitle">Termination</h3><p data-i18n="terms.terminationText">We reserve the right to terminate or suspend access to the App at our discretion.</p></div>
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.changesToTermsTitle">Changes to Terms</h3><p data-i18n="terms.changesToTermsText">We may update these Terms from time to time.</p></div>
+        <div class="glass legal-card fade-up"><h3 data-i18n="terms.governingLawTitle">Governing Law</h3><p data-i18n="terms.governingLawText">These Terms shall be governed by the laws of the United States.</p></div>
+
+    </div>
+</section>
+
+<footer class="foot">
+    <div class="wrap tc">
+        <div class="foot-links">
+            <a href="index.html" data-i18n="footer.home">Home</a>
+            <a href="support.html" data-i18n="footer.support">Support</a>
+            <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+        </div>
+        <p class="foot-copy" data-i18n="footer.copyright">&copy; 2026 Klosyt. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+});
+</script>
+<script src="script.js?v=4"></script>
+<script src="i18n.js"></script>
 </body>
-
 </html>
