@@ -1,246 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klosyt - Your AI Closet</title>
-    <meta name="description"
-        content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly.">
-
+    <title>Klosyt — Your AI Closet</title>
+    <meta name="description" content="Klosyt is the ultimate AI closet app. Organize, style, and track your clothing seamlessly.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/AppIcon.png">
-    <link rel="stylesheet" href="styles.css">
-
-    <script>
-        (function () {
-            let currentTheme = localStorage.getItem('klosyt_theme')
-                || sessionStorage.getItem('klosyt_theme')
-                || 'blue';
-            localStorage.setItem('klosyt_theme', currentTheme);
-            sessionStorage.setItem('klosyt_theme', currentTheme);
-            document.documentElement.style.setProperty('--current-wallpaper', `url('assets/wallpaper_${currentTheme}.jpg')`);
-        })();
-    </script>
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
-
 <body>
 
-    <!-- Ambient Background -->
-    <div class="hero-background"></div>
+<!-- Animated gradient mesh background -->
+<div class="mesh-bg">
+    <div class="mesh-orb orb-1"></div>
+    <div class="mesh-orb orb-2"></div>
+    <div class="mesh-orb orb-3"></div>
+</div>
 
-    <!-- Navigation -->
-    <div class="nav-container">
-        <nav class="glass-nav">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/favicon.png" alt="Klosyt" class="dynamic-app-icon">
-                <span>Klosyt</span>
-            </a>
-            <div class="nav-links">
-                <a href="#features" data-i18n="nav.features">Features</a>
-                <a href="#pricing" data-i18n="nav.klosytPlus">Klosyt+</a>
-                <a href="support.html" data-i18n="nav.support">Support</a>
-                <div class="theme-switcher" id="theme-switcher">
-                    <a href="javascript:void(0)" class="theme-btn" id="theme-btn" title="Change theme">
-                        <span id="theme-pill" class="theme-pill">🎨</span>
-                    </a>
-                    <div class="theme-dropdown" id="theme-dropdown"></div>
-                </div>
+<!-- Nav -->
+<header class="nav-wrap">
+    <nav class="glass nav-bar">
+        <a href="index.html" class="nav-brand">
+            <img src="assets/favicon.png" alt="Klosyt" class="dynamic-app-icon nav-icon">
+            <span>Klosyt</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features" data-i18n="nav.features">Features</a>
+            <a href="#pricing" data-i18n="nav.klosytPlus">Klosyt+</a>
+            <a href="support.html" data-i18n="nav.support">Support</a>
+            <div class="theme-switcher" id="theme-switcher">
+                <button class="theme-toggle" id="theme-btn" aria-label="Change theme">
+                    <span id="theme-pill">🎨</span>
+                </button>
+                <div class="theme-menu glass" id="theme-dropdown"></div>
             </div>
-        </nav>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner fade-up">
+        <div class="hero-glow">
+            <img src="assets/AppIcon-blue.png" alt="Klosyt" class="hero-icon dynamic-app-icon">
+        </div>
+        <h1 data-i18n="hero.mainTitle">Your AI-Powered<br>Digital Closet</h1>
+        <p class="hero-sub" data-i18n="hero.mainSubtitle">Snap your clothes, let AI organize them, and get weather-smart outfit suggestions&nbsp;&mdash; all on-device and private.</p>
+        <a href="https://apps.apple.com/app/klosyt/id6758277603" target="_blank" rel="noopener" class="badge-link">
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" class="badge-img">
+        </a>
+        <p class="hero-devices" data-i18n="hero.platforms">iPhone &middot; iPad &middot; Mac &middot; Apple&nbsp;TV &middot; Vision&nbsp;Pro</p>
     </div>
+</section>
 
-    <!-- ═══════════════════════════
-         HERO
-         ═══════════════════════════ -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <div class="hero-icon-wrapper">
-                <img src="assets/AppIcon-blue.png" alt="Klosyt" class="hero-app-icon dynamic-app-icon">
+<!-- How it works -->
+<section class="section">
+    <div class="wrap">
+        <div class="glass steps fade-up">
+            <div class="step">
+                <span class="step-n">1</span>
+                <div><h3 data-i18n="steps.snapTitle">Snap</h3><p data-i18n="steps.snapDesc">Photo, share sheet, or paste a link&nbsp;&mdash; background removed automatically.</p></div>
             </div>
-            <h1 class="hero-title" data-i18n="hero.mainTitle">Your AI-Powered<br>Digital Closet</h1>
-            <p class="hero-subtitle" data-i18n="hero.mainSubtitle">Snap your clothes, let AI organize them, and get weather-smart outfit suggestions — all on-device and private.</p>
-            <div class="hero-cta">
-                <a href="https://apps.apple.com/app/klosyt/id6758277603" target="_blank" rel="noopener" class="app-store-link">
-                    <img src="assets/app-store-badge.svg" alt="Download on the App Store">
-                </a>
+            <span class="step-div"></span>
+            <div class="step">
+                <span class="step-n">2</span>
+                <div><h3 data-i18n="steps.categorizeTitle">Categorize</h3><p data-i18n="steps.categorizeDesc">AI detects type, color, pattern, season, and material instantly.</p></div>
             </div>
-            <p class="hero-platforms" data-i18n="hero.platforms">iPhone &middot; iPad &middot; Mac &middot; Apple TV &middot; Vision Pro</p>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════
-         HOW IT WORKS
-         ═══════════════════════════ -->
-    <section class="container section-spacing reveal">
-        <div class="steps-strip">
-            <div class="step-item">
-                <div class="step-number">1</div>
-                <div class="step-text">
-                    <h3 data-i18n="steps.snapTitle">Snap</h3>
-                    <p data-i18n="steps.snapDesc">Photo, share sheet, or paste a link — background removed automatically.</p>
-                </div>
-            </div>
-            <div class="step-divider"></div>
-            <div class="step-item">
-                <div class="step-number">2</div>
-                <div class="step-text">
-                    <h3 data-i18n="steps.categorizeTitle">Categorize</h3>
-                    <p data-i18n="steps.categorizeDesc">AI detects type, color, pattern, season, and material instantly.</p>
-                </div>
-            </div>
-            <div class="step-divider"></div>
-            <div class="step-item">
-                <div class="step-number">3</div>
-                <div class="step-text">
-                    <h3 data-i18n="steps.styleTitle">Style</h3>
-                    <p data-i18n="steps.styleDesc">Get outfit suggestions based on your wardrobe, activity, and real-time weather.</p>
-                </div>
+            <span class="step-div"></span>
+            <div class="step">
+                <span class="step-n">3</span>
+                <div><h3 data-i18n="steps.styleTitle">Style</h3><p data-i18n="steps.styleDesc">Get outfit suggestions based on your wardrobe, activity, and real-time weather.</p></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══════════════════════════
-         FEATURES
-         ═══════════════════════════ -->
-    <section id="features" class="container section-spacing">
-        <div class="section-header reveal">
-            <h2 class="section-title" data-i18n="features.sectionTitle">Everything you need,<br>nothing you don't</h2>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(175, 82, 222, 0.12); color: #af52de;">✨</div>
+<!-- Features -->
+<section id="features" class="section">
+    <div class="wrap">
+        <h2 class="sec-title fade-up" data-i18n="features.sectionTitle">Everything you need,<br>nothing you don't</h2>
+        <div class="grid fade-up">
+            <div class="glass card">
+                <span class="card-ico" style="--c:#af52de;--bg:rgba(175,82,222,.12)">✨</span>
                 <h3 data-i18n="features.aiStylist">AI Stylist</h3>
                 <p data-i18n="features.aiStylistDesc">Weather-aware outfit suggestions built from your exact wardrobe. Powered by on-device AI.</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(0, 122, 255, 0.12); color: #007aff;">👔</div>
+            <div class="glass card">
+                <span class="card-ico" style="--c:#007aff;--bg:rgba(0,122,255,.12)">👔</span>
                 <h3 data-i18n="features.outfitsTitle">Outfits</h3>
                 <p data-i18n="features.outfitsDesc">Drag and drop items to create looks. Save favorites and share beautiful Pantone-style cards.</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(255, 149, 0, 0.12); color: #ff9500;">📅</div>
+            <div class="glass card">
+                <span class="card-ico" style="--c:#ff9500;--bg:rgba(255,149,0,.12)">📅</span>
                 <h3 data-i18n="features.calendarTitle">Calendar</h3>
                 <p data-i18n="features.calendarDesc">Log what you wear every day. See patterns emerge and never repeat an outfit by accident.</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(52, 199, 89, 0.12); color: #34c759;">🔐</div>
+            <div class="glass card">
+                <span class="card-ico" style="--c:#34c759;--bg:rgba(52,199,89,.12)">🔐</span>
                 <h3 data-i18n="features.privacyTitle">Private by Design</h3>
-                <p data-i18n="features.privacyDesc">Everything runs on-device. Your data syncs only to your iCloud — never shared with anyone.</p>
+                <p data-i18n="features.privacyDesc">Everything runs on-device. Your data syncs only to your iCloud&nbsp;&mdash; never shared with anyone.</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(90, 200, 250, 0.12); color: #5ac8fa;">☁️</div>
+            <div class="glass card">
+                <span class="card-ico" style="--c:#5ac8fa;--bg:rgba(90,200,250,.12)">☁️</span>
                 <h3 data-i18n="features.syncTitle">Synced Everywhere</h3>
                 <p data-i18n="features.syncDesc">iCloud keeps your closet in sync across every Apple device, instantly and automatically.</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="feature-icon" style="background: rgba(255, 45, 85, 0.12); color: #ff2d55;">🔍</div>
+            <div class="glass card">
+                <span class="card-ico" style="--c:#ff2d55;--bg:rgba(255,45,85,.12)">🔍</span>
                 <h3 data-i18n="features.filtersTitle">Smart Filters</h3>
                 <p data-i18n="features.filtersDesc">Find any item by season, color, category, material, or pattern in seconds.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══════════════════════════
-         PRICING
-         ═══════════════════════════ -->
-    <section id="pricing" class="container section-spacing">
-        <div class="pricing-wrapper reveal">
-            <div class="pricing-card-modern">
-                <div class="pricing-header-modern">
-                    <span class="pricing-badge">Klosyt+</span>
-                    <div class="pricing-amount">
-                        <span class="price">$0.99</span>
-                        <span class="period" data-i18n="pricing.period">/month</span>
-                    </div>
-                    <p class="pricing-trial" data-i18n="pricing.trial">30-day free trial &middot; Cancel anytime</p>
-                </div>
-                <div class="pricing-features-modern">
-                    <div class="pricing-feature-row">
-                        <span class="pf-icon" style="background: rgba(192, 115, 255, 0.15); color: #c073ff;">✨</span>
-                        <span data-i18n="pricing.aiStyleAssistant">AI Style Assistant</span>
-                    </div>
-                    <div class="pricing-feature-row">
-                        <span class="pf-icon" style="background: rgba(0, 122, 255, 0.15); color: #007aff;">👔</span>
-                        <span data-i18n="pricing.outfits">Outfits</span>
-                    </div>
-                    <div class="pricing-feature-row">
-                        <span class="pf-icon" style="background: rgba(52, 199, 89, 0.15); color: #34c759;">📅</span>
-                        <span data-i18n="pricing.calendarTracking">Calendar Tracking</span>
-                    </div>
-                    <div class="pricing-feature-row">
-                        <span class="pf-icon" style="background: rgba(255, 153, 64, 0.15); color: #ff9940;">🎨</span>
-                        <span data-i18n="pricing.themesWallpapers">Themes & Wallpapers</span>
-                    </div>
-                    <div class="pricing-feature-row">
-                        <span class="pf-icon" style="background: rgba(255, 204, 0, 0.15); color: #ffcc00;">🌤️</span>
-                        <span data-i18n="pricing.weatherData">Real-Time Weather Data</span>
-                    </div>
-                </div>
-                <div class="pricing-footer-modern">
-                    <a href="https://apps.apple.com/app/klosyt/id6758277603" target="_blank" rel="noopener" class="app-store-link">
-                        <img src="assets/app-store-badge.svg" alt="Download on the App Store">
-                    </a>
-                    <p class="pricing-note" data-i18n="pricing.note">Your closet is always free. Klosyt+ unlocks premium features.</p>
-                </div>
+<!-- Pricing -->
+<section id="pricing" class="section">
+    <div class="wrap tc">
+        <div class="glass price-card fade-up">
+            <div class="price-head">
+                <span class="price-badge">Klosyt+</span>
+                <div class="price-amt"><span class="price-num">$0.99</span><span class="price-per" data-i18n="pricing.period">/month</span></div>
+                <p class="price-trial" data-i18n="pricing.trial">30-day free trial &middot; Cancel anytime</p>
+            </div>
+            <ul class="price-list">
+                <li><span class="pl-ico" style="--c:#c073ff;--bg:rgba(192,115,255,.15)">✨</span><span data-i18n="pricing.aiStyleAssistant">AI Style Assistant</span></li>
+                <li><span class="pl-ico" style="--c:#007aff;--bg:rgba(0,122,255,.15)">👔</span><span data-i18n="pricing.outfits">Outfits</span></li>
+                <li><span class="pl-ico" style="--c:#34c759;--bg:rgba(52,199,89,.15)">📅</span><span data-i18n="pricing.calendarTracking">Calendar Tracking</span></li>
+                <li><span class="pl-ico" style="--c:#ff9940;--bg:rgba(255,153,64,.15)">🎨</span><span data-i18n="pricing.themesWallpapers">Themes &amp; Wallpapers</span></li>
+                <li><span class="pl-ico" style="--c:#ffcc00;--bg:rgba(255,204,0,.15)">🌤️</span><span data-i18n="pricing.weatherData">Real-Time Weather</span></li>
+            </ul>
+            <div class="price-foot">
+                <a href="https://apps.apple.com/app/klosyt/id6758277603" target="_blank" rel="noopener" class="badge-link"><img src="assets/app-store-badge.svg" alt="Download on the App Store" class="badge-img"></a>
+                <p class="price-note" data-i18n="pricing.note">Your closet is always free. Klosyt+ unlocks premium features.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ═══════════════════════════
-         LANGUAGES
-         ═══════════════════════════ -->
-    <section class="container section-spacing text-center reveal">
-        <p class="languages-label" data-i18n="index.languagesTitle">Available in 16 languages</p>
-        <div class="languages-grid">
-            <span class="lang-tag">English</span>
-            <span class="lang-tag">简体中文</span>
-            <span class="lang-tag">繁體中文</span>
-            <span class="lang-tag">Dansk</span>
-            <span class="lang-tag">Nederlands</span>
-            <span class="lang-tag">Français</span>
-            <span class="lang-tag">Deutsch</span>
-            <span class="lang-tag">Italiano</span>
-            <span class="lang-tag">日本語</span>
-            <span class="lang-tag">한국어</span>
-            <span class="lang-tag">Norsk</span>
-            <span class="lang-tag">Português</span>
-            <span class="lang-tag">Español</span>
-            <span class="lang-tag">Svenska</span>
-            <span class="lang-tag">Türkçe</span>
-            <span class="lang-tag">Tiếng Việt</span>
+<!-- Languages -->
+<section class="section">
+    <div class="wrap tc fade-up">
+        <p class="lang-label" data-i18n="index.languagesTitle">Available in 16 languages</p>
+        <div class="lang-row">
+            <span>English</span><span>简体中文</span><span>繁體中文</span><span>Dansk</span>
+            <span>Nederlands</span><span>Français</span><span>Deutsch</span><span>Italiano</span>
+            <span>日本語</span><span>한국어</span><span>Norsk</span><span>Português</span>
+            <span>Español</span><span>Svenska</span><span>Türkçe</span><span>Tiếng Việt</span>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <div class="footer-links">
-                <a href="index.html" data-i18n="footer.home">Home</a>
-                <a href="support.html" data-i18n="footer.support">Support</a>
-                <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
-            </div>
-            <p class="footer-copy" data-i18n="footer.copyright">&copy; 2026 Klosyt. All rights reserved.</p>
+<!-- Footer -->
+<footer class="foot">
+    <div class="wrap tc">
+        <div class="foot-links">
+            <a href="index.html" data-i18n="footer.home">Home</a>
+            <a href="support.html" data-i18n="footer.support">Support</a>
+            <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
         </div>
-    </footer>
+        <p class="foot-copy" data-i18n="footer.copyright">&copy; 2026 Klosyt. All rights reserved.</p>
+    </div>
+</footer>
 
-    <!-- Scroll Reveal -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+            if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
         });
-    </script>
-    <script src="script.js"></script>
-    <script src="i18n.js"></script>
+    },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+});
+</script>
+<script src="script.js?v=3"></script>
+<script src="i18n.js"></script>
 </body>
-
 </html>
