@@ -2,7 +2,7 @@
 """Expand nl, nb, pt-BR, sv, tr, vi to full translations using de.json as structural template."""
 import json, os, copy
 
-LOCALES_DIR = '/Users/greg/git/Klosyt/website/locales'
+LOCALES_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'locales')
 
 with open(os.path.join(LOCALES_DIR, 'de.json'), 'r') as f:
     DE = json.load(f)  # Use DE as template since it's 95% complete
