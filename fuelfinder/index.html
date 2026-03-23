@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuelCast - Find the Cheapest Gas Near You</title>
+    <meta name="description"
+        content="FuelCast helps you find the cheapest gas stations nearby with real-time fuel prices for Regular, Midgrade, Premium, and Diesel.">
+
+    <link rel="icon" type="image/png" href="assets/AppIcon.png">
+    <link rel="apple-touch-icon" href="assets/AppIcon.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FuelCast - Find the Cheapest Gas Near You">
+    <meta property="og:description" content="Real-time fuel prices. Find the cheapest gas stations nearby.">
+    <meta property="og:image" content="assets/AppIcon.png">
+</head>
+
+<body>
+
+    <div class="hero-background"></div>
+
+    <!-- Floating Fuel Items -->
+    <div id="floating-items">
+        <div class="glass-item-card" style="top: 2%; left: 8%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: -12deg; animation-delay: 0.5s;">&#9981;</div>
+        <div class="glass-item-card" style="top: 3%; left: 78%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 14deg; animation-delay: 2.1s;">&#128664;</div>
+        <div class="glass-item-card" style="top: 8%; left: 42%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 6deg; animation-delay: 3.8s;">&#128176;</div>
+        <div class="glass-item-card" style="top: 12%; left: 18%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: -8deg; animation-delay: 1.2s;">&#128663;</div>
+        <div class="glass-item-card" style="top: 14%; left: 88%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 10deg; animation-delay: 4.5s;">&#128205;</div>
+        <div class="glass-item-card" style="top: 20%; left: 5%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: -15deg; animation-delay: 0.8s;">&#9978;</div>
+        <div class="glass-item-card" style="top: 22%; left: 62%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 4deg; animation-delay: 3.2s;">&#128665;</div>
+        <div class="glass-item-card" style="top: 28%; left: 35%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: -6deg; animation-delay: 5.1s;">&#128178;</div>
+        <div class="glass-item-card" style="top: 30%; left: 92%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 12deg; animation-delay: 2.7s;">&#128661;</div>
+        <div class="glass-item-card" style="top: 35%; left: 15%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 8deg; animation-delay: 1.9s;">&#128739;</div>
+        <div class="glass-item-card" style="top: 40%; left: 70%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: -10deg; animation-delay: 4.0s;">&#9981;</div>
+        <div class="glass-item-card" style="top: 45%; left: 50%; width: 90px; height: 90px; font-size: 2.5rem; --rotate: 3deg; animation-delay: 0.3s;">&#128663;</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="glass-nav">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/AppIcon.png" alt="FuelCast">
+                FuelCast
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="privacy.html">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero container">
+        <img src="assets/AppIcon.png" alt="FuelCast App Icon" class="hero-icon">
+        <h1>Find the <span class="accent">Cheapest Gas</span> Near You</h1>
+        <p class="subtitle">Real-time fuel prices for Regular, Midgrade, Premium, and Diesel. Save money on every fill-up.</p>
+        <a href="https://apps.apple.com/app/fuelfinder/id000000000">
+            <img src="assets/app-store-badge.svg" alt="Download on the App Store" class="app-store-badge">
+        </a>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-spacing container text-center">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Three steps to cheaper gas.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Open the App</h3>
+                <p>FuelCast uses your location to find gas stations nearby.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Compare Prices</h3>
+                <p>See all fuel grades at a glance — 87, 89, 93, and Diesel — with prices updated weekly from the U.S. Energy Information Administration.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Get Directions</h3>
+                <p>Tap any station to get directions in Apple Maps. Fill up and save.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section-spacing container text-center">
+        <div class="section-header">
+            <h2>Features</h2>
+            <p>Everything you need to find cheap gas, nothing you don't.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#9981;</div>
+                <h3>All Fuel Grades</h3>
+                <p>Compare Regular 87, Midgrade 89, Premium 93, and Diesel prices side by side for every station.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128205;</div>
+                <h3>Nearby Stations</h3>
+                <p>Search within 1, 5, 10, or 25 miles. Sort by distance or cheapest price.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128200;</div>
+                <h3>Price Trends</h3>
+                <p>4-week price history charts so you know if prices are rising or falling.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#11088;</div>
+                <h3>Favorites</h3>
+                <p>Save your go-to stations for quick access.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128506;</div>
+                <h3>Map View</h3>
+                <p>See all stations on a map with price pins. Cheapest stations highlighted in green.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128274;</div>
+                <h3>Privacy First</h3>
+                <p>Your location is used only to find nearby stations. We don't track you or sell your data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:support@fuelfinder.app">Contact</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Gregory Yuzik. All rights reserved.</p>
+    </footer>
+
+    <!-- Parallax Script -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const floating = document.getElementById('floating-items');
+            if (floating) {
+                floating.style.transform = `translateY(${window.scrollY * -0.3}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
