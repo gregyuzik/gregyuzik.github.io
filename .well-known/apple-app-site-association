@@ -1,0 +1,18 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["D8R4QDUS2K.com.legend.aiCloset2026"],
+        "components": [
+          { "/": "/item/*", "comment": "Clothing item deep link" },
+          { "/": "/outfit/*", "comment": "Outfit deep link" },
+          { "/": "/add", "comment": "Quick-add clothing" },
+          { "/": "/suggestions", "comment": "AI Suggestions" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["D8R4QDUS2K.com.legend.aiCloset2026"]
+  }
+}
