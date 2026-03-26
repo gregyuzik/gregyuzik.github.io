@@ -24,16 +24,8 @@
     "styleDesc": "Receba sugestões de looks com base no seu guarda-roupa, atividade e clima em tempo real."
   },
   "whatsNew": {
-    "badge": "Novo",
     "title": "Klosyt 2.0",
-    "ai": "Motor de IA totalmente novo — 10x mais rápido com teoria real de cores na moda",
-    "generate": "Toque em qualquer peça para gerar instantaneamente um look completo a partir dela",
-    "lock": "Trave as peças que você ama e regenere o restante",
-    "siri": "Suporte ao Siri — \"O que eu deveria vestir?\"",
-    "widget": "Widget de Look do dia para Lock Screen e Home Screen",
-    "share": "Compartilhe cartões de looks no Instagram Stories",
-    "themes": "Temas e papéis de parede agora são gratuitos para todos",
-    "languages": "Disponível em 16 idiomas"
+    "desc": "IA 10x mais rápida com teoria das cores, toque em qualquer peça para gerar looks, trave e regenere peças, suporte ao Siri, widgets de looks, compartilhamento no Instagram, temas gratuitos e 16 idiomas."
   },
   "features": {
     "sectionTitle": "Tudo o que você precisa,<br>nada que não precisa",

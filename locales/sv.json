@@ -24,16 +24,8 @@
     "styleDesc": "Få outfitförslag baserade på din garderob, aktivitet och realtidsväder."
   },
   "whatsNew": {
-    "badge": "Nytt",
     "title": "Klosyt 2.0",
-    "ai": "Helt ny AI-motor — 10x snabbare med riktig modefärgteori",
-    "generate": "Tryck på ett plagg för att omedelbart generera en komplett outfit kring det",
-    "lock": "Lås de delar du älskar och generera om resten",
-    "siri": "Siri-stöd — \"Vad ska jag ha på mig?\"",
-    "widget": "Dagens outfit-widget för Lock Screen & Home Screen",
-    "share": "Dela outfitkort till Instagram Stories",
-    "themes": "Teman & bakgrunder är nu gratis för alla",
-    "languages": "Tillgänglig på 16 språk"
+    "desc": "10x snabbare AI med färgteori, tryck på valfritt plagg för att generera outfits, lås och generera om delar, Siri-stöd, outfit-widgets, Instagram-delning, gratis teman och 16 språk."
   },
   "features": {
     "sectionTitle": "Allt du behöver,<br>inget du inte behöver",

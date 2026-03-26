@@ -24,16 +24,8 @@
     "styleDesc": "Erhalte Outfit-Vorschläge basierend auf deiner Garderobe, Aktivität und dem aktuellen Wetter."
   },
   "whatsNew": {
-    "badge": "Neu",
     "title": "Klosyt 2.0",
-    "ai": "Völlig neue KI-Engine — 10x schneller mit echter Mode-Farbtheorie",
-    "generate": "Tippe auf ein Kleidungsstück, um sofort ein komplettes Outfit daraus zu erstellen",
-    "lock": "Sperre Teile, die du liebst, und generiere den Rest neu",
-    "siri": "Siri-Unterstützung — \"Was soll ich anziehen?\"",
-    "widget": "Heutiges Outfit-Widget für Lock Screen & Home Screen",
-    "share": "Teile Outfit-Karten in Instagram Stories",
-    "themes": "Themen & Hintergründe sind jetzt für alle kostenlos",
-    "languages": "Verfügbar in 16 Sprachen"
+    "desc": "10x schnellere KI mit Farbtheorie, tippe auf ein Kleidungsstück um Outfits zu generieren, Teile sperren und neu generieren, Siri-Unterstützung, Outfit-Widgets, Instagram-Teilen, kostenlose Themen und 16 Sprachen."
   },
   "features": {
     "sectionTitle": "Alles was du brauchst,<br>nichts was du nicht brauchst",
