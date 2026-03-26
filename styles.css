@@ -238,6 +238,7 @@ body{
 
 .wn-section{padding-top:0;padding-bottom:0}
 .wn-card{max-width:480px;margin:0 auto;text-align:center}
+.wn-card .card-ico{margin-left:auto;margin-right:auto}
 
 /* ── Steps ── */
 
