@@ -23,6 +23,18 @@
     "styleTitle": "Estiliza",
     "styleDesc": "Recibe sugerencias de outfits basadas en tu guardarropa, actividad y el clima en tiempo real."
   },
+  "whatsNew": {
+    "badge": "Nuevo",
+    "title": "Klosyt 2.0",
+    "ai": "Motor de IA completamente nuevo — 10x más rápido con teoría real del color en moda",
+    "generate": "Toca cualquier prenda para generar al instante un outfit completo alrededor de ella",
+    "lock": "Bloquea las piezas que amas y regenera el resto",
+    "siri": "Soporte para Siri — \"¿Qué me pongo?\"",
+    "widget": "Widget de Outfit del día para Lock Screen y Home Screen",
+    "share": "Comparte tarjetas de outfits en Instagram Stories",
+    "themes": "Temas y fondos ahora son gratis para todos",
+    "languages": "Disponible en 16 idiomas"
+  },
   "features": {
     "sectionTitle": "Todo lo que necesitas,<br>nada que no",
     "aiStylist": "Estilista IA",

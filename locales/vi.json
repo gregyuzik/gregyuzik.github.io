@@ -23,6 +23,18 @@
     "styleTitle": "Phối đồ",
     "styleDesc": "Nhận gợi ý trang phục dựa trên tủ quần áo, hoạt động và thời tiết thực tế."
   },
+  "whatsNew": {
+    "badge": "Mới",
+    "title": "Klosyt 2.0",
+    "ai": "Công cụ AI hoàn toàn mới — nhanh hơn 10 lần với lý thuyết màu sắc thời trang thực thụ",
+    "generate": "Chạm vào bất kỳ món đồ nào để tạo ngay một bộ trang phục hoàn chỉnh xung quanh nó",
+    "lock": "Khóa những món đồ yêu thích và tạo lại phần còn lại",
+    "siri": "Hỗ trợ Siri — \"Hôm nay mặc gì?\"",
+    "widget": "Widget Trang phục hôm nay cho Lock Screen & Home Screen",
+    "share": "Chia sẻ thẻ trang phục lên Instagram Stories",
+    "themes": "Giao diện & hình nền giờ đây miễn phí cho tất cả mọi người",
+    "languages": "Có sẵn bằng 16 ngôn ngữ"
+  },
   "features": {
     "sectionTitle": "Mọi thứ bạn cần,<br>không gì thừa thãi",
     "aiStylist": "AI Stylist",

@@ -23,6 +23,18 @@
     "styleTitle": "Style",
     "styleDesc": "Få antrekksforslag basert på garderoben din, aktivitet og sanntidsvær."
   },
+  "whatsNew": {
+    "badge": "Nytt",
+    "title": "Klosyt 2.0",
+    "ai": "Helt ny AI-motor — 10x raskere med ekte motefargeteori",
+    "generate": "Trykk på et plagg for å umiddelbart generere et komplett antrekk rundt det",
+    "lock": "Lås delene du elsker og generer resten på nytt",
+    "siri": "Siri-støtte — \"Hva skal jeg ha på meg?\"",
+    "widget": "Dagens antrekk-widget for Lock Screen og Home Screen",
+    "share": "Del antrekkskort til Instagram Stories",
+    "themes": "Temaer og bakgrunner er nå gratis for alle",
+    "languages": "Tilgjengelig på 16 språk"
+  },
   "features": {
     "sectionTitle": "Alt du trenger,<br>ingenting du ikke trenger",
     "aiStylist": "AI-stylist",

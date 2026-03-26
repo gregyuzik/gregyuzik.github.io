@@ -23,6 +23,18 @@
     "styleTitle": "スタイリング",
     "styleDesc": "ワードローブ、アクティビティ、リアルタイム天気に基づくコーディネート提案。"
   },
+  "whatsNew": {
+    "badge": "新機能",
+    "title": "Klosyt 2.0",
+    "ai": "まったく新しいAIエンジン — 本格的なファッションカラー理論で10倍高速",
+    "generate": "アイテムをタップするだけで、それを中心にした完全なコーディネートを即座に生成",
+    "lock": "お気に入りのアイテムをロックして、残りを再生成",
+    "siri": "Siri対応 — 「何を着ればいい？」",
+    "widget": "今日のコーディネートウィジェット（Lock Screen & Home Screen対応）",
+    "share": "コーディネートカードをInstagram Storiesにシェア",
+    "themes": "テーマと壁紙がすべてのユーザーに無料開放",
+    "languages": "16言語で利用可能"
+  },
   "features": {
     "sectionTitle": "必要なものだけ、<br>余計なものはなし",
     "aiStylist": "AIスタイリスト",
