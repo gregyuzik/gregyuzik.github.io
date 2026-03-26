@@ -236,6 +236,8 @@ body{
 
 /* ── What's New banner ── */
 
+.wn-section{padding-top:0;padding-bottom:0}
+
 .whats-new{
     border-radius:var(--radius);padding:2rem 2.5rem;
     text-align:left;max-width:600px;margin:0 auto;
