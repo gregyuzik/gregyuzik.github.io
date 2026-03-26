@@ -26,7 +26,7 @@ Everything you create in Klosyt — photos, clothing items, outfits, preferences
 
 ### Klosyt+
 
-Klosyt offers an optional auto-renewable subscription ("Klosyt+") that unlocks premium features including AI outfit suggestions, outfit planning, calendar tracking, and themes. **The free tier provides unlimited wardrobe storage and core functionality forever** — you will never lose access to your clothing library.
+Klosyt offers an optional auto-renewable subscription ("Klosyt+") that unlocks premium features including AI outfit suggestions, outfit planning, and calendar tracking. Themes and wallpapers are available to all users for free. **The free tier provides unlimited wardrobe storage and core functionality forever** — you will never lose access to your clothing library.
 
 ### Billing
 

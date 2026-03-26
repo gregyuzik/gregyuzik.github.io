@@ -23,6 +23,18 @@
     "styleTitle": "Style",
     "styleDesc": "Get outfit suggestions based on your wardrobe, activity, and real-time weather."
   },
+  "whatsNew": {
+    "badge": "New",
+    "title": "Klosyt 2.0",
+    "ai": "All-new AI engine — 10x faster with real fashion color theory",
+    "generate": "Tap any item to instantly generate a complete outfit around it",
+    "lock": "Lock pieces you love and regenerate the rest",
+    "siri": "Siri support — \"What should I wear?\"",
+    "widget": "Today's Outfit widget for Lock Screen & Home Screen",
+    "share": "Share outfit cards to Instagram Stories",
+    "themes": "Themes & wallpapers are now free for everyone",
+    "languages": "Available in 16 languages"
+  },
   "features": {
     "sectionTitle": "Everything you need,<br>nothing you don't",
     "aiStylist": "AI Stylist",
@@ -50,8 +62,8 @@
     "outfitsDesc": "Create, save, and share your outfits",
     "calendarTracking": "Calendar Tracking",
     "calendarTrackingDesc": "Log what you wear and build history",
-    "themesWallpapers": "Themes & Wallpapers",
-    "themesWallpapersDesc": "Style the app with themes you love",
+    "themesWallpapers": "Themes & Wallpapers (Free)",
+    "themesWallpapersDesc": "Style the app with themes you love — free for everyone",
     "alwaysFree": "Klosyt is Always Free",
     "alwaysFreeDesc": "Your Klosyt stays yours, always free",
     "weatherData": "Real-Time Weather Data",
@@ -158,7 +170,7 @@
     "ownershipText": "Everything you create in Klosyt — photos, clothing items, outfits, preferences, and all other content — <strong>belongs entirely to you.</strong> Your data is stored on your device and in your personal iCloud account. We do not access, collect, or claim any rights to your content. If you delete the App, your local data is removed with it; your iCloud data is managed through your Apple ID settings.",
 
     "subscriptionsTitle": "Subscriptions",
-    "subscriptionsText": "Klosyt offers an optional auto-renewable subscription (\"Klosyt+\") that unlocks premium features including AI outfit suggestions, outfit planning, calendar tracking, and themes. <strong>The free tier provides unlimited wardrobe storage and core functionality forever</strong> — you will never lose access to your clothing library.",
+    "subscriptionsText": "Klosyt offers an optional auto-renewable subscription (\"Klosyt+\") that unlocks premium features including AI outfit suggestions, outfit planning, and calendar tracking. Themes and wallpapers are available to all users for free. <strong>The free tier provides unlimited wardrobe storage and core functionality forever</strong> — you will never lose access to your clothing library.",
     "subBilling1": "Payment is charged to your Apple ID account at confirmation of purchase.",
     "subBilling2": "Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.",
     "subBilling3": "Your account will be charged for renewal within 24 hours prior to the end of the current period.",
@@ -230,7 +242,7 @@
     "filterDesc": "Klosyt's GelCap filter system lets you narrow your wardrobe instantly. Filter by category, season, color, material, or pattern. Search by name and switch between grid and wardrobe views.",
 
     "themesTitle": "Themes & Wallpapers",
-    "themesDesc": "Make Klosyt your own! With Klosyt+, choose from stunning wallpapers and themes to customize your app's look & feel. Your chosen theme syncs across all your Apple devices.",
+    "themesDesc": "Make Klosyt your own! Choose from stunning wallpapers and themes to customize your app's look & feel — completely free, no subscription required. Your chosen theme syncs across all your Apple devices.",
 
     "objectCaptureTitle": "Object Capture (3D Scanning)",
     "objectCaptureDesc": "On iPhone Pro models with LiDAR, create stunning 3D scans of your clothing items. Walk around the item to capture every angle. The 3D model is saved alongside the standard photo.",
