@@ -24,16 +24,8 @@
     "styleDesc": "Recevez des suggestions de tenues basées sur votre garde-robe, votre activité et la météo en temps réel."
   },
   "whatsNew": {
-    "badge": "Nouveau",
     "title": "Klosyt 2.0",
-    "ai": "Moteur IA entièrement repensé — 10x plus rapide avec une vraie théorie des couleurs mode",
-    "generate": "Touchez n'importe quel article pour générer instantanément une tenue complète autour de lui",
-    "lock": "Verrouillez les pièces que vous aimez et régénérez le reste",
-    "siri": "Support Siri — « Qu'est-ce que je devrais porter ? »",
-    "widget": "Widget Tenue du jour pour Lock Screen et Home Screen",
-    "share": "Partagez des cartes de tenues sur Instagram Stories",
-    "themes": "Les thèmes et fonds d'écran sont désormais gratuits pour tous",
-    "languages": "Disponible en 16 langues"
+    "desc": "IA 10x plus rapide avec théorie des couleurs, touchez n'importe quel article pour générer des tenues, verrouillez et régénérez des pièces, support Siri, widgets de tenues, partage Instagram, thèmes gratuits et 16 langues."
   },
   "features": {
     "sectionTitle": "Tout ce dont vous avez besoin,<br>rien de superflu",

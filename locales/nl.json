@@ -24,16 +24,8 @@
     "styleDesc": "Ontvang outfitsuggesties op basis van je garderobe, activiteit en realtime weer."
   },
   "whatsNew": {
-    "badge": "Nieuw",
     "title": "Klosyt 2.0",
-    "ai": "Geheel nieuwe AI-engine — 10x sneller met echte modekleurentheorie",
-    "generate": "Tik op een kledingstuk om direct een complete outfit eromheen te genereren",
-    "lock": "Vergrendel de stukken die je leuk vindt en genereer de rest opnieuw",
-    "siri": "Siri-ondersteuning — \"Wat zal ik aantrekken?\"",
-    "widget": "Outfit van de dag-widget voor Lock Screen & Home Screen",
-    "share": "Deel outfitkaarten naar Instagram Stories",
-    "themes": "Thema's & achtergronden zijn nu gratis voor iedereen",
-    "languages": "Beschikbaar in 16 talen"
+    "desc": "10x snellere AI met kleurentheorie, tik op een item om outfits te genereren, vergrendel en genereer stukken opnieuw, Siri-ondersteuning, outfit-widgets, Instagram-delen, gratis thema's en 16 talen."
   },
   "features": {
     "sectionTitle": "Alles wat je nodig hebt,<br>niets wat je niet nodig hebt",

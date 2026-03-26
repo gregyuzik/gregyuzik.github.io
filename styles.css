@@ -234,36 +234,10 @@ body{
     font-size:.85rem;color:var(--text-3);font-weight:500;letter-spacing:.02em;
 }
 
-/* ── What's New banner ── */
+/* ── What's New ── */
 
 .wn-section{padding-top:0;padding-bottom:0}
-
-.whats-new{
-    border-radius:var(--radius);padding:2rem 2.5rem;
-    text-align:left;max-width:600px;margin:0 auto;
-}
-.wn-header{
-    display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;
-}
-.wn-badge{
-    font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
-    padding:3px 10px;border-radius:100px;
-    background:rgba(0,122,255,.18);color:#4d9fff;
-    border:1px solid rgba(0,122,255,.25);
-}
-.wn-title{
-    font-size:clamp(1.3rem,3vw,1.6rem);font-weight:800;letter-spacing:-.03em;
-}
-.wn-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem}
-.wn-list li{
-    display:flex;align-items:flex-start;gap:.6rem;
-    font-size:.9rem;color:var(--text-2);line-height:1.5;
-}
-.wn-ico{flex-shrink:0;font-size:.85rem;width:1.4em;text-align:center;line-height:1.5}
-
-@media(max-width:640px){
-    .whats-new{padding:1.5rem 1.25rem}
-}
+.wn-card{max-width:480px;margin:0 auto;text-align:center}
 
 /* ── Steps ── */
 

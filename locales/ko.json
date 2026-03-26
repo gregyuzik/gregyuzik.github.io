@@ -24,16 +24,8 @@
     "styleDesc": "옷장, 활동, 실시간 날씨를 기반으로 코디를 제안."
   },
   "whatsNew": {
-    "badge": "새로운 기능",
     "title": "Klosyt 2.0",
-    "ai": "완전히 새로운 AI 엔진 — 실제 패션 색채 이론으로 10배 빠른 속도",
-    "generate": "아이템을 탭하면 그것을 중심으로 한 완벽한 코디를 즉시 생성",
-    "lock": "마음에 드는 아이템을 잠그고 나머지를 다시 생성",
-    "siri": "Siri 지원 — \"오늘 뭐 입을까?\"",
-    "widget": "오늘의 코디 위젯 — Lock Screen & Home Screen 지원",
-    "share": "코디 카드를 Instagram Stories에 공유",
-    "themes": "테마와 배경화면이 이제 모든 사용자에게 무료",
-    "languages": "16개 언어로 이용 가능"
+    "desc": "색채 이론을 적용한 10배 빠른 AI, 아이템을 탭하여 코디 생성, 잠금 및 재생성, Siri 지원, 코디 위젯, Instagram 공유, 무료 테마, 16개 언어 지원."
   },
   "features": {
     "sectionTitle": "필요한 건 전부,<br>불필요한 건 제로",

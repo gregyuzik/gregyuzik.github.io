@@ -24,16 +24,8 @@
     "styleDesc": "Get outfit suggestions based on your wardrobe, activity, and real-time weather."
   },
   "whatsNew": {
-    "badge": "New",
     "title": "Klosyt 2.0",
-    "ai": "All-new AI engine — 10x faster with real fashion color theory",
-    "generate": "Tap any item to instantly generate a complete outfit around it",
-    "lock": "Lock pieces you love and regenerate the rest",
-    "siri": "Siri support — \"What should I wear?\"",
-    "widget": "Today's Outfit widget for Lock Screen & Home Screen",
-    "share": "Share outfit cards to Instagram Stories",
-    "themes": "Themes & wallpapers are now free for everyone",
-    "languages": "Available in 16 languages"
+    "desc": "10x faster AI with color theory, tap any item to generate outfits, lock & regenerate pieces, Siri support, outfit widgets, Instagram sharing, free themes, and 16 languages."
   },
   "features": {
     "sectionTitle": "Everything you need,<br>nothing you don't",

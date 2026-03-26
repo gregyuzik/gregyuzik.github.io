@@ -24,16 +24,8 @@
     "styleDesc": "根據你的衣櫥、活動和即時天氣取得穿搭建議。"
   },
   "whatsNew": {
-    "badge": "新功能",
     "title": "Klosyt 2.0",
-    "ai": "全新AI引擎——速度提升10倍，融入真正的時尚色彩理論",
-    "generate": "點擊任意單品，即刻生成圍繞它的完整穿搭",
-    "lock": "鎖定你喜愛的單品，重新生成其餘部分",
-    "siri": "Siri支援——「今天穿什麼？」",
-    "widget": "今日穿搭小工具，支援Lock Screen和Home Screen",
-    "share": "將穿搭卡片分享到Instagram Stories",
-    "themes": "主題和桌布現已對所有人免費開放",
-    "languages": "支援16種語言"
+    "desc": "融入色彩理論的AI速度提升10倍，點擊任意單品生成穿搭，鎖定並重新生成單品，Siri支援，穿搭小工具，Instagram分享，免費主題，支援16種語言。"
   },
   "features": {
     "sectionTitle": "你需要的一切，<br>沒有多餘",

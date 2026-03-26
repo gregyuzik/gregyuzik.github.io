@@ -24,16 +24,8 @@
     "styleDesc": "Gardırobuna, aktivitene ve anlık hava durumuna göre kombin önerileri al."
   },
   "whatsNew": {
-    "badge": "Yeni",
     "title": "Klosyt 2.0",
-    "ai": "Tamamen yeni AI motoru — gerçek moda renk teorisiyle 10 kat daha hızlı",
-    "generate": "Herhangi bir parçaya dokun ve anında etrafında komple bir kombin oluştur",
-    "lock": "Sevdiğin parçaları kilitle ve geri kalanını yeniden oluştur",
-    "siri": "Siri desteği — \"Ne giysem?\"",
-    "widget": "Günün Kombini widget'ı — Lock Screen ve Home Screen için",
-    "share": "Kombin kartlarını Instagram Stories'da paylaş",
-    "themes": "Temalar ve duvar kağıtları artık herkes için ücretsiz",
-    "languages": "16 dilde kullanılabilir"
+    "desc": "Renk teorisiyle 10 kat daha hızlı AI, herhangi bir parçaya dokunarak kombin oluştur, kilitle ve yeniden oluştur, Siri desteği, kombin widget'ları, Instagram paylaşımı, ücretsiz temalar ve 16 dil."
   },
   "features": {
     "sectionTitle": "İhtiyacın olan her şey,<br>gereksiz hiçbir şey",
