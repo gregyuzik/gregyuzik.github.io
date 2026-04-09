@@ -11,3 +11,17 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials.json
+service-account*.json
+
+# Build artifacts
+dist/
+build/
+node_modules/
