@@ -97,15 +97,15 @@
             overflow-x:hidden;
         }
 
-        /* Animated gradient mesh */
-        .mesh-bg{position:fixed;inset:0;z-index:0;overflow:hidden}
-        .mesh-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.45}
-        .orb-1{width:550px;height:550px;background:radial-gradient(circle,#1a3d8f 0%,transparent 70%);top:-8%;left:-5%;animation:f1 18s ease-in-out infinite alternate}
-        .orb-2{width:450px;height:450px;background:radial-gradient(circle,#6a2fc1 0%,transparent 70%);bottom:-8%;right:-5%;animation:f2 22s ease-in-out infinite alternate}
-        .orb-3{width:350px;height:350px;background:radial-gradient(circle,#0a5e8a 0%,transparent 70%);top:45%;left:55%;animation:f3 20s ease-in-out infinite alternate}
-        @keyframes f1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(80px,60px) scale(1.15)}}
-        @keyframes f2{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-70px,-50px) scale(1.1)}}
-        @keyframes f3{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-40px,70px) scale(1.2)}}
+        /* Fixed noise background */
+        body::before{
+            content:'';position:fixed;inset:0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 30%,rgba(26,61,143,.18),transparent),
+                radial-gradient(ellipse 60% 50% at 80% 70%,rgba(106,47,193,.14),transparent),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events:none;z-index:-1;
+        }
 
         /* Hero */
         .hero{
@@ -190,7 +190,6 @@
             .app-arrow{display:none}
             .links{gap:.75rem}
             .link-btn{padding:10px 18px;font-size:.85rem}
-            .mesh-orb{filter:blur(80px);opacity:.3}
         }
 
         /* Reduced motion */
@@ -201,18 +200,11 @@
                 transition-duration:.01ms !important;
                 scroll-behavior:auto !important;
             }
-            .mesh-orb{animation:none}
             .js .fade-up{opacity:1;transform:none;transition:none}
         }
     </style>
 </head>
 <body>
-
-<div class="mesh-bg" aria-hidden="true">
-    <div class="mesh-orb orb-1"></div>
-    <div class="mesh-orb orb-2"></div>
-    <div class="mesh-orb orb-3"></div>
-</div>
 
 <main class="hero">
     <div class="hero-inner fade-up">
