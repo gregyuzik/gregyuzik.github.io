@@ -1,0 +1,24 @@
+{
+  "name": "Gregory Yuzik",
+  "short_name": "Gregory Yuzik",
+  "description": "Cloud Architect & Developer. Creator of vultyr and Klosyt.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
