@@ -77,6 +77,8 @@
             unicode-range:U+006C,U+0072,U+0074,U+0075,U+0076,U+0079;
         }
 
+        /* Solid bg on <html> fills Safari chrome, rubber-band overscroll, and safe-area insets */
+        html{background:#050508}
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
             --glass-bg:rgba(255,255,255,.08);
@@ -93,7 +95,7 @@
             -webkit-font-smoothing:antialiased;
             background:#050508;
             color:var(--text-1);
-            min-height:100dvh;
+            min-height:100svh;
             overflow-x:hidden;
         }
 
@@ -106,7 +108,7 @@
 
         /* Hero */
         .hero{
-            min-height:100dvh;
+            min-height:100svh;
             display:flex;align-items:center;justify-content:center;
             text-align:center;
             padding:max(80px,env(safe-area-inset-top)) max(1.5rem,env(safe-area-inset-right)) max(80px,env(safe-area-inset-bottom)) max(1.5rem,env(safe-area-inset-left));
