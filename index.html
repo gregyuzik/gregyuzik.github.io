@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>document.documentElement.classList.add('js')</script>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self';">
+    <script>document.documentElement.classList.add('js')</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#050508">
     <title>Gregory Yuzik</title>
 
-    <meta name="description" content="Cloud Architect & Developer. Creator of vultyr and Klosyt.">
+    <meta name="description" content="Gregory Yuzik — Cloud Architect & Developer. Creator of vultyr (monitor 200+ services across Apple devices) and Klosyt (AI-powered digital closet).">
     <link rel="canonical" href="https://gregyuzik.github.io/">
 
     <meta property="og:type" content="website">
@@ -25,15 +26,19 @@
     <meta name="twitter:title" content="Gregory Yuzik">
     <meta name="twitter:description" content="Cloud Architect & Developer. Creator of vultyr and Klosyt.">
     <meta name="twitter:image" content="https://gregyuzik.github.io/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="Gregory Yuzik — Cloud Architect & Developer">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260413-2">
     <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png?v=20260413-2">
-    <link rel="shortcut icon" href="/favicon.ico?v=20260413-2">
+    <link rel="icon" href="/favicon.ico?v=20260413-2">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260413-2">
-    <link rel="manifest" href="/manifest.webmanifest?v=20260413-2">
+    <link rel="manifest" href="/manifest.webmanifest?v=20260413-3">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gregory Yuzik">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
 
     <script type="application/ld+json">
     {
@@ -95,9 +100,9 @@
             background:#050508;
             color:var(--text-1);
             min-height:100svh;
-            overflow-x:hidden;
         }
 
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
         /* Hero */
         .hero{
@@ -154,7 +159,7 @@
         .links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
         .link-btn{
             display:inline-flex;align-items:center;gap:8px;
-            padding:10px 22px;border-radius:100px;
+            padding:12px 22px;min-height:44px;border-radius:100px;
             background:var(--glass-bg);
             border:1px solid var(--glass-border);
             text-decoration:none;color:var(--text-2);
@@ -181,7 +186,7 @@
             .app-card{flex-direction:column;text-align:center;gap:1rem;padding:1.25rem}
             .app-arrow{display:none}
             .links{gap:.75rem}
-            .link-btn{padding:10px 18px;font-size:.85rem}
+            .link-btn{padding:12px 18px;font-size:.85rem}
         }
 
         /* Reduced motion */
@@ -204,19 +209,21 @@
         <p class="hero-sub">Cloud Architect &amp; Developer</p>
 
         <div class="apps">
-            <a href="https://vultyr.app" class="app-card" target="_blank" rel="noopener" aria-label="vultyr (opens in new tab)">
-                <img src="/assets/VultyrIcon.png" alt="" class="app-icon" width="72" height="72" loading="lazy" decoding="async">
+            <a href="https://vultyr.app" class="app-card" target="_blank" rel="noopener">
+                <img src="/assets/VultyrIcon.png" alt="" class="app-icon" width="72" height="72" decoding="async">
                 <div class="app-info">
                     <div class="app-name audiowide">vultyr</div>
                     <div class="app-desc">Is it down? Monitor 200+ services across every Apple device.</div>
+                    <span class="sr-only">(opens in new tab)</span>
                 </div>
                 <span class="app-arrow" aria-hidden="true">&rsaquo;</span>
             </a>
-            <a href="https://klosyt.com" class="app-card" target="_blank" rel="noopener" aria-label="Klosyt (opens in new tab)">
-                <img src="/assets/KlosytIcon.png" alt="" class="app-icon" width="72" height="72" loading="lazy" decoding="async">
+            <a href="https://klosyt.com" class="app-card" target="_blank" rel="noopener">
+                <img src="/assets/KlosytIcon.png" alt="" class="app-icon" width="72" height="72" decoding="async" fetchpriority="high">
                 <div class="app-info">
                     <div class="app-name">Klosyt</div>
                     <div class="app-desc">Your AI-powered digital closet.</div>
+                    <span class="sr-only">(opens in new tab)</span>
                 </div>
                 <span class="app-arrow" aria-hidden="true">&rsaquo;</span>
             </a>
@@ -231,7 +238,7 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 LinkedIn
             </a>
-            <a href="/assets/resume.pdf" class="link-btn" target="_blank" rel="noopener" aria-label="Resume (opens in new tab)">
+            <a href="/assets/resume.pdf" class="link-btn" target="_blank" rel="noopener" aria-label="Resume (PDF, opens in new tab)">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
                 Resume
             </a>
@@ -240,14 +247,21 @@
 </main>
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-    var io=new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-            if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-        });
-    },{threshold:.1});
-    document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
-});
+(function(){
+    function showAll(){document.querySelectorAll('.fade-up').forEach(function(e){e.classList.add('in');});}
+    function run(){
+        try{
+            if(!('IntersectionObserver' in window))return showAll();
+            var io=new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+                });
+            },{threshold:.1});
+            document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el);});
+        }catch(err){showAll();}
+    }
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}
+})();
 </script>
 </body>
 </html>
