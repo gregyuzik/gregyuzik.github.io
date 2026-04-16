@@ -2,6 +2,8 @@
   "name": "Gregory Yuzik",
   "short_name": "Gregory Yuzik",
   "description": "Cloud Architect & Developer. Creator of vultyr and Klosyt.",
+  "lang": "en",
+  "dir": "ltr",
   "id": "/",
   "start_url": "/",
   "scope": "/",
