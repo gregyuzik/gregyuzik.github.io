@@ -4,60 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="color-scheme" content="dark">
-    <meta name="theme-color" content="#050508">
+    <meta name="theme-color" content="#05060b">
     <meta name="robots" content="noindex">
     <title>404 — Gregory Yuzik</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260413-2">
     <link rel="icon" href="/favicon.ico?v=20260413-2">
     <style>
-        html{background:#050508}
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{background:#05060b;color-scheme:dark}
+        :root{
+            --display:ui-serif,"New York","Iowan Old Style","Palatino","Times New Roman",serif;
+            --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+        }
         body{
             font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
             -webkit-font-smoothing:antialiased;
-            background:#050508;
-            color:#fff;
+            background:#05060b;
+            color:#f6f6f8;
             min-height:100svh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
+            display:flex;align-items:center;justify-content:center;text-align:center;
             padding:max(1.5rem,env(safe-area-inset-top)) max(1.5rem,env(safe-area-inset-right)) max(1.5rem,env(safe-area-inset-bottom)) max(1.5rem,env(safe-area-inset-left));
+            overflow:hidden;position:relative;
         }
-        main{max-width:420px}
-        h1{
-            font-size:clamp(3rem,10vw,5rem);
-            font-weight:800;letter-spacing:-.04em;line-height:1;
-            margin-bottom:1rem;
-            text-shadow:0 2px 12px rgba(0,0,0,.5);
+        .bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+        .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+        .orb-a{width:55vmax;height:55vmax;left:-18vmax;top:-18vmax;
+            background:radial-gradient(circle,rgba(120,80,230,.7),transparent 65%)}
+        .orb-b{width:45vmax;height:45vmax;right:-15vmax;bottom:-15vmax;
+            background:radial-gradient(circle,rgba(60,200,200,.5),transparent 65%)}
+        main{position:relative;z-index:1;max-width:460px}
+        .code{
+            font-family:var(--display);font-style:italic;font-weight:300;
+            font-size:clamp(5rem,18vw,9rem);letter-spacing:-.04em;line-height:.9;
+            background:linear-gradient(180deg,#fff 0%,#d0d0d6 60%,#a8a8b0 100%);
+            -webkit-background-clip:text;background-clip:text;
+            -webkit-text-fill-color:transparent;color:transparent;
+            margin-bottom:.75rem;
         }
-        p{
-            color:rgba(255,255,255,.62);
-            font-size:1rem;line-height:1.6;
-            margin-bottom:2rem;
+        .tag{
+            font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+            color:rgba(246,246,248,.38);margin-bottom:1.75rem;
         }
+        p{color:rgba(246,246,248,.66);font-size:1rem;line-height:1.6;margin-bottom:2rem}
         a{
-            display:inline-flex;align-items:center;
-            padding:12px 22px;min-height:44px;border-radius:100px;
-            background:rgba(255,255,255,.08);
-            border:1px solid rgba(255,255,255,.12);
-            text-decoration:none;color:rgba(255,255,255,.62);
-            font-size:.9rem;font-weight:500;
+            display:inline-flex;align-items:center;gap:.5rem;
+            padding:11px 20px;min-height:44px;border-radius:100px;
+            background:rgba(255,255,255,.055);
+            border:1px solid rgba(255,255,255,.09);
+            backdrop-filter:blur(18px) saturate(1.6);
+            -webkit-backdrop-filter:blur(18px) saturate(1.6);
+            text-decoration:none;color:rgba(246,246,248,.66);
+            font-size:.82rem;font-weight:500;letter-spacing:.02em;
             transition:background .2s,color .2s,border-color .2s;
         }
-        a:hover{
-            background:rgba(255,255,255,.14);
-            color:#fff;
-            border-color:rgba(255,255,255,.2);
-        }
-        a:focus-visible{outline:2px solid rgba(255,255,255,.5);outline-offset:2px}
+        a:hover{background:rgba(255,255,255,.1);color:#f6f6f8;border-color:rgba(255,255,255,.18)}
+        a:focus-visible{outline:none;box-shadow:0 0 0 2px rgba(154,247,224,.55)}
     </style>
 </head>
 <body>
+    <div class="bg" aria-hidden="true">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+    </div>
     <main>
-        <h1>404</h1>
-        <p>This page doesn't exist.</p>
-        <a href="/">Go home</a>
+        <div class="code">404</div>
+        <div class="tag">Page Not Found</div>
+        <p>The page you're looking for has drifted off the grid.</p>
+        <a href="/">&larr; Return home</a>
     </main>
 </body>
 </html>
