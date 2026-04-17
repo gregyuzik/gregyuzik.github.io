@@ -137,7 +137,7 @@
         }
 
         /* ---------- Intro ---------- */
-        .intro{display:flex;flex-direction:column;align-items:flex-start;gap:1.1rem}
+        .intro{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1rem}
         .eyebrow{
             display:inline-flex;align-items:center;gap:.65rem;
             padding:7px 14px 7px 10px;
@@ -161,18 +161,19 @@
             font-family:var(--display);
             font-weight:600;
             font-size:clamp(2.25rem,10.5vw,6.25rem);
-            line-height:1;letter-spacing:-.045em;
+            line-height:1.04;letter-spacing:-.04em;
             max-width:100%;
+            overflow-wrap:anywhere;word-break:break-word;
             background:linear-gradient(180deg,#ffffff 0%,#e4e4e8 60%,#c9c9d0 100%);
             -webkit-background-clip:text;background-clip:text;
             -webkit-text-fill-color:transparent;color:transparent;
         }
         .name .and{display:none}
         .hairline{
-            display:flex;align-items:center;gap:1rem;width:100%;max-width:640px;
+            display:flex;align-items:center;justify-content:center;gap:1rem;width:100%;max-width:640px;
             color:var(--ink-2);
         }
-        .hairline .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--edge-hi),transparent)}
+        .hairline .rule{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--edge-hi),transparent)}
         .role{
             font-family:var(--mono);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
             color:var(--ink-2);white-space:nowrap;
@@ -180,8 +181,8 @@
 
         /* ---------- Works ---------- */
         .works-head{
-            display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-            margin-bottom:1.25rem;
+            display:flex;align-items:baseline;justify-content:center;gap:1rem;
+            margin-bottom:1.25rem;text-align:center;
         }
         .section-label{
             font-family:var(--mono);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
@@ -274,7 +275,7 @@
 
         /* ---------- Links ---------- */
         .links{
-            display:flex;flex-wrap:wrap;gap:.6rem;
+            display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;
         }
         .link{
             --mx:50%;--my:50%;
@@ -333,7 +334,7 @@
         }
         @media (max-width:480px){
             .hairline .rule{display:none}
-            .name{font-size:clamp(1.9rem,8.2vw,2.5rem);letter-spacing:-.035em}
+            .name{font-size:clamp(1.75rem,7.8vw,2.4rem);letter-spacing:-.03em}
         }
 
         /* ---------- Reduced motion ---------- */
@@ -361,10 +362,11 @@
     <header class="intro">
         <span class="eyebrow reveal d1">
             <span class="dot" aria-hidden="true"></span>
-            Portfolio · MMXXVI
+            Portfolio
         </span>
         <h1 class="name reveal d2">Gregory Yuzik</h1>
         <div class="hairline reveal d3">
+            <span class="rule" aria-hidden="true"></span>
             <span class="role">Cloud Architect &amp; Developer</span>
             <span class="rule" aria-hidden="true"></span>
         </div>
@@ -373,7 +375,6 @@
     <section class="works" aria-label="Selected projects">
         <div class="works-head reveal d3">
             <span class="section-label">Selected Work</span>
-            <span class="section-num">№ 01 — 02</span>
         </div>
 
         <div class="cards">
