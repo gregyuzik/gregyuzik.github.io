@@ -258,10 +258,11 @@
             max-width:32ch;
         }
         .card-foot{
-            display:flex;align-items:center;justify-content:space-between;gap:1rem;
+            display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;
             margin-top:auto;padding-top:1rem;
             border-top:1px solid var(--edge);
         }
+        .card-foot .card-cta{align-self:flex-end}
         .card-tag{
             font-family:var(--mono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
             color:var(--ink-3);
@@ -326,9 +327,7 @@
             .card{min-height:0;padding:1.35rem}
             .card-icon{width:56px;height:56px;border-radius:14px}
             .card-title{font-size:1.6rem}
-            .card-foot{flex-direction:column;align-items:flex-start;gap:.75rem}
             .card-tag{letter-spacing:.18em;font-size:.64rem}
-            .card-cta{align-self:flex-end}
             .hairline{max-width:none}
             .role{font-size:.7rem;letter-spacing:.18em}
             .works-head{margin-bottom:.75rem}
@@ -385,7 +384,7 @@
                     <p class="card-desc">Is it down? Monitor 200&plus; services across every Apple device.</p>
                 </div>
                 <div class="card-foot">
-                    <span class="card-tag">iOS · macOS · watchOS · tvOS</span>
+                    <span class="card-tag">iOS · iPadOS · macOS · visionOS · tvOS · watchOS</span>
                     <span class="card-cta">Visit
                         <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M5 3h4v4"/></svg>
                     </span>
@@ -402,7 +401,7 @@
                     <p class="card-desc">Your AI-powered digital closet.</p>
                 </div>
                 <div class="card-foot">
-                    <span class="card-tag">iOS · On-device AI</span>
+                    <span class="card-tag">iOS · iPadOS · macOS · visionOS · tvOS</span>
                     <span class="card-cta">Visit
                         <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M5 3h4v4"/></svg>
                     </span>
