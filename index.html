@@ -160,8 +160,9 @@
         .name{
             font-family:var(--display);
             font-weight:600;
-            font-size:clamp(3rem,9.5vw,6.5rem);
-            line-height:.98;letter-spacing:-.045em;
+            font-size:clamp(2.25rem,10.5vw,6.25rem);
+            line-height:1;letter-spacing:-.045em;
+            max-width:100%;
             background:linear-gradient(180deg,#ffffff 0%,#e4e4e8 60%,#c9c9d0 100%);
             -webkit-background-clip:text;background-clip:text;
             -webkit-text-fill-color:transparent;color:transparent;
@@ -332,7 +333,7 @@
         }
         @media (max-width:420px){
             .hairline .rule{display:none}
-            .name{letter-spacing:-.035em}
+            .name{font-size:clamp(2.1rem,11vw,3rem);letter-spacing:-.04em}
         }
 
         /* ---------- Reduced motion ---------- */
