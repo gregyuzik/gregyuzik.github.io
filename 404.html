@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com; img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#05060b">
@@ -10,6 +11,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png?v=20260417-2">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260417-2">
     <link rel="icon" href="/favicon.ico?v=20260417-2">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <!-- Google tag (gtag.js) -->
+    <script src="/assets/js/gtag.js?v=20260413-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6F30H7DLZ"></script>
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         html{background:#05060b;color-scheme:dark}
