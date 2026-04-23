@@ -42,7 +42,6 @@
 
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/fraunces-name.woff2?v=20260417-2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
 
     <script type="application/ld+json">
@@ -73,13 +72,6 @@
             src:url('/assets/fonts/inter-latin.woff2') format('woff2');
         }
         @font-face{
-            font-family:'Fraunces';
-            font-style:normal;
-            font-weight:300 700;
-            font-display:swap;
-            src:url('/assets/fonts/fraunces-name.woff2?v=20260417-2') format('woff2');
-        }
-        @font-face{
             font-family:'Audiowide';
             font-style:normal;
             font-weight:400;
@@ -93,7 +85,7 @@
         :root{
             --bg:#05060b;
             --ink:#f6f6f8;
-            --ink-serif:#f2ede3;
+            --ink-display:#f2ede3;
             --ink-2:rgba(246,246,248,.66);
             --ink-3:rgba(246,246,248,.50);
             --ink-4:rgba(246,246,248,.16);
@@ -102,7 +94,6 @@
             --edge:rgba(255,255,255,.09);
             --edge-hi:rgba(255,255,255,.18);
             --sans:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-            --serif:'Fraunces',ui-serif,Georgia,serif;
             --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
             --ease:cubic-bezier(.16,1,.3,1);
             --radius:22px;
@@ -144,14 +135,13 @@
         /* ---------- Intro ---------- */
         .intro{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem}
         .name{
-            font-family:var(--serif);
-            font-weight:400;
+            font-family:var(--sans);
+            font-weight:600;
             font-size:clamp(2.25rem,8vw,4.75rem);
-            line-height:1.15;letter-spacing:-.015em;
+            line-height:1.1;letter-spacing:-.03em;
             max-width:100%;
             overflow-wrap:anywhere;word-break:break-word;
-            color:var(--ink-serif);
-            font-variation-settings:"opsz" 144,"SOFT" 30,"WONK" 0;
+            color:var(--ink-display);
         }
         .role{
             font-family:var(--mono);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;
