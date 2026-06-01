@@ -88,7 +88,7 @@
             --ink:#f6f6f8;
             --ink-display:#f2ede3;
             --ink-2:rgba(246,246,248,.66);
-            --ink-3:rgba(246,246,248,.50);
+            --ink-3:rgba(246,246,248,.58);
             --ink-4:rgba(246,246,248,.16);
             --glass:rgba(255,255,255,.055);
             --glass-hi:rgba(255,255,255,.10);
@@ -117,6 +117,13 @@
             background:
               radial-gradient(58vmax 44vmax at 22% 12%,rgba(220,196,164,.10),transparent 65%),
               radial-gradient(68vmax 52vmax at 88% 96%,rgba(140,150,172,.08),transparent 70%);
+            will-change:transform;
+            animation:washDrift 36s ease-in-out infinite;
+        }
+        @keyframes washDrift{
+            0%{transform:translate3d(0,0,0) scale(1)}
+            50%{transform:translate3d(2.5%,-2%,0) scale(1.06)}
+            100%{transform:translate3d(0,0,0) scale(1)}
         }
         .vignette{
             position:absolute;inset:0;pointer-events:none;
@@ -127,9 +134,9 @@
         .shell{
             position:relative;z-index:1;
             min-height:100svh;
-            display:flex;flex-direction:column;justify-content:flex-start;
+            display:flex;flex-direction:column;justify-content:safe center;
             max-width:1080px;margin:0 auto;
-            padding:max(clamp(88px,18vh,200px),env(safe-area-inset-top)) max(1.5rem,env(safe-area-inset-right)) max(64px,env(safe-area-inset-bottom)) max(1.5rem,env(safe-area-inset-left));
+            padding:max(clamp(56px,10vh,120px),env(safe-area-inset-top)) max(1.5rem,env(safe-area-inset-right)) max(clamp(56px,10vh,120px),env(safe-area-inset-bottom)) max(1.5rem,env(safe-area-inset-left));
             gap:2.5rem;
         }
 
